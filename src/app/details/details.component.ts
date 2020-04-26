@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/services/product.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BagService } from 'src/services/bag.service';
 
 @Component({
@@ -25,14 +25,20 @@ export class DetailsComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
-    private bagService: BagService) { }
+    private bagService: BagService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.productid = this.route.snapshot.paramMap.get('id');
     this.productService.getProducto_Detalle(this.productid)
       .subscribe(resp => {
         console.log('response', resp);
+        if (resp.length == 0) {
+          alert('Producto no encontrado');
+          this.router.navigateByUrl('/home');
+        }
         this.product = resp[0];
+
       });
   }
 
