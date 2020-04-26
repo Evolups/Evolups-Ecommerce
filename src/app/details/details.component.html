@@ -1,1 +1,419 @@
-<p>details works!</p>
+<div class="col-12">
+
+  <div class="col-xs-3 sidebar collection-sidebar">
+    <div class="widget sidebar-links sidebar-custom">
+      <div class="widget-title">
+        <span class="lang1">Departamentos </span>
+      </div>
+      <div class="widget-content">
+        <ul>
+          <li>
+            <a href="javascript:void(0)">
+              <span class="lang1">Baños</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <span class="lang1">Ceramicas</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <span class="lang1">Climatización</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <span class="lang1">Cocina</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <span class="lang1">Eléctricidad</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <span class="lang1">Herramientas</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <span class="lang1">Madera</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <span class="lang1">Pintura</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="dtl-section">
+      <div class="sidebar-block">
+        <div class="sidebar-custom sidebar-tag brand">
+          <div class="widget-title">
+            <span class="lang1">Marca </span>
+            <a href="javascript:void(0)" class="clear" style="display:none">
+              Clear
+            </a>
+          </div>
+          <div class="widget-content">
+            <ul>
+              <li>
+                <input type="checkbox" class="lang1" value="dincidunteros">
+                <label class="lang1">Dincidunteros</label>
+              </li>
+              <li>
+                <input type="checkbox" class="lang1" value="nectellus">
+                <label class="lang1">Nectellus</label>
+              </li>
+              <li>
+                <input type="checkbox" class="lang1" value="solutmades">
+                <label class="lang1">Solutmades</label>
+              </li>
+              <li>
+                <input type="checkbox" class="lang1" value="loremous-comodous">
+                <label class="lang1">Loremous Comodous</label>
+              </li>
+              <li>
+                <input type="checkbox" class="lang1" value="cosmopolis">
+                <label class="lang1">Cosmopolis</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-9 col-main">
+    <div class="product">
+
+      <!---PRODUCT FEATURE IMAGE--->
+      <div class="col-xs-5 feature-product-detail">
+        <div class="product-img-box">
+          <div class="product-photo-container text-center">
+            <div class="zoomWrapper">
+              <img src="assets/imgs/01_grande.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---END PRODUCT FEATURE IMAGE--->
+
+      <!---PRODUCT SHOP--->
+      <div class="col-xs-7 product-shop">
+        <header class="product-title ">
+          <p class="product-vendor">
+            <span>{{ product.descripcio }}</span></p>
+          <h3>
+            <span class="lang1">Naminos elementum disus tincidunts danous milano de cosmopolis</span>
+          </h3>
+        </header>
+        <div class="product-info">
+          <label class="lang1">SKU</label>
+          <span class="variant-sku">{{product.codigo}}</span>
+          <p class="product-inventory">
+            <label class="lang1">Availability</label>
+            <span>{{product.existencia}} In stock</span>
+          </p>
+
+          <p class="product-type">
+            <label class="lang1">Product Type</label>
+            <span>Dincidunteros</span>
+          </p>
+
+        </div>
+        <div class="short-description">
+          <div class="lang1">
+            <p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor,
+              elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo
+              pharetras...
+            </p>
+          </div>
+        </div>
+
+        <div class="offers">
+
+          <form action="car.html" method="post" enctype="multipart/form-data">
+            <div class="prices">
+              <span class="price" itemprop="price"><span class="money">{{product.precio1 | currency}}</span></span>
+            </div>
+            <label for="quantity" data-translate="cart.label.quantity">Quantity: </label>
+            <div (click)="cantidad > 1 ? cantidad = cantidad - 1 : 1" class="dec button">-</div>
+            <input [(ngModel)]="cantidad" type="text" id="quantity" name="quantity" value="1">
+            <div (click)="cantidad = cantidad+1" class="inc button">+</div>
+            <div class="total-price">
+              <label><b data-translate="cart.general.subtotal">Sub total</b>:</label><span><span
+                  class="money">{{ (cantidad * product.precio1) | currency }}</span></span>
+            </div>
+            <input type="button" (click)="add()" name="add" class="btn" value="Añadir al carrito">
+          </form>
+        </div>
+
+      </div>
+      <!---END PRODUCT SHOP--->
+    </div>
+    <!--TAB VERTICAL-->
+
+    <!--TAB HORIZONTAL-->
+
+    <div class="panel-group">
+      <ul class="nav nav-tabs" id="myTab">
+        <li class="active">
+          <a data-toggle="tab" href="#collapse-tab1">
+            <span class="lang1">Description</span>
+          </a>
+        </li>
+        <li class="">
+          <a data-toggle="tab" href="#collapse-tab2">
+            <span class="lang1">Shipping &amp; Returns</span>
+          </a>
+        </li>
+      </ul>
+
+      <div id="myTabContent" class="tab-content">
+        <div id="collapse-tab1" class="tab-pane active">
+          <div class="lang1">
+            <p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor,
+              elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo
+              pharetras loremos.Donec pretium egestas sapien et mollis. Mauris tincidunt urna eu neque feugiat
+              vulputate. Morbi ut tempor lacus, ac pellentesque nibh. Ut nec vestibulum urna. Sed facilisis luctus sem,
+              at accumsan
+              diam volutpat sit amet. Nunc sem massa, imperdiet condimentum commodo vel, euismod nec augue. Etiam porta
+              vel erat non ullamcorper. Etiam tristique egestas orci ac maximus.&nbsp;</p>
+
+          </div>
+        </div>
+
+        <div id="collapse-tab2" class="tab-pane">
+          <div class="lang1">
+            <p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor,
+              elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo
+              pharetras loremos.Donec pretium egestas sapien et mollis. Mauris tincidunt urna eu neque feugiat
+              vulputate. Morbi ut tempor lacus, ac pellentesque nibh.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--RELATED PRODUCT-->
+
+    <section class="related-products">
+      <h5 class="lang1">Productos Relacionados</h5>
+      <div class="products-grid row owl-carousel">
+        <div class=" no_crop_image grid-item">
+          <div class="inner product-item  on-sale wow fadeIn animated" data-wow-delay="1000ms">
+            <div class="inner-top">
+              <div class="product-top">
+                <div class="product-image image-swap">
+                  <a href="#" class="product-grid-image">
+                    <img src="assets/imgs/l02184820_504d6138-63f9-4d02-b7c3-ac1cd3ff58e9_large.jpg"
+                      alt="Naminos elementum disus tincidunts cosmo de cosmopolis">
+                    <img src="assets/imgs/l10608410_cc41a6f1-65b1-4a71-add1-c52ba5eaf85d_large.jpg"
+                      alt="Naminos elementum disus tincidunts cosmo de cosmopolis">
+                    <div class="hover"></div>
+                  </a>
+                </div>
+                <div class="product-label">
+                  <strong class="label">Sale</strong>
+                </div>
+                <div class="product-des">
+                  <div class="action">
+                    <form action="/cart/add" method="post" class="variants" enctype="multipart/form-data">
+                      <button type="button" class="btn" title="Select options">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <span data-translate="products.product.select_options">Select
+                          options</span>
+                      </button>
+                    </form>
+                  </div>
+                  <div class="quickview-button">
+                    <a href="javascript:void(0)" title="Quick View">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                      <span data-translate="products.product.quick_view">Quick View</span>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="product-bottom">
+                <div class="product-vendor">Dressers</div>
+                <a class="product-title" href="#">
+                  <span class="lang1">Naminos elementum disus tincidunts cosmo de
+                    cosmopolis</span>
+                </a>
+                <div class="price-box">
+                  <p class="sale">
+                    <span class="old-price"><span class="money">$1,111.00</span></span>
+                    <span class="special-price"><em data-translate="products.product.from">from </em><span class="money"
+                        data-currency-usd="$1,000.00" data-currency="USD">$1,000.00</span></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=" no_crop_image grid-item">
+          <div class="inner product-item  on-sale wow fadeIn animated" data-wow-delay="1000ms">
+            <div class="inner-top">
+              <div class="product-top">
+                <div class="product-image image-swap">
+                  <a href="#" class="product-grid-image">
+                    <img src="assets/imgs/l02184820_504d6138-63f9-4d02-b7c3-ac1cd3ff58e9_large.jpg"
+                      alt="Naminos elementum disus tincidunts cosmo de cosmopolis">
+                    <img src="assets/imgs/l10608410_cc41a6f1-65b1-4a71-add1-c52ba5eaf85d_large.jpg"
+                      alt="Naminos elementum disus tincidunts cosmo de cosmopolis">
+                    <div class="hover"></div>
+                  </a>
+                </div>
+                <div class="product-label">
+                  <strong class="label">Sale</strong>
+                </div>
+                <div class="product-des">
+                  <div class="action">
+                    <form action="/cart/add" method="post" class="variants" enctype="multipart/form-data">
+                      <button type="button" class="btn" title="Select options">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <span data-translate="products.product.select_options">Select
+                          options</span>
+                      </button>
+                    </form>
+                  </div>
+                  <div class="quickview-button">
+                    <a href="javascript:void(0)" title="Quick View">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                      <span data-translate="products.product.quick_view">Quick View</span>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="product-bottom">
+                <div class="product-vendor">Dressers</div>
+                <a class="product-title" href="#">
+                  <span class="lang1">Naminos elementum disus tincidunts cosmo de
+                    cosmopolis</span>
+                </a>
+                <div class="price-box">
+                  <p class="sale">
+                    <span class="old-price"><span class="money">$1,111.00</span></span>
+                    <span class="special-price"><em data-translate="products.product.from">from </em><span class="money"
+                        data-currency-usd="$1,000.00" data-currency="USD">$1,000.00</span></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=" no_crop_image grid-item">
+          <div class="inner product-item  on-sale wow fadeIn animated" data-wow-delay="1000ms">
+            <div class="inner-top">
+              <div class="product-top">
+                <div class="product-image image-swap">
+                  <a href="#" class="product-grid-image">
+                    <img src="assets/imgs/l02184820_504d6138-63f9-4d02-b7c3-ac1cd3ff58e9_large.jpg"
+                      alt="Naminos elementum disus tincidunts cosmo de cosmopolis">
+                    <img src="assets/imgs/l10608410_cc41a6f1-65b1-4a71-add1-c52ba5eaf85d_large.jpg"
+                      alt="Naminos elementum disus tincidunts cosmo de cosmopolis">
+                    <div class="hover"></div>
+                  </a>
+                </div>
+                <div class="product-label">
+                  <strong class="label">Sale</strong>
+                </div>
+                <div class="product-des">
+                  <div class="action">
+                    <form action="/cart/add" method="post" class="variants" enctype="multipart/form-data">
+                      <button type="button" class="btn" title="Select options">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <span data-translate="products.product.select_options">Select
+                          options</span>
+                      </button>
+                    </form>
+                  </div>
+                  <div class="quickview-button">
+                    <a href="javascript:void(0)" title="Quick View">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                      <span data-translate="products.product.quick_view">Quick View</span>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="product-bottom">
+                <div class="product-vendor">Dressers</div>
+                <a class="product-title" href="#">
+                  <span class="lang1">Naminos elementum disus tincidunts cosmo de
+                    cosmopolis</span>
+                </a>
+                <div class="price-box">
+                  <p class="sale">
+                    <span class="old-price"><span class="money">$1,111.00</span></span>
+                    <span class="special-price"><em data-translate="products.product.from">from </em><span class="money"
+                        data-currency-usd="$1,000.00" data-currency="USD">$1,000.00</span></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=" no_crop_image grid-item">
+          <div class="inner product-item  on-sale wow fadeIn animated" data-wow-delay="1000ms">
+            <div class="inner-top">
+              <div class="product-top">
+                <div class="product-image image-swap">
+                  <a href="#" class="product-grid-image">
+                    <img src="assets/imgs/l02184820_504d6138-63f9-4d02-b7c3-ac1cd3ff58e9_large.jpg"
+                      alt="Naminos elementum disus tincidunts cosmo de cosmopolis">
+                    <img src="assets/imgs/l10608410_cc41a6f1-65b1-4a71-add1-c52ba5eaf85d_large.jpg"
+                      alt="Naminos elementum disus tincidunts cosmo de cosmopolis">
+                    <div class="hover"></div>
+                  </a>
+                </div>
+                <div class="product-label">
+                  <strong class="label">Sale</strong>
+                </div>
+                <div class="product-des">
+                  <div class="action">
+                    <form action="/cart/add" method="post" class="variants" enctype="multipart/form-data">
+                      <button type="button" class="btn" title="Select options">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <span data-translate="products.product.select_options">Select
+                          options</span>
+                      </button>
+                    </form>
+                  </div>
+                  <div class="quickview-button">
+                    <a href="javascript:void(0)" title="Quick View">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                      <span data-translate="products.product.quick_view">Quick View</span>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="product-bottom">
+                <div class="product-vendor">Dressers</div>
+                <a class="product-title" href="#">
+                  <span class="lang1">Naminos elementum disus tincidunts cosmo de
+                    cosmopolis</span>
+                </a>
+                <div class="price-box">
+                  <p class="sale">
+                    <span class="old-price"><span class="money">$1,111.00</span></span>
+                    <span class="special-price"><em data-translate="products.product.from">from </em><span class="money"
+                        data-currency-usd="$1,000.00" data-currency="USD">$1,000.00</span></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

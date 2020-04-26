@@ -9,6 +9,8 @@ import { CarComponent } from './car/car.component';
 import { AboutComponent } from './about/about.component';
 import { DepartmentComponent } from './department/department.component';
 import { DetailsComponent } from './details/details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,7 +26,10 @@ import { DetailsComponent } from './details/details.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
