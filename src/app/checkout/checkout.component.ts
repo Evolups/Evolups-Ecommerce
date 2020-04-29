@@ -81,12 +81,12 @@ export class CheckoutComponent implements OnInit {
 
     console.log(myArray);
     console.log(this.validateForm.value);
-    // this.bagService.sendOrder(myArray).subscribe(result => {
-    //   alert(result);
-    //   this.bagService.items = [];
-    //   this.bagService.totalBagItems.next(0);
-    //   this.router.navigateByUrl('/home');
-    // });
+    this.bagService.sendOrder(myArray).subscribe(result => {
+      alert('Se ha creado la orden #' + result);
+      this.bagService.items = [];
+      this.bagService.totalBagItems.next(0);
+      this.router.navigateByUrl('/home');
+    });
   }
 
 }
