@@ -11,6 +11,8 @@ import { DepartmentComponent } from './department/department.component';
 import { DetailsComponent } from './details/details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { DefaultLayoutComponent } from './default-layout/default-layout.component';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     DepartmentComponent,
     DetailsComponent,
     AppComponent,
+    CheckoutComponent,
+    DefaultLayoutComponent,
 
   ],
   imports: [

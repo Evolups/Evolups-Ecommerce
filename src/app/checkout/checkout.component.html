@@ -1,0 +1,481 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div class="wrapper-container anyflexbox no-touchevents">
+  <div class="content">
+    <div class="wrap">
+      <div class="main">
+        <header class="main__header" role="banner">
+          <a class="logo logo--left" href="/"><span class="logo__text heading-1">furnitica-vinova</span></a>
+          <h1>
+            Information {{ validateForm.invalid }}
+          </h1>
+          <nav aria-label="Breadcrumb">
+            <ul class="breadcrumb ">
+              <li class="breadcrumb__item breadcrumb__item--completed">
+                <a class="breadcrumb__link" href="/cart">Cart</a>
+                <svg class="icon-svg icon-svg--color-adaptive-light icon-svg--size-10 breadcrumb__chevron-icon"
+                  aria-hidden="true" focusable="false">
+                  <use xlink:href="#chevron-right"></use>
+                </svg>
+              </li>
+
+              <li class="breadcrumb__item breadcrumb__item--current" aria-current="step">
+                <span class="breadcrumb__text">Information</span>
+                <svg class="icon-svg icon-svg--color-adaptive-light icon-svg--size-10 breadcrumb__chevron-icon"
+                  aria-hidden="true" focusable="false">
+                  <use xlink:href="#chevron-right"></use>
+                </svg>
+              </li>
+              <li class="breadcrumb__item breadcrumb__item--blank">
+                <span class="breadcrumb__text">Shipping</span>
+                <svg class="icon-svg icon-svg--color-adaptive-light icon-svg--size-10 breadcrumb__chevron-icon"
+                  aria-hidden="true" focusable="false">
+                  <use xlink:href="#chevron-right"></use>
+                </svg>
+              </li>
+              <li class="breadcrumb__item breadcrumb__item--blank">
+                <span class="breadcrumb__text">Payment</span>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <main class="main__content" role="main">
+          <div class="step" data-step="contact_information" data-last-step="false">
+            <form [formGroup]="validateForm" appIdentityRevealed class="edit_checkout animate-floating-labels" action=""
+              accept-charset="UTF-8" method="post">
+              <div class="step__sections">
+                <div class="section section--contact-information">
+                  <div class="section__header">
+                    <div
+                      class="layout-flex layout-flex--tight-vertical layout-flex--loose-horizontal layout-flex--wrap">
+                      <h2 class="section__title layout-flex__item layout-flex__item--stretch" id="main-header"
+                        tabindex="-1">
+                        Contact information
+                      </h2>
+
+                      <p class="layout-flex__item">
+                        <span aria-hidden="true">Already have an account?</span>
+                        <a href="/login.html">
+                          <span class="visually-hidden">Already have an account?</span> Log in
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="section__content">
+                    <div class="fieldset">
+                      <div data-email-or-phone-input-wrapper="true" data-shopify-pay-email-flow="false"
+                        class="field field--email_or_phone">
+                        <div class="field__input-wrapper">
+                          <input value="" placeholder="Email or mobile phone number" aria-required="true"
+                            class="field__input" size="30" type="email" id="checkout_email_or_phone">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="section section--shipping-address" data-shipping-address="">
+                    <div class="section__header">
+                      <h2 class="section__title">
+                        Shipping address
+                      </h2>
+                    </div>
+
+
+                    <div class="section__content">
+
+                      <div class="fieldset">
+                        <div class="address-fields" data-address-fields="">
+
+                          <div class="field field--optional field--half" data-address-field="first_name">
+
+                            <div class="field__input-wrapper">
+                              <input formControlName="name" placeholder="First name (optional)" class="field__input"
+                                size="30" type="text" name="" id="checkout_shipping_address_first_name">
+                            </div>
+                          </div>
+                          <div class="field field--required field--half" data-address-field="last_name">
+
+                            <div class="field__input-wrapper">
+                              <input placeholder="Last name" class="field__input" aria-required="true" size="30"
+                                type="text" name="" id="checkout_shipping_address_last_name">
+                            </div>
+                          </div>
+                          <div data-address-field="address1" data-autocomplete-field-container="true"
+                            class="field field--required">
+
+                            <div class="field__input-wrapper">
+                              <input placeholder="Address" class="field__input" aria-required="true" size="30"
+                                type="text" name="" id="checkout_shipping_address_address1">
+                            </div>
+                          </div>
+                          <div data-address-field="address2" data-autocomplete-field-container="true"
+                            class="field field--optional">
+
+                            <div class="field__input-wrapper">
+                              <input placeholder="Apartment, suite, etc. (optional)" class="field__input" size="30"
+                                type="text" name="" id="checkout_shipping_address_address2">
+                            </div>
+                          </div>
+                          <div data-address-field="city" data-autocomplete-field-container="true"
+                            class="field field--required">
+
+                            <div class="field__input-wrapper">
+                              <input placeholder="City" class="field__input" aria-required="true" size="30" type="text"
+                                name="" id="checkout_shipping_address_city">
+                            </div>
+                          </div>
+                          <div class="field field--required field--half field--show-floating-label"
+                            data-address-field="country" data-autocomplete-field-container="true">
+                            <div class="field__input-wrapper field__input-wrapper--select">
+                              <select size="1" class="field__input field__input--select" aria-required="true" name=""
+                                id="checkout_shipping_address_country">
+                                <option data-code="AF" value="Afghanistan">Afghanistan</option>
+                                <option data-code="AX" value="Aland Islands">Åland Islands</option>
+                                <option data-code="AL" value="Albania">Albania</option>
+                                <option data-code="DZ" value="Algeria">Algeria</option>
+                                <option data-code="AD" value="Andorra">Andorra</option>
+                              </select>
+                              <div class="field__caret">
+                                <svg
+                                  class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-10 field__caret-svg"
+                                  role="presentation" aria-hidden="true" focusable="false">
+                                  <use xlink:href="#caret-down"></use>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="field--third field field--required hidden" data-address-field="province"
+                            data-autocomplete-field-container="true">
+
+                            <div class="field__input-wrapper field__input-wrapper--select">
+                              <input placeholder="Region" class="field__input" aria-required="true" type="text" name=""
+                                id="checkout_shipping_address_province">
+                              <div class="field__caret shown-if-js">
+                                <svg
+                                  class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-10 field__caret-svg"
+                                  role="presentation" aria-hidden="true" focusable="false">
+                                  <use xlink:href="#caret-down"></use>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="field field--required field--half" data-address-field="zip"
+                            data-autocomplete-field-container="true">
+
+                            <div class="field__input-wrapper">
+                              <input placeholder="Postal code" class="field__input field__input--zip"
+                                aria-required="true" size="30" type="text" name="" id="checkout_shipping_address_zip">
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <h2 class="section__title layout-flex__item layout-flex__item--stretch" id="main-header"
+                            tabindex="-1">
+                            Datos de la tarjeta
+                          </h2>
+                          <div class="col-12">
+                            <input type="text" class="form-control" formControlName="nombreTarjeta"
+                              placeholder="Nombre Titular" />
+                            <div *ngIf="validateForm.get('nombreTarjeta').invalid && (validateForm.get('nombreTarjeta').dirty || validateForm.get('nombreTarjeta').touched)" class="alert alert-danger">
+
+                              <div *ngIf="validateForm.get('nombreTarjeta')?.errors.required">
+                                El nombre es requerido
+                              </div>
+                              <div *ngIf="validateForm.get('nombreTarjeta')?.errors.minlength">
+                                El nombre debe tener 4 caracteres minimo.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <input type="text" class="form-control" formControlName="numeroTarjeta"
+                              placeholder="Número Tarjeta " />
+                              <div *ngIf="validateForm.get('numeroTarjeta').invalid && (validateForm.get('numeroTarjeta').dirty || validateForm.get('numeroTarjeta').touched)" class="alert alert-danger">
+
+                                <div *ngIf="validateForm.get('numeroTarjeta')?.errors.required">
+                                  El número de la tarjeta es requerido.
+                                </div>
+                                <div *ngIf="validateForm.get('numeroTarjeta')?.errors.minlength">
+                                  El número de la tarjeta debe tener 16 digitos minimo.
+                                </div>
+                                <div *ngIf="validateForm.get('numeroTarjeta')?.errors.maxlength">
+                                  El número de la tarjeta debe tener 16 digitos maximo.
+                                </div>
+                                <div *ngIf="validateForm.get('ano')?.errors.pattern">
+                                  Solo se aceptan números.
+                                </div>
+                              </div>
+                          </div>
+                          <div class="col-4">
+                            <input type="text" class="form-control" formControlName="mes" placeholder="Mes" />
+                            <div *ngIf="validateForm.get('mes').invalid && (validateForm.get('mes').dirty || validateForm.get('mes').touched)" class="alert alert-danger">
+
+                              <div *ngIf="validateForm.get('mes')?.errors.required">
+                                El mes de la tarjeta es requerido.
+                              </div>
+                              <div *ngIf="validateForm.get('mes')?.errors.minlength">
+                                El mes de la tarjeta debe tener 1 digitos minimo.
+                              </div>
+                              <div *ngIf="validateForm.get('mes')?.errors.maxlength">
+                                El mes de la tarjeta debe tener 2 digitos maximo.
+                              </div>
+                              <div *ngIf="validateForm.get('ano')?.errors.pattern">
+                                Solo se aceptan números.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <input type="text" class="form-control" formControlName="ano" placeholder="Año" />
+                            <div *ngIf="validateForm.get('ano').invalid && (validateForm.get('ano').dirty || validateForm.get('ano').touched)" class="alert alert-danger">
+
+                              <div *ngIf="validateForm.get('ano')?.errors.required">
+                                El año de la tarjeta es requerido.
+                              </div>
+                              <div *ngIf="validateForm.get('ano')?.errors.minlength">
+                                El año de la tarjeta debe tener 4 digitos minimo.
+                              </div>
+                              <div *ngIf="validateForm.get('ano')?.errors.maxlength">
+                                El año de la tarjeta debe tener 4 digitos maximo.
+                              </div>
+                              <div *ngIf="validateForm.get('ano')?.errors.pattern">
+                                Solo se aceptan números.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <input type="text" class="form-control" formControlName="cvv" placeholder="CVV" />
+                            <div *ngIf="validateForm.get('cvv').invalid && (validateForm.get('cvv').dirty || validateForm.get('cvv').touched)" class="alert alert-danger">
+
+                              <div *ngIf="validateForm.get('cvv')?.errors.required">
+                                El cvv de la tarjeta es requerido.
+                              </div>
+                              <div *ngIf="validateForm.get('cvv')?.errors.minlength">
+                                El cvv de la tarjeta debe tener 3 digitos minimo.
+                              </div>
+                              <div *ngIf="validateForm.get('cvv')?.errors.maxlength">
+                                El cvv de la tarjeta debe tener 3 digitos maximo.
+                              </div>
+                              <div *ngIf="validateForm.get('ano')?.errors.pattern">
+                                Solo se aceptan números.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="field field--show-floating-label">
+                          <div class="checkbox-wrapper">
+                            <div class="checkbox__input">
+                              <input class="input-checkbox" data-backup="remember_me" type="checkbox" value="1"
+                                name="checkout[remember_me]" id="checkout_remember_me">
+                            </div>
+                            <label class="checkbox__label" for="checkout_remember_me">Save this information for next
+                              time</label>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+
+                  </div>
+                </div>
+
+
+
+                <div class="step__footer" data-step-footer="">
+
+                  <button [disabled]="validateForm.invalid" name="button" type="button" (click)="sendOrder()"
+                    id="continue_button" class="step__footer__continue-btn btn p-3" aria-busy="false"><span
+                      class="btn__content" data-continue-button-content="true">Continue to
+                      shipping</span><svg class="icon-svg icon-svg--size-18 btn__spinner icon-svg--spinner-button"
+                      aria-hidden="true" focusable="false">
+                      <use xlink:href="#spinner-button"></use>
+                    </svg></button>
+
+                  <a routerLink='/car' class="step__footer__previous-link" href="/cart"><svg focusable="false"
+                      aria-hidden="true" class="icon-svg icon-svg--color-accent icon-svg--size-10 previous-link__icon"
+                      role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+                      <path d="M8 1L7 0 3 4 2 5l1 1 4 4 1-1-4-4"></path>
+                    </svg><span class="step__footer__previous-link-content">Return to cart</span></a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </main>
+        <footer class="main__footer" role="contentinfo">
+          <p class="copyright-text">
+            Todos los derechos reservados - Evolups
+          </p>
+
+
+        </footer>
+      </div>
+      <aside class="sidebar" role="complementary">
+        <div class="sidebar__header"></div>
+        <div class="sidebar__content">
+          <div id="order-summary" class="order-summary order-summary--is-collapsed" data-order-summary="">
+            <h2 class="visually-hidden-if-js">Order summary</h2>
+
+            <div class="order-summary__sections">
+              <div class="order-summary__section order-summary__section--product-list">
+                <div class="order-summary__section__content">
+                  <table class="product-table">
+                    <caption class="visually-hidden">Shopping cart</caption>
+                    <thead class="product-table__header">
+                      <tr>
+                        <th scope="col"><span class="visually-hidden">Product image</span></th>
+                        <th scope="col"><span class="visually-hidden">Description</span></th>
+                        <th scope="col"><span class="visually-hidden">Quantity</span></th>
+                        <th scope="col"><span class="visually-hidden">Price</span></th>
+                      </tr>
+                    </thead>
+                    <tbody data-order-summary-section="line-items">
+                      <tr class="product" data-product-id="1997713211492" data-variant-id="18689453031524"
+                        data-product-type="" data-customer-ready-visible="">
+                        <td class="product__image">
+                          <div class="product-thumbnail ">
+                            <div class="product-thumbnail__wrapper">
+                              <img alt="Ipsum dolor sit amet - S / Cornflowerblue" class="product-thumbnail__image"
+                                src="//cdn.shopify.com/s/files/1/0121/6430/0900/products/26_6ebce679-f7ed-4ea3-8142-1fbd69c53516_small.jpg?v=1545971593">
+                            </div>
+                            <span class="product-thumbnail__quantity" aria-hidden="true">1</span>
+                          </div>
+
+                        </td>
+                        <th class="product__description" scope="row">
+                          <span class="product__description__name order-summary__emphasis">Ipsum dolor sit amet</span>
+                          <span class="product__description__variant order-summary__small-text">S /
+                            Cornflowerblue</span>
+
+
+                        </th>
+                        <td class="product__quantity visually-hidden">
+                          1
+                        </td>
+                        <td class="product__price">
+                          <span class="order-summary__emphasis skeleton-while-loading">$75.00</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div class="order-summary__scroll-indicator" aria-hidden="true" tabindex="-1">
+                    Scroll for more items
+                    <svg aria-hidden="true" focusable="false" class="icon-svg icon-svg--size-12">
+                      <use xlink:href="#down-arrow"></use>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="order-summary__section order-summary__section--total-lines"
+                data-order-summary-section="payment-lines">
+                <table class="total-line-table">
+                  <caption class="visually-hidden">Cost summary</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col"><span class="visually-hidden">Description</span></th>
+                      <th scope="col"><span class="visually-hidden">Price</span></th>
+                    </tr>
+                  </thead>
+                  <tbody class="total-line-table__tbody">
+                    <tr class="total-line total-line--subtotal">
+                      <th class="total-line__name" scope="row">Subtotal</th>
+                      <td class="total-line__price">
+                        <span class="order-summary__emphasis skeleton-while-loading"
+                          data-checkout-subtotal-price-target="7500">
+                          $75.00
+                        </span>
+                      </td>
+                    </tr>
+
+
+                    <tr class="total-line total-line--shipping">
+                      <th class="total-line__name" scope="row">
+                        <span>
+                          Shipping
+                        </span>
+                      </th>
+                      <td class="total-line__price">
+                        <span class="skeleton-while-loading order-summary__small-text"
+                          data-checkout-total-shipping-target="0">
+                          Calculated at next step
+                        </span>
+                      </td>
+                    </tr>
+
+
+                    <tr class="total-line total-line--taxes hidden" data-checkout-taxes="">
+                      <th class="total-line__name" scope="row">Taxes (estimated)</th>
+                      <td class="total-line__price">
+                        <span class="order-summary__emphasis skeleton-while-loading"
+                          data-checkout-total-taxes-target="0">$0.00</span>
+                      </td>
+                    </tr>
+
+
+
+
+                  </tbody>
+                  <tfoot class="total-line-table__footer">
+                    <tr class="total-line">
+                      <th class="total-line__name payment-due-label" scope="row">
+                        <span class="payment-due-label__total">Total</span>
+                      </th>
+                      <td class="total-line__price payment-due">
+                        <span class="payment-due__currency remove-while-loading">USD</span>
+                        <span class="payment-due__price skeleton-while-loading--lg"
+                          data-checkout-payment-due-target="7500">
+                          $75.00
+                        </span>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="visually-hidden" data-order-summary-section="accessibility-live-region">
+            <div aria-live="polite" aria-atomic="true" role="status">
+              Updated total price:
+              <span data-checkout-payment-due-target="7500">
+                $75.00
+              </span>
+            </div>
+          </div>
+
+
+          <div id="partial-icon-symbols" class="icon-symbols" data-tg-refresh="partial-icon-symbols"
+            data-tg-refresh-always="true"><svg xmlns="http://www.w3.org/2000/svg">
+              <symbol id="caret-down"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+                  <path d="M0 3h10L5 8" fill-rule="nonzero"></path>
+                </svg></symbol>
+              <symbol id="spinner-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path
+                    d="M20 10c0 5.523-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0v2c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8h2z">
+                  </path>
+                </svg></symbol>
+              <symbol id="chevron-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+                  <path d="M2 1l1-1 4 4 1 1-1 1-4 4-1-1 4-4"></path>
+                </svg></symbol>
+              <symbol id="down-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
+                  <path
+                    d="M10.817 7.624l-4.375 4.2c-.245.235-.64.235-.884 0l-4.375-4.2c-.244-.234-.244-.614 0-.848.245-.235.64-.235.884 0L5.375 9.95V.6c0-.332.28-.6.625-.6s.625.268.625.6v9.35l3.308-3.174c.122-.117.282-.176.442-.176.16 0 .32.06.442.176.244.234.244.614 0 .848">
+                  </path>
+                </svg></symbol>
+            </svg>
+          </div>
+
+
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>

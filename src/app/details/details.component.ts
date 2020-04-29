@@ -38,7 +38,6 @@ export class DetailsComponent implements OnInit {
           this.router.navigateByUrl('/home');
         }
         this.product = resp[0];
-
       });
   }
 
