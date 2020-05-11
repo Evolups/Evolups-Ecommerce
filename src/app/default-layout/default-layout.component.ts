@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { BagService } from 'src/services/bag.service';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { User } from '../interfaces/interfaces';
+
 
 @Component({
   selector: 'app-default-layout',
@@ -8,9 +12,34 @@ import { BagService } from 'src/services/bag.service';
 })
 export class DefaultLayoutComponent implements OnInit {
 
-  constructor(public bagService: BagService) { }
+ 
+  registerUser: User = {
+    usuario: ''
+  };
+
+
+  constructor(public bagService: BagService,private router:Router) { }
+
+  async register( fRegister: NgForm ) {
+   // if (fRegister.invalid) { return; }
+    ///const valido = await this.userService.register( this.registerUser);
+   this.router.navigate(['/formsearch',this.registerUser.usuario]);
+ 
+   console.log(fRegister.value);
+  }
+
 
   ngOnInit(): void {
   }
+  
+   
+
+  departamento(){
+
+    this.router.navigate(['/department']);
+  
+    }
+  
+  
 
 }

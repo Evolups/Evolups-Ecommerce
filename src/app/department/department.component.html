@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/imgs/favicon.png" type="image/png">
 
-    <title>Home</title>
+    <title>inicio</title>
     <!-- fonts -->
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
     <script>
@@ -66,7 +66,7 @@
                             </a>
                         </li>
                         <li class="item">
-                            <a href="contact.html" class=" ">
+                            <a href="/contact" class=" ">
                                 <span>
                                         <span class="lang1">Contactos</span>
                                 </span>
@@ -77,9 +77,10 @@
             </div>
         </div>
     </nav>
+
     <div class="wrapper-container">
         <div class="dtl-section header-p">
-            <header class="site-header" role="banner">
+            <!--  <header class="site-header" role="banner">
                 <div class="header-bottom">
                     <div class="header-mobile">
                         <div class="container">
@@ -92,7 +93,7 @@
                                         <ul class="customer-links">
 
                                             <li class="dropdown ct_login">
-                                                <!-- <a class="login visible-xs" href="/account/login" data-translate="customer.login.sign_in">Sign In</a> -->
+                                              <a class="login visible-xs" href="/account/login" data-translate="customer.login.sign_in">Sign In</a> 
                                                 <a class="login hidden-xs" href="javascript:void(0)" data-toggle="dropdown" data-translate="customer.login.sign_in">Sign In</a>
 
                                                 <a id="customer_register_link" class="visible-xs" href="/account/register" data-translate="layout.customer.create_account">Create Account</a>
@@ -134,19 +135,18 @@
                             </div>
                         </div>
                     </div>
-                    <!-- end header Mobile  -->
+            
 
                     <div class="container header-panel-bottom">
                         <div class="row">
                             <div class="align-items-center d-flex header-panel justify-content-between">
 
                                 <div class="menu-block text-center visible-phone">
-                                    <!-- start Navigation Mobile  -->
+                              
                                     <div id="showRightPush" class="resized gf-menu-device-wrapper">
                                         <i class="fa fa-bars"></i>
                                     </div>
-                                </div>
-                                <!-- end Navigation Mobile  -->
+                     
 
                                 <div class="header-logo-fix">
                                     <a href="index.html">
@@ -160,7 +160,7 @@
                                     </a>
                                 </h1>
 
-                                <!--header-logo-->
+                          
 
                                 <div class="header-search">
                                     <div class="nav-search dropdown">
@@ -177,7 +177,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!------end header search---------->
+                              
                                 <ul class="customer-links">
 
                                     <li class="dropdown ct_login">
@@ -252,9 +252,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- End Top Header -->
+                                End Top Header 
                                 <div class="menu-block btn_menu text-center hidden-xs hidden-phone">
-                                    <!-- start Navigation Mobile  -->
+                                    start Navigation Mobile  
                                     <a href="javascript:void(0)" class="resized dbars">
                                         <i class="fa fa-bars f32 font-white"></i>
                                     </a>
@@ -310,6 +310,7 @@
                     </div>
                 </div>
             </header>
+             -->
         </div>
         <nav class="nav-bar" role="navigation">
             <div class="container" style="display: block;">
@@ -332,7 +333,7 @@
                             </a>
                         </li>
                         <li class="item">
-                            <a href="contact.html" class=" ">
+                            <a href="/contact" class=" ">
                                 <span>
                                         <span class="lang1">Contactos</span>
                                 </span>
@@ -344,8 +345,10 @@
         </nav>
         <div class="wrapper-breadcrumb">
             <div class="breadcrumb container">
-                <a href="/" data-translate="general.breadcrumbs.home">Home</a>
+                <a [routerLink]="['/home']" routerLinkActive="router-link-active" data-translate="general.breadcrumbs.home">Inicio</a>
+
                 <span class="spera">/</span>
+
                 <span class="lang1">Departamentos</span>
             </div>
         </div>
@@ -357,52 +360,53 @@
                 </header>
 
                 <div class="list-category row">
-                    <div class="grid-item wow fadeIn col-xs-12 col-sm-4" data-wow-delay="100ms">
+                    <div class="grid-item wow fadeIn col-xs-12 col-sm-4" data-wow-delay="100ms" *ngFor="let cat of groupCategorias">
 
                         <div class="background_section">
                             <div class="product-top">
-                                <a href="departament.html" title="Accéssoriuss">
-                                    <img src="assets/imgs/dp/bano.jpg" alt="Accéssoriuss">
+                                <a (click)="listaproductos(cat[0].categoria)" title="Accéssoriuss">
+                                    <img src="{{cat[0].foto_url}}" alt="Accéssoriuss">
                                     <div class="hover"></div>
                                 </a>
-                                <a href="departament.html" class="view">&nbsp;</a>
+                                <a (click)="listaproductos(cat[0].categoria)" class="view">&nbsp;</a>
                             </div>
                             <div class="collection-title-wrapper">
                                 <div class="collection-title">
                                     <h5 class="h5">
-                                        <a href="departament.html" title="Browse our Accéssoriuss collection" data-translate="collections.general.link_title|title:Accéssoriuss" translate-item="title">
-                                            <span class="lang1">Baños</span>
+                                        <a (click)="listaproductos(cat[0].categoria)" title="Browse our Accéssoriuss collection" data-translate="collections.general.link_title|title:Accéssoriuss" translate-item="title">
+                                            <span class="lang1">{{cat[0].categoria}}</span>
                                         </a>
                                     </h5>
                                     <p class="count-products" data-translate="collections.general.items_with_count|count:17">17 products
                                     </p>
-                                    <p class="desc">Pellentesque at libero vehicula consectetur justo lorem luctus libero. Aenean eu viverra mauris enos...</p>
-                                    <p><a href="departament.html" class="btn" data-translate="collections.general.shop_the_collection">Ir al departamento</a></p>
+                                    <!--p class="desc">Pellentesque at libero vehicula consectetur justo lorem luctus libero. Aenean eu viverra mauris enos...</p> -->
+                                    <p><a (click)="listaproductos(cat[0].categoria)" class="btn" data-translate="collections.general.shop_the_collection">Ir al departamento</a></p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- 
                     <div class="grid-item wow fadeIn col-xs-12 col-sm-4" data-wow-delay="100ms">
 
                         <div class="background_section">
                             <div class="product-top">
-                                <a href="departament.html" title="Accéssoriuss">
+                                <a (click)="listaproductos('ceramica')" title="Accéssoriuss">
                                     <img src="assets/imgs/dp/ceramica.jpg" alt="Accéssoriuss">
                                     <div class="hover"></div>
                                 </a>
-                                <a href="departament.html" class="view">&nbsp;</a>
+                                <a (click)="listaproductos('ceramica')" class="view">&nbsp;</a>
                             </div>
                             <div class="collection-title-wrapper">
                                 <div class="collection-title">
                                     <h5 class="h5">
-                                        <a href="departament.html" title="Browse our Accéssoriuss collection" data-translate="collections.general.link_title|title:Accéssoriuss" translate-item="title">
+                                        <a (click)="listaproductos('ceramica')" title="Browse our Accéssoriuss collection" data-translate="collections.general.link_title|title:Accéssoriuss" translate-item="title">
                                             <span class="lang1">Ceramica</span>
                                         </a>
                                     </h5>
                                     <p class="count-products" data-translate="collections.general.items_with_count|count:17">17 products
                                     </p>
-                                    <p class="desc">Pellentesque at libero vehicula consectetur justo lorem luctus libero. Aenean eu viverra mauris enos...</p>
-                                    <p><a href="departament.html" class="btn" data-translate="collections.general.shop_the_collection">Ir al departamento</a></p>
+                                     <p class="desc">Pellentesque at libero vehicula consectetur justo lorem luctus libero. Aenean eu viverra mauris enos...</p> 
+                                    <p><a (click)="listaproductos('ceramica')" class="btn" data-translate="collections.general.shop_the_collection">Ir al departamento</a></p>
                                 </div>
                             </div>
                         </div>
@@ -411,23 +415,23 @@
 
                         <div class="background_section">
                             <div class="product-top">
-                                <a href="departament.html" title="Accéssoriuss">
+                                <a (click)="listaproductos('clima')" title="Accéssoriuss">
                                     <img src="assets/imgs/dp/clima.jpg" alt="Accéssoriuss">
                                     <div class="hover"></div>
                                 </a>
-                                <a href="departament.html" class="view">&nbsp;</a>
+                                <a (click)="listaproductos('clima')" class="view">&nbsp;</a>
                             </div>
                             <div class="collection-title-wrapper">
                                 <div class="collection-title">
                                     <h5 class="h5">
-                                        <a href="departament.html" title="Browse our Accéssoriuss collection" data-translate="collections.general.link_title|title:Accéssoriuss" translate-item="title">
+                                        <a (click)="listaproductos('clima')" title="Browse our Accéssoriuss collection" data-translate="collections.general.link_title|title:Accéssoriuss" translate-item="title">
                                             <span class="lang1">Climatización</span>
                                         </a>
                                     </h5>
                                     <p class="count-products" data-translate="collections.general.items_with_count|count:17">17 products
                                     </p>
-                                    <p class="desc">Pellentesque at libero vehicula consectetur justo lorem luctus libero. Aenean eu viverra mauris enos...</p>
-                                    <p><a href="departament.html" class="btn" data-translate="collections.general.shop_the_collection">Ir al departamento</a></p>
+                                     <p class="desc">Pellentesque at libero vehicula consectetur justo lorem luctus libero. Aenean eu viverra mauris enos...</p> 
+                                    <p><a (click)="listaproductos('clima')" class="btn" data-translate="collections.general.shop_the_collection">Ir al departamento</a></p>
                                 </div>
                             </div>
                         </div>
@@ -436,23 +440,23 @@
 
                         <div class="background_section">
                             <div class="product-top">
-                                <a href="departament.html" title="Accéssoriuss">
+                                <a (click)="listaproductos('cocina')" title="Accéssoriuss">
                                     <img src="assets/imgs/dp/cocina.jpg" alt="Accéssoriuss">
                                     <div class="hover"></div>
                                 </a>
-                                <a href="departament.html" class="view">&nbsp;</a>
+                                <a (click)="listaproductos('cocina')" class="view">&nbsp;</a>
                             </div>
                             <div class="collection-title-wrapper">
                                 <div class="collection-title">
                                     <h5 class="h5">
-                                        <a href="departament.html" title="Browse our Accéssoriuss collection" data-translate="collections.general.link_title|title:Accéssoriuss" translate-item="title">
+                                        <a (click)="listaproductos('cocina')" title="Browse our Accéssoriuss collection" data-translate="collections.general.link_title|title:Accéssoriuss" translate-item="title">
                                             <span class="lang1">Cocina</span>
                                         </a>
                                     </h5>
                                     <p class="count-products" data-translate="collections.general.items_with_count|count:17">17 products
                                     </p>
                                     <p class="desc">Pellentesque at libero vehicula consectetur justo lorem luctus libero. Aenean eu viverra mauris enos...</p>
-                                    <p><a href="departament.html" class="btn" data-translate="collections.general.shop_the_collection">Ir al departamento</a></p>
+                                    <p><a (click)="listaproductos('cocina')" class="btn" data-translate="collections.general.shop_the_collection">Ir al departamento</a></p>
                                 </div>
                             </div>
                         </div>
@@ -461,23 +465,23 @@
 
                         <div class="background_section">
                             <div class="product-top">
-                                <a href="departament.html" title="Accéssoriuss">
+                                <a (click)="listaproductos('electricidad')" title="Accéssoriuss">
                                     <img src="assets/imgs/dp/electricidad.jpg" alt="Accéssoriuss">
                                     <div class="hover"></div>
                                 </a>
-                                <a href="departament.html" class="view">&nbsp;</a>
+                                <a (click)="listaproductos('electricidad')" class="view">&nbsp;</a>
                             </div>
                             <div class="collection-title-wrapper">
                                 <div class="collection-title">
                                     <h5 class="h5">
-                                        <a href="departament.html" title="Browse our Accéssoriuss collection" data-translate="collections.general.link_title|title:Accéssoriuss" translate-item="title">
+                                        <a (click)="listaproductos('electricidad')" title="Browse our Accéssoriuss collection" data-translate="collections.general.link_title|title:Accéssoriuss" translate-item="title">
                                             <span class="lang1">Eléctricidad</span>
                                         </a>
                                     </h5>
                                     <p class="count-products" data-translate="collections.general.items_with_count|count:17">17 products
                                     </p>
-                                    <p class="desc">Pellentesque at libero vehicula consectetur justo lorem luctus libero. Aenean eu viverra mauris enos...</p>
-                                    <p><a href="departament.html" class="btn" data-translate="collections.general.shop_the_collection">Ir al departamento</a></p>
+                                    <p class="desc">Pellentesque at libero vehicula consectetur justo lorem luctus libero. Aenean eu viverra mauris enos...</p> 
+                                    <p><a (click)="listaproductos('electricidad')" class="btn" data-translate="collections.general.shop_the_collection">Ir al departamento</a></p>
                                 </div>
                             </div>
                         </div>
@@ -486,23 +490,23 @@
 
                         <div class="background_section">
                             <div class="product-top">
-                                <a href="departament.html" title="Accéssoriuss">
+                                <a (click)="listaproductos('herramienta')" title="Accéssoriuss">
                                     <img src="assets/imgs/dp/herramienta.jpg" alt="Accéssoriuss">
                                     <div class="hover"></div>
                                 </a>
-                                <a href="departament.html" class="view">&nbsp;</a>
+                                <a (click)="listaproductos('herramienta')" class="view">&nbsp;</a>
                             </div>
                             <div class="collection-title-wrapper">
                                 <div class="collection-title">
                                     <h5 class="h5">
-                                        <a href="departament.html" title="Browse our Accéssoriuss collection" data-translate="collections.general.link_title|title:Accéssoriuss" translate-item="title">
+                                        <a (click)="listaproductos('herramienta')" title="Browse our Accéssoriuss collection" data-translate="collections.general.link_title|title:Accéssoriuss" translate-item="title">
                                             <span class="lang1">Herramientas</span>
                                         </a>
                                     </h5>
                                     <p class="count-products" data-translate="collections.general.items_with_count|count:17">17 products
                                     </p>
-                                    <p class="desc">Pellentesque at libero vehicula consectetur justo lorem luctus libero. Aenean eu viverra mauris enos...</p>
-                                    <p><a href="departament.html" class="btn" data-translate="collections.general.shop_the_collection">Ir al departamento</a></p>
+                                     <p class="desc">Pellentesque at libero vehicula consectetur justo lorem luctus libero. Aenean eu viverra mauris enos...</p> 
+                                    <p><a (click)="listaproductos('herramienta')" class="btn" data-translate="collections.general.shop_the_collection">Ir al departamento</a></p>
                                 </div>
                             </div>
                         </div>
@@ -511,52 +515,52 @@
 
                         <div class="background_section">
                             <div class="product-top">
-                                <a href="departament.html" title="Accéssoriuss">
+                                <a (click)="listaproductos('madera')" title="Accéssoriuss">
                                     <img src="assets/imgs/dp/madera.jpg" alt="Accéssoriuss">
                                     <div class="hover"></div>
                                 </a>
-                                <a href="departament.html" class="view">&nbsp;</a>
+                                <a (click)="listaproductos('madera')" class="view">&nbsp;</a>
                             </div>
                             <div class="collection-title-wrapper">
                                 <div class="collection-title">
                                     <h5 class="h5">
-                                        <a href="departament.html" title="Browse our Accéssoriuss collection" data-translate="collections.general.link_title|title:Accéssoriuss" translate-item="title">
+                                        <a (click)="listaproductos('madera')" title="Browse our Accéssoriuss collection" data-translate="collections.general.link_title|title:Accéssoriuss" translate-item="title">
                                             <span class="lang1">Madera</span>
                                         </a>
                                     </h5>
                                     <p class="count-products" data-translate="collections.general.items_with_count|count:17">17 products
                                     </p>
-                                    <p class="desc">Pellentesque at libero vehicula consectetur justo lorem luctus libero. Aenean eu viverra mauris enos...</p>
-                                    <p><a href="departament.html" class="btn" data-translate="collections.general.shop_the_collection">Ir al departamento</a></p>
+                                     <p class="desc">Pellentesque at libero vehicula consectetur justo lorem luctus libero. Aenean eu viverra mauris enos...</p> 
+                                    <p><a (click)="listaproductos('madera')" class="btn" data-translate="collections.general.shop_the_collection">Ir al departamento</a></p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="grid-item wow fadeIn col-xs-12 col-sm-4" data-wow-delay="100ms">
+                    </div> -->
+                    <!-- <div class="grid-item wow fadeIn col-xs-12 col-sm-4" data-wow-delay="100ms">
 
                         <div class="background_section">
                             <div class="product-top">
-                                <a href="departament.html" title="Accéssoriuss">
+                                <a (click)="listaproductos('pintura')" title="Accéssoriuss">
                                     <img src="assets/imgs/dp/pintura.jpg" alt="Accéssoriuss">
                                     <div class="hover"></div>
                                 </a>
-                                <a href="departament.html" class="view">&nbsp;</a>
+                                <a (click)="listaproductos('pintura')" class="view">&nbsp;</a>
                             </div>
                             <div class="collection-title-wrapper">
                                 <div class="collection-title">
                                     <h5 class="h5">
-                                        <a href="departament.html" title="Browse our Accéssoriuss collection" data-translate="collections.general.link_title|title:Accéssoriuss" translate-item="title">
+                                        <a (click)="listaproductos('pintura')" title="Browse our Accéssoriuss collection" data-translate="collections.general.link_title|title:Accéssoriuss" translate-item="title">
                                             <span class="lang1">Pintura</span>
                                         </a>
                                     </h5>
                                     <p class="count-products" data-translate="collections.general.items_with_count|count:17">17 products
                                     </p>
-                                    <p class="desc">Pellentesque at libero vehicula consectetur justo lorem luctus libero. Aenean eu viverra mauris enos...</p>
-                                    <p><a href="departament.html" class="btn" data-translate="collections.general.shop_the_collection">Ir al departamento</a></p>
+                                    <p class="desc">Pellentesque at libero vehicula consectetur justo lorem luctus libero. Aenean eu viverra mauris enos...</p> 
+                                    <p><a (click)="listaproductos('pintura')" class="btn" data-translate="collections.general.shop_the_collection">Ir al departamento</a></p>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </main>
@@ -576,7 +580,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="/contact">
                                             <span class="lang1">Contacto</span>
                                         </a>
                                     </li>
@@ -614,15 +618,15 @@
                                     </h6>
                                     <ul class="social">
                                         <li class="Facebook">
-                                            <a href="#" title="Facebook">
+                                            <a href="https://web.facebook.com/Evolups.do" title="Facebook">
                                                 <i class="fa fa-facebook"></i>
                                             </a>
                                         </li>
                                         <li class="Twitter">
-                                            <a href="#" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                            <a href="https://twitter.com/evolups.do?igshid=gllyr0ue6b2z" title="Twitter"><i class="fa fa-twitter"></i></a>
                                         </li>
                                         <li class="Instagram">
-                                            <a href="#" title="Instagram">
+                                            <a href="https://twitter.com/evolups.do?igshid=gllyr0ue6b2z" title="Instagram">
                                                 <i class="fa fa-instagram"></i>
                                             </a>
                                         </li>
@@ -643,22 +647,22 @@
                                 <span class="payment-method">
                                         <a href="/cart" title="visa">
                                             <img
-                                                src="assets/imgs/Visa_Inverted_58x36.png?v=1503289230">
+                                                src="assets/imgs/Visa?v=1503289230">
                                         </a>
                                     </span>
-                                <span class="payment-method">
+                                <!--    <span class="payment-method">
                                         <a href="/cart" title="visa Electron">
                                             <img
                                                 src="assets/imgs/Visa_Electron_58x36.png?v=1503289246">
                                         </a>
-                                    </span>
+                                    </span> -->
                                 <span class="payment-method">
                                         <a href="/cart" title="MasterCard">
                                             <img
-                                                src="assets/imgs/MasterCard_Inverted_58x36.png?v=1503289271">
+                                                src="assets/imgs/Masterdcard.jpeg?v=1503289271">
                                         </a>
                                     </span>
-                                <span class="payment-method">
+                                <!--  <span class="payment-method">
                                         <a href="/cart" title="Maestro">
                                             <img src="assets/imgs/Maestro_58x36.png?v=1503289287">
                                         </a>
@@ -668,7 +672,7 @@
                                             <img
                                                 src="assets/imgs/PayPal_cb89a856-006f-4176-a552-055826074573_58x36.png?v=1503289315">
                                         </a>
-                                    </span>
+                                    </span> -->
                             </div>
                         </div>
 
