@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { BagService } from 'src/services/bag.service';
 import { Router } from '@angular/router';
-import { from } from 'rxjs';
-import { groupBy, mergeMap, toArray } from 'rxjs/operators';
-import { ProductService } from 'src/services/product.service'; 
 
 @Component({
   selector: 'app-checkout',
@@ -14,22 +11,8 @@ import { ProductService } from 'src/services/product.service';
 export class CheckoutComponent implements OnInit {
 
   validateForm: FormGroup;
-  groupItems: any[][] = [];
-  groupSectores: any[][] = [];
-  Vsectores=[];
-  
-  VCategoria={
-    nro_fact:'1',
-    fecha_fact:'01/02/2020',
-    item:'T',
-    itemds:'T',
-    cantidad:'1',
-    Precio:'1',
-    descuento:'1'
-    };
 
-
-  constructor(private formBuilder: FormBuilder, private bagService: BagService, private router: Router,private productservices: ProductService) {
+  constructor(private formBuilder: FormBuilder, private bagService: BagService, private router: Router) {
     this.validateForm = new FormGroup({
       name: new FormControl('', [
         Validators.required,
@@ -69,10 +52,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   this.Sectores();
   }
- 
-
 
   sendOrder() {
     let myArray = [];
@@ -97,55 +77,16 @@ export class CheckoutComponent implements OnInit {
       };
 
       myArray.push(obj);
-    
-
     }
 
-   
-   this.groupItems.push(myArray);
-   console.log(myArray);
+    console.log(myArray);
     console.log(this.validateForm.value);
-  
-
     this.bagService.sendOrder(myArray).subscribe(result => {
-      this.router.navigate(['/receipt',result]);
-    
-      //alert('Se ha creado la orden #' + result);
+      alert('Se ha creado la orden #' + result);
       this.bagService.items = [];
       this.bagService.totalBagItems.next(0);
-      //this.router.navigateByUrl('/receipt',result);
-   
+      this.router.navigateByUrl('/home');
     });
   }
-
- 
-Sectores(){
-  //Busca las marcas
-this.productservices.getSectores()
-.subscribe( resp => {
-  resp.forEach(item => {
-    this.Vsectores.push( item )
-    this.groupSectores = [];
-    const source = from(this.Vsectores);
-    // group by code
-    const example = source.pipe(
-      groupBy((item: any) => item.codigo),
-      // return each item in group as array
-      mergeMap(group => group.pipe(toArray()))
-    );
-
-    let contador = 0;
-    const subscribe = example.subscribe(val => {
-      this.groupSectores[contador] = val;
-      console.log(this.groupSectores);
-      contador++;
-    });
-
-  });
-    
-});  
-
-
-}
 
 }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/imgs/favicon.png" type="image/png">
 
-    <title>inicio</title>
+    <title>Home</title>
     <!-- fonts -->
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
     <script>
@@ -58,14 +58,14 @@
                         </li>
 
                         <li class="item">
-                            <a class="menu__moblie" href="/home">
+                            <a class="menu__moblie" href="index.html">
                                 <span>
                                         <span class="lang1">Newsletter</span>
                                 </span>
                             </a>
                         </li>
                         <li class="item">
-                            <a href="/contact" class=" ">
+                            <a href="contact.html" class=" ">
                                 <span>
                                         <span class="lang1">Contactos</span>
                                 </span>
@@ -167,18 +167,13 @@
                                             <i class="fa fa-search"></i>
                                         </a>
                                         <div class="dropdown-menu shadow">
-                                            <form class="input-group search-bar" role="search" (ngSubmit)="register(fRegister)" #fRegister="ngForm">
-                                                <input type="text" id="buscar" name="fb" [(ngModel)]="registerUser.usuario" placeholder="Buscar Producto" class="input-group-field" aria-label="Search Site">
+                                            <form action="/search" method="get" class="input-group search-bar" role="search">
+                                                <input type="text" name="q" value="" placeholder="Buscar en los departamentos" class="input-group-field" aria-label="Search Site" autocomplete="off">
                                                 <button type="submit" class="btn-search">
-                                                <i class="fa fa-search" aria-hidden="true"></i>
-                                                </button>
+                                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                                    </button>
                                             </form>
                                         </div>
-
-                                        <!--   <input type="text" id="buscar" [(ngModel)]="buscar" placeholder="Buscar" class="input-group-field" aria-label="Search Site" autocomplete="off"> -->
-
-
-
                                     </div>
                                 </div>
                                 <!------end header search---------->
@@ -187,7 +182,7 @@
                                     <li class="dropdown ct_login">
                                         <a class="login visible-xs" href="/login.html">Sign In</a>
                                         <a class="visible-xs" href="/register.html">Create Account</a>
-                                        <a class="login hidden-xs" href="javascript:void(0)" data-toggle="dropdown">Iniciar Sesión</a>
+                                        <a class="login hidden-xs" href="javascript:void(0)" data-toggle="dropdown">Iniciar Sesion</a>
                                         <div class="dropdown-menu shadow" role="menu" aria-labelledby="dLabel">
                                             <h6 class="login-header" data-translate="customer.login.sign_in">Iniciar Sesion</h6>
                                             <form class="form-login" accept-charset="UTF-8" action="/login" method="post">
@@ -215,9 +210,9 @@
                                         </div>
                                     </li>
                                     <li class="wishlist">
-                                        <a routerLink="/department">
+                                        <a href="/presupuesto.html#">
                                             <span>
-                                                Departamentos
+                                                Presupuesto
                                               </span>
                                         </a>
                                     </li>
@@ -285,7 +280,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="item">
-                                                    <a href="/contact" class=" ">
+                                                    <a href="contact.html" class=" ">
                                                         <span>
                                                                 <span class="lang1">Contactos</span>
                                                         </span>
@@ -336,7 +331,7 @@
                             </a>
                         </li>
                         <li class="item">
-                            <a href="/contact" class=" ">
+                            <a href="contact.html" class=" ">
                                 <span>
                                         <span class="lang1">Contactos</span>
                                 </span>
@@ -348,6 +343,7 @@
         </nav>
         <main class="main-content home">
             <router-outlet></router-outlet>
+            <!-- Banner -->
             <div class="dtl-section index-section">
                 <section class="content_module new_row dtl show">
                     <div class="new_row content_bg">
@@ -392,7 +388,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/contact">
+                                        <a href="#">
                                             <span class="lang1">Contacto</span>
                                         </a>
                                     </li>
@@ -430,12 +426,12 @@
                                     </h6>
                                     <ul class="social">
                                         <li class="Facebook">
-                                            <a href="https://web.facebook.com/Evolups.do" title="Facebook">
+                                            <a href="#" title="Facebook">
                                                 <i class="fa fa-facebook"></i>
                                             </a>
                                         </li>
                                         <li class="Twitter">
-                                            <a href="https://twitter.com/evolups.do?igshid=gllyr0ue6b2z" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                            <a href="#" title="Twitter"><i class="fa fa-twitter"></i></a>
                                         </li>
                                         <li class="Instagram">
                                             <a href="#" title="Instagram">
@@ -459,22 +455,22 @@
                                 <span class="payment-method">
                                         <a href="/cart" title="visa">
                                             <img
-                                                src="assets/imgs/Visa.jpeg?v=1503289230">
+                                                src="assets/imgs/Visa_Inverted_58x36.png?v=1503289230">
                                         </a>
                                     </span>
-                                <!--   <span class="payment-method">
+                                <span class="payment-method">
                                         <a href="/cart" title="visa Electron">
                                             <img
                                                 src="assets/imgs/Visa_Electron_58x36.png?v=1503289246">
                                         </a>
-                                    </span> -->
+                                    </span>
                                 <span class="payment-method">
                                         <a href="/cart" title="MasterCard">
                                             <img
-                                                src="assets/imgs/Masterdcard.jpeg?v=1503289271">
+                                                src="assets/imgs/MasterCard_Inverted_58x36.png?v=1503289271">
                                         </a>
                                     </span>
-                                <!--  <span class="payment-method">
+                                <span class="payment-method">
                                         <a href="/cart" title="Maestro">
                                             <img src="assets/imgs/Maestro_58x36.png?v=1503289287">
                                         </a>
@@ -484,7 +480,7 @@
                                             <img
                                                 src="assets/imgs/PayPal_cb89a856-006f-4176-a552-055826074573_58x36.png?v=1503289315">
                                         </a>
-                                    </span> -->
+                                    </span>
                             </div>
                         </div>
 
@@ -542,7 +538,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    <script type="text/javascript" src="assets/js/slick.min.js"></script> -->
+    <!-- <script type="text/javascript" src="assets/js/slick.min.js"></script> -->
 
     <script type="text/javascript" src="assets/js/wow.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.nicescroll.min.js"></script>
