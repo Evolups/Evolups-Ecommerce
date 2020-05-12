@@ -1,0 +1,80 @@
+<div class="page-width pb-30">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-6 col-xs-12">
+        <!-- Mensaje si olvido la clave (quitale la clase *hide* para ver este DIV) -->
+        <div class="note form-success hide" id="ResetSuccess">
+          We've sent you an email with a link to update your password.
+        </div>
+
+        <div id="CustomerLoginForm" class="form-vertical">
+          <form method="post" action="/account/login" id="customer_login" accept-charset="UTF-8"
+            class="align-items-center d-flex flex-column">
+            <h1 class="title_block"><span class="text-bold">Login</span></h1>
+
+            <label for="CustomerEmail">Email</label>
+            <input [(ngModel)]="model.usuario" type="email" name="customer[email]" id="CustomerEmail" class=""
+              autocorrect="off" autocapitalize="off" autofocus="">
+
+
+            <label for="CustomerPassword">Password</label>
+            <input [(ngModel)]="model.clave" type="password" value="" name="customer[password]"
+              id="CustomerPassword" class="">
+
+
+            <div class="text-center">
+
+              <p>
+                <a href="#recover" class="mr-2" id="RecoverPassword">Forgot your password?</a>
+                <a href="/create-account.html" id="customer_register_link">Register</a>?
+              </p>
+
+              <input (click)="login()" type="button" class="btn mt-25" value="Sign In">
+              <input (click)="signInWithGoogle()" type="button" class="btn mt-25" value="Sign In Google">
+              <input (click)="signInWithFB()" type="button" class="btn mt-25" value="Sign In Facebook">
+            </div>
+
+            <input type="hidden" name="checkout_url"
+              value="https://furnitica-vinova.myshopify.com/12164300900/checkouts/bc5d4d0d842c3d62dcae5088e92aba46?key=f2a63244a12c4a8d8e1a1f3e36873727&amp;step=contact_information">
+          </form>
+        </div>
+
+        <div id="RecoverPasswordForm" class="hide">
+
+          <div class="text-center">
+            <h2>Reset your password</h2>
+            <p>We will send you an email to reset your password.</p>
+          </div>
+
+          <div class="form-vertical">
+            <form>
+
+              <label for="RecoverEmail">Email</label>
+              <input type="email" value="" name="email" id="RecoverEmail" class="input-full" autocorrect="off"
+                autocapitalize="off">
+
+              <div class="text-center">
+                <p>
+                  <input type="submit" class="btn" value="Submit">
+                </p>
+
+                <button type="button" id="HideRecoverPasswordLink" class="text-link">Cancel</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+
+
+        <div class="text-center">
+          <hr class="hr--invisible">
+          <h2>Continue as a guest</h2>
+
+          <button routerLink="/home" class="btn">Continue</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

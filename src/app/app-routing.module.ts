@@ -8,6 +8,9 @@ import { DepartmentComponent } from './department/department.component';
 import { DetailsComponent } from './details/details.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { DefaultLayoutComponent } from './default-layout/default-layout.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from 'src/helpers/auth-guard';
 
 
 const routes: Routes = [
@@ -20,11 +23,13 @@ const routes: Routes = [
       { path: 'car', component: CarComponent },
       { path: 'about', component: AboutComponent },
       { path: 'department', component: DepartmentComponent },
+      { path: 'register', component: RegisterComponent },
+      { path: 'login', component: LoginComponent },
       { path: 'product-detail/:id', component: DetailsComponent }
 
     ]
   },
-  { path: 'checkout', component: CheckoutComponent },
+  { path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

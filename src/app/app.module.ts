@@ -10,9 +10,28 @@ import { AboutComponent } from './about/about.component';
 import { DepartmentComponent } from './department/department.component';
 import { DetailsComponent } from './details/details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { DefaultLayoutComponent } from './default-layout/default-layout.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { JwtInterceptor } from 'src/helpers/jwt-interceptor';
+import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
+import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
+const config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider('69519889741-6s564vs4m9dupm8p31p7d6nv9js4urk0.apps.googleusercontent.com')
+  },
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider('1452955061565768')
+  }
+]);
+
+export function provideConfig() {
+  return config;
+}
 
 
 @NgModule({
@@ -26,6 +45,8 @@ import { DefaultLayoutComponent } from './default-layout/default-layout.componen
     AppComponent,
     CheckoutComponent,
     DefaultLayoutComponent,
+    RegisterComponent,
+    LoginComponent,
 
   ],
   imports: [
@@ -33,9 +54,13 @@ import { DefaultLayoutComponent } from './default-layout/default-layout.componen
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: AuthServiceConfig, useFactory: provideConfig }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
