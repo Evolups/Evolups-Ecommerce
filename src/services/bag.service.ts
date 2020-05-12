@@ -12,6 +12,7 @@ export class BagService {
   public totalBagItems = new BehaviorSubject<number>(0);
   public items: any = [];
   groupItems: any[][] = [];
+  
   private sendOrderModel = {
     Cliente: 'cliente de prueba',
     Fecha: '2020-04-05',
@@ -74,7 +75,7 @@ export class BagService {
     });
 
     let options = { headers: headers };
-    return this.http.post<any>('/api/venta', obj, options);
+    return this.http.post<any>('https://evolups.azurewebsites.net/api/venta', obj, options);
   }
 
   getOrders() {

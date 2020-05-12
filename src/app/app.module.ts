@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -32,6 +31,11 @@ const config = new AuthServiceConfig([
 export function provideConfig() {
   return config;
 }
+import { TestComponent } from './test/test.component';
+import { ProductlistComponent } from './productlist/productlist.component';
+import { ReceiptComponent } from './receipt/receipt.component';
+import { FormsearchComponent } from './formsearch/formsearch.component';
+import { OfertasComponent } from './ofertas/ofertas.component';
 
 
 @NgModule({
@@ -47,7 +51,11 @@ export function provideConfig() {
     DefaultLayoutComponent,
     RegisterComponent,
     LoginComponent,
-
+    TestComponent,
+    ProductlistComponent,
+    ReceiptComponent,
+    FormsearchComponent,
+    OfertasComponent
   ],
   imports: [
     BrowserModule,
