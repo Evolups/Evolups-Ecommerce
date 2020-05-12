@@ -141,20 +141,20 @@ $(document).ready(function() {
     var nav = $('#cbp-spmenu-s1');
 
     showLeftPush.on('click', function(e) {
-      e.stopPropagation();
+        e.stopPropagation();
 
-      body.toggleClass('cbp-spmenu-push-toleft');
-      nav.toggleClass('cbp-spmenu-open');
-      showLeftPush.toggleClass('active');
+        body.toggleClass('cbp-spmenu-push-toleft');
+        nav.toggleClass('cbp-spmenu-open');
+        showLeftPush.toggleClass('active');
     });
 
     $('.gf-menu-device-wrapper .close-menu').on('click', function() {
-    	showLeftPush.trigger('click');
+        showLeftPush.trigger('click');
     });
 
     doc.on('click', function(e) {
-      if (!$(e.target).closest('#cbp-spmenu-s1').length && showLeftPush.hasClass('active')) {
-        showLeftPush.trigger('click');
-      }
+        if (!$(e.target).closest('#cbp-spmenu-s1').length && showLeftPush.hasClass('active')) {
+            showLeftPush.trigger('click');
+        }
     });
 });
