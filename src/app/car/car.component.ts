@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BagService } from 'src/services/bag.service';
-import { Router,ActivatedRoute } from '@angular/router'; 
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -10,16 +10,16 @@ import { Router,ActivatedRoute } from '@angular/router';
 })
 export class CarComponent implements OnInit {
 
-  constructor(public bagService: BagService,private router:Router) { }
+  constructor(public bagService: BagService, private router: Router) { }
 
   ngOnInit(): void {
     this.bagService.agruparItems();
     console.log('groups', this.bagService.groupItems);
   }
 
-//debe direccionar a la categoria que esta el producto seleccinado
-  seguircomprando(){
-  this.router.navigate(['/productlist','General']);
+  //debe direccionar a la categoria que esta el producto seleccinado
+  seguircomprando() {
+    this.router.navigate(['/productlist', 'General']);
   }
 
   async confirmarEliminarArticulos(items) {

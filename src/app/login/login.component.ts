@@ -35,21 +35,23 @@ export class LoginComponent implements OnInit {
       this.user = user;
       this.loggedIn = (user != null);
       console.log(this.user);
-      console.log(this.loggedIn);
-      this.setData(user);
+      // console.log(this.loggedIn);
+      // this.setData(user);
     });
 
-    this.accountService.getUsers().subscribe(res => {
-      console.log(res);
-    });
   }
 
   signInWithGoogle(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(res => {
+      this.setData(res, environment.tipoLogueo.Google);
+    });
   }
 
   signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then(res => {
+      this.setData(res, environment.tipoLogueo.Facebok);
+      console.log('FB', res);
+    });
   }
 
   signOut(): void {
@@ -68,12 +70,15 @@ export class LoginComponent implements OnInit {
     // });
   }
 
-  setData(result) {
+  setData(result, tipo) {
     if (!result) {
       return;
     }
-    localStorage.setItem(environment.keyLoginLocalStorage, JSON.stringify(result));
+
+    const data = { tipoLogin: tipo, data: result };
+    localStorage.setItem(environment.keyLoginLocalStorage, JSON.stringify(data));
     this.router.navigateByUrl(this.returnUrl);
+    window.location.reload();
   }
 
   getByUserName() {
@@ -81,7 +86,7 @@ export class LoginComponent implements OnInit {
       if (result.length > 0) {
         if (result[0].clave == this.model.clave) {
           alert('si');
-          this.setData(result[0]);
+          this.setData(result[0], environment.tipoLogueo.User);
         } else {
           alert('usuario o contraseña incorrecta');
         }

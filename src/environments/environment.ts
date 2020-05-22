@@ -5,7 +5,14 @@
 export const environment = {
   production: false,
   apiUrl: 'https://evolups.azurewebsites.net/api',
-  keyLoginLocalStorage: 'e-commerce'
+  keyLoginLocalStorage: 'e-commerce',
+  tipoLogueo: {
+    Facebok: 1,
+    Google: 2,
+    User: 3
+  },
+  currentUser: JSON.parse(localStorage.getItem('e-commerce')) // Debe tener el mismo valor que la variable keyLoginLocalStorage
+
 };
 
 /*

@@ -16,9 +16,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { TestComponent } from './test/test.component';
 import { ProductlistComponent } from './productlist/productlist.component';
-import {ReceiptComponent} from './receipt/receipt.component';
-import {FormsearchComponent} from './formsearch/formsearch.component';
-import {OfertasComponent} from './ofertas/ofertas.component';
+import { ReceiptComponent } from './receipt/receipt.component';
+import { FormsearchComponent } from './formsearch/formsearch.component';
+import { OfertasComponent } from './ofertas/ofertas.component';
 
 const routes: Routes = [
   {
@@ -44,7 +44,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),BrowserModule,CommonModule],
+  imports: [RouterModule.forRoot(routes), BrowserModule, CommonModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
