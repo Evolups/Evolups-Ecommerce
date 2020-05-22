@@ -1,6 +1,6 @@
 <div class="page-width pb-30">
   <div class="container">
-    <div class="row justify-content-center">
+    <div *ngIf="!isRecovery" class="row justify-content-center">
       <div class="col-6 col-xs-12">
         <!-- Mensaje si olvido la clave (quitale la clase *hide* para ver este DIV) -->
         <div class="note form-success hide" id="ResetSuccess">
@@ -25,7 +25,7 @@
             <div class="text-center">
 
               <p>
-                <a href="#recover" class="mr-2" id="RecoverPassword">Forgot your password?</a>
+                <a style="cursor: pointer;" (click)="isRecovery=true" class="mr-2" id="RecoverPassword">Forgot your password?</a>
                 <a href="/create-account.html" id="customer_register_link">Register</a>?
               </p>
 
@@ -76,5 +76,52 @@
 
       </div>
     </div>
+
+    <div *ngIf="isRecovery" class="row justify-content-center">
+      <div class="col-6 col-xs-12">
+        <!-- Mensaje si olvido la clave (quitale la clase *hide* para ver este DIV) -->
+        <div class="note form-success hide" id="ResetSuccess">
+          We've sent you an email with a link to update your password.
+        </div>
+
+        <div id="CustomerLoginForm" class="form-vertical">
+          <form method="post" action="/account/login" id="customer_login" accept-charset="UTF-8"
+            class="align-items-center d-flex flex-column">
+            <h1 class="title_block"><span class="text-bold">Recuperar</span></h1>
+
+            <label for="CustomerEmail">Email</label>
+            <input type="email" class=""
+              autocorrect="off" autocapitalize="off" autofocus="">
+          </form>
+        </div>
+
+        <div id="RecoverPasswordForm" class="hide">
+
+          <div class="form-vertical">
+            <form>
+
+              <label for="RecoverEmail">Email</label>
+              <input type="email" value="" name="email" id="RecoverEmail" class="input-full" autocorrect="off"
+                autocapitalize="off">
+                <input (click)="login()" type="button" class="btn mt-25" value="Sign In">
+
+            </form>
+          </div>
+
+        </div>
+
+
+
+        <div class="text-center">
+          <hr class="hr--invisible">
+          <!-- <h2>Iniciar Sesion</h2> -->
+
+          <button (click)="isRecovery = false;" class="btn">Enviar correo</button>
+          <button (click)="isRecovery = false;" class="btn">Iniciar sesión</button>
+        </div>
+
+      </div>
+    </div>
   </div>
 </div>
+

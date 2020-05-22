@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   };
   user: any;
   loggedIn = false;
+  isRecovery = false;
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
