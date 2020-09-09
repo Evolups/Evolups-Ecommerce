@@ -1,0 +1,32 @@
+<div class="wrapper-breadcrumb">
+    <div class="breadcrumb container">
+        <a [routerLink]="['/home']" routerLinkActive="router-link-active" data-translate="general.breadcrumbs.home">Inicio</a>
+
+        <span class="spera">/</span>
+
+        <span class="lang1">Mis Ordenes</span>
+    </div>
+</div>
+<table class="table table-striped" *ngFor="let venta of groupItems">
+    <thead>
+        <tr>
+            <th scope="col">Factura No.</th>
+            <th scope="col">Fecha Emision</th>
+            <th scope="col">Total</th>
+            <th scope="col">Estatus</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ve of venta">
+
+            <a [routerLink]="['/historydetail', ve.nro_fact]" routerLinkActive="router-link-active">
+                <td scope="row">{{ve.nro_fact}}</td>
+            </a>
+            <td>{{ve.total}}</td>
+            <td>{{ve.fecha_fact}}</td>
+            <td>{{ve.Estatus}}</td>
+
+        </tr>
+
+    </tbody>
+</table>

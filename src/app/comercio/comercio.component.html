@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/imgs/favicon.png" type="image/png">
+
+    <title>Inicio</title>
+    <!-- fonts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                "families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"]
+            },
+            active: function() {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/bootstrap-v3.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/assets/css/component.css">
+    <link rel="stylesheet" href="/assets/css/theme-styles.css">
+    <link rel="stylesheet" href="/assets/css/theme-styles-setting.css">
+    <link rel="stylesheet" href="/assets/css/theme-styles-responsive.css">
+    <!-- <link href="https://www.jqueryscript.net/css/jquerysctipttop.css?v4" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet" href="/assets/css/dtl.css">
+    <link rel="stylesheet" href="/assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/slick-1.css" /> -->
+
+</head>
+
+<body>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s1">
+        <div class="gf-menu-device-wrapper">
+            <div class="close-menu">x</div>
+            <div class="gf-menu-device-container">
+                <div class="row">
+                    <ul class="site-nav gf-menu" style="display: none;">
+                        <li class="item">
+                            <a href="/about" class=" ">
+                                <span>
+                                        <span class="lang1">Nosotros</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="blogs.html" class=" ">
+                                <span>
+                                        <span class="lang1">Blog</span>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="item">
+                            <a class="menu__moblie" href="/home">
+                                <span>
+                                        <span class="lang1">Newsletter</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="/contact" class=" ">
+                                <span>
+                                        <span class="lang1">Contactos</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="wrapper-container">
+        <div class="dtl-section header-p">
+
+        </div>
+        <nav class="nav-bar" role="navigation">
+            <div class="container" style="display: block;">
+                <div class="row">
+                    <ul class="site-nav">
+                        <li class="item">
+                            <a href="about-us.html" class=" ">
+                                <span class="lang1">Nosotros</span>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="blogs.html" class=" ">
+                                <span class="lang1">Blog</span>
+                            </a>
+                        </li>
+
+                        <li class="item">
+                            <a class="menu__moblie" href="index.html">
+                                <span class="lang1">Newsletter</span>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="/contact" class=" ">
+                                <span>
+                                        <span class="lang1">Contactos</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="wrapper-breadcrumb">
+            <div class="breadcrumb container">
+                <a href="/">Inicio</a>
+                <span class="spera">/</span>
+                <a [routerLink]="['/department']" routerLinkActive="router-link-active">Departamentos </a>
+
+                <span class="spera">/</span>
+                <span class="lang1"></span>
+
+            </div>
+        </div>
+        <main class="main-content container" role="main">
+            <div class="row">
+
+                <div class="col-xs-3 sidebar collection-sidebar">
+                    <div class="widget sidebar-links sidebar-custom">
+
+                    </div>
+
+
+                    <div class="dtl-section">
+
+                        <div class="sidebar-block">
+                            <div class="sidebar-custom sidebar-tag brand">
+                                <div class="widget-title">
+                                    <span class="lang1">Marca </span>
+                                    <a href="javascript:void(0)" class="clear" style="display:none">
+                                            Clear
+                                        </a>
+                                </div>
+                                <div class="widget-content" *ngFor="let marca of  groupMarcas">
+                                    <ul>
+                                        <li>
+                                            <input type="checkbox" class="lang1" value="dincidunteros">
+                                            <label class="lang1">{{marca[0].marca}}</label>
+                                        </li>
+
+                                        <li>
+                                            <input type="checkbox" class="lang1" value="cosmopolis">
+                                            <label class="lang1">Cosmopolis</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block-row col-main col-xs-9">
+                    <div class="dtl-section">
+                        <header class="page-header">
+
+                            <!--  <img src={{cat[0].foto_url}} width="1000" height="20"> -->
+
+                            <h3>
+                                <span class="lang1">FERRETERIA: {{this.categoria}}</span>
+                            </h3>
+                            <div class="collection-des">
+                                <div class="rte lang1">
+                                    <span><!-- Pellentesque at libero vehicula consectetur justo lorem luctus
+                                            libero. Aenean eu viverra mauris enos pulvinar tellus. Divamus ut massa a libero commodo
+                                            imperdiet in danos amet arcus.&nbsp;Cras accumsan dorci maces consequat blandi susto
+                                            dusto elementum libero non honcus purus sem sit amet enimos. --></span>
+                                </div>
+                            </div>
+                        </header>
+                    </div>
+                    <div class="dtl-section">
+
+                        <div class="toolbar">
+                            <div class="view-mode">
+                                <a class="grid active" href="grid" title="Grid" data-translate="collections.general.grid_view" translate-item="title">
+                                    <div class="icon-grid">
+                                        <div class="icon-bar"></div>
+                                        <div class="icon-bar"></div>
+                                        <div class="icon-bar"></div>
+                                    </div>
+                                    <span data-translate="collections.general.grid_view">Grid</span>
+                                </a>
+                                <a class="list" href="list" title="List" data-translate="collections.general.list_view" translate-item="title">
+                                    <div class="icon-list">
+                                        <div class="icon-bar"></div>
+                                        <div class="icon-bar"></div>
+                                        <div class="icon-bar"></div>
+                                    </div>
+                                    <span data-translate="collections.general.list_view">List</span>
+                                </a>
+                            </div>
+
+
+                            <div class="filter-sortby btn-group">
+                                <label for="sort-by" data-translate="collections.sorting.title">Sortear</label>
+                                <button class="btn btn-2 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <i class="icon-exchange"></i>
+                                        <span data-translate="collections.sorting.featured">Destacados</span>
+                   
+                                        <i class="icon-chevron-down"></i>
+                                    </button>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="active"><span data-href="manual" data-translate="collections.sorting.featured">Destacados</span></li>
+                                    <li><span data-href="price-ascending" data-translate="collections.sorting.price_ascending">Price, low to high</span></li>
+                                    <li><span data-href="price-descending" data-translate="collections.sorting.price_descending">Price, high to low</span></li>
+                                    <li><span data-href="title-ascending" data-translate="collections.sorting.az">Alphabetically, A-Z</span></li>
+                                    <li><span data-href="title-descending" data-translate="collections.sorting.za">Alphabetically, Z-A</span></li>
+                                    <li><span data-href="created-ascending" data-translate="collections.sorting.date_ascending">Date, old to new</span></li>
+                                    <li><span data-href="created-descending" data-translate="collections.sorting.date_descending">Date, new to old</span></li>
+                                    <li><span data-href="best-selling" data-translate="collections.sorting.best_selling">Best
+                                                Selling</span></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="product-collection products-grid row">
+                            <div class="no_crop_image  grid-item col-xs-6 col-md-4" *ngFor="let item of  groupItems">
+
+                                <div class="inner product-item  on-sale wow fadeIn" data-wow-delay="1100ms">
+                                    <div class="inner-top">
+                                        <div class="product-top">
+                                            <div class="product-image image-swap">
+                                                <a (click)="ProductDetail(item[0])" class="product-grid-image">
+                                                    <img src={{item[0].foto_url}} width="300" height="300" alt="">
+                                                    <img src="{{item[0].foto_url}}" width="300" height="300" alt=" ">
+                                                    <div class="hover"></div>
+                                                </a>
+                                            </div>
+
+
+                                            <div class="product-label">
+                                                <strong class="label" data-translate="products.product.sale">Venta</strong>
+                                            </div>
+
+                                            <div class="product-des">
+                                                <a class="wishlist" (click)="ProductDetail(item[0])" title="Add to wishlist">
+                                                    <span class="icon"></span>
+                                                    <span class="wishlist_text">
+                                                           ver Detalle
+                                                        </span>
+                                                </a>
+
+                                                <div class="action">
+
+                                                    <form action="/cart/add" method="post" class="variants" enctype="multipart/form-data">
+                                                        <button type="button" (click)="add(item.codigo,item.precio1,item.marca,item.descripcio,item.codigo_empre,item.existencia,item.foto_url)" class="btn" title="Agregar al Carrito">
+                                                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                                                <span data-translate="products.product.select_options">Select
+                                                                    options</span>
+                                                            </button>
+                                                    </form>
+                                                </div>
+
+                                                <div class="quickview-button">
+                                                    <a (click)="ProductDetail(item[0])" title="Ver Detalle" data-translate="products.product.quick_view" translate-item="title">
+                                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                                        <span data-translate="products.product.quick_view">Ver Detalle</span>
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="product-bottom">
+                                            <div class="product-vendor">{{item[0].descripcio}}</div>
+
+
+
+                                            <div class="price-box">
+                                                <p class="sale">
+
+                                                    <span class="special-price"><em data-translate="products.product.from">from
+                                                            </em><span class="money">{{item[0].precio1}}</span></span>
+                                                </p>
+                                            </div>
+
+                                            <div>
+
+
+                                                <img src={{item[0].imagen}} width="80" height="80" alt="">
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="padding">
+
+                            <div class="toolbar toolbar-bottom">
+                                <p class="page-total">
+                                    <span data-translate="collections.toolbar.showing">Showing</span>: 1 - 12
+
+                                    <span data-translate="collections.toolbar.of">of</span> 17
+                                </p>
+
+                                <ul class="pagination-page">
+                                    <li class="disabled"><span>Previo</span>
+                                    </li>
+
+                                    <li *ngFor="let pag of groupPagCantidad | slice:1; let i = index">
+                                        <a [routerLink]="['/productlist', this.categoria,i]" routerLinkActive="router-link-active">{{i+1}}</a>
+                                    </li>
+
+                                    <li class="text">
+                                        <a (click)="ProductosconPaginacion(this.categoria,'1') " title="Next"><span>Siguiente</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <div class="dtl-section float-left w-100">
+            <footer class="site-footer">
+                <div class="footer-middle wow fadeInUp " data-wow-delay="200ms">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h6 class="title">
+                                    <span class="lang1">Información </span>
+                                </h6>
+                                <ul>
+                                    <li>
+                                        <a [routerLink]="['/about']" routerLinkActive="router-link-active">
+                                            <span class="lang1">Nosotros</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['/contact']" routerLinkActive="router-link-active">
+                                            <span class="lang1">Contacto</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="lang1">Blog</span>
+                                        </a>
+                                    </li>
+                                    <!-- <li>
+                                        <a href="#">
+                                            <span class="lang1">Refiere un Comercio</span>
+                                        </a>
+                                    </li> -->
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 newslt">
+                                <h6 class="title">
+                                    <span class="lang1">REGÍSTRESE EN NUESTRO BOLETÍN DE NOTICIAS</span>
+                                </h6>
+                                <span class="sub-tit hide">
+                                        <span class="lang1">Enter your email bellow to receive a $30 coupon, special offters,
+                                            excusive discounts and more!</span>
+                                </span>
+                                <div class="inner-form-subscribe">
+                                    <form method="post" action="/contact" id="contact_form" accept-charset="UTF-8" class="input-group">
+                                        <input class="input-group-field" type="email" name="contact[email]" placeholder="Enter your email address" required="required">
+                                        <button class="btn" type="submit">Suscribirse</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="social-footer text-center">
+                                    <h6 class="title">
+                                        <span class="lang1">Síguenos en</span>
+                                    </h6>
+                                    <ul class="social">
+                                        <li class="Facebook">
+                                            <a href="https://www.facebook.com/evolups.rd" target="_blank" title="Facebook">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="Twitter">
+                                            <a href="https://twitter.com/evolups_do" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li class="Instagram">
+                                            <a href="https://www.instagram.com/evolups.do/" target="_blank" title="Instagram">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom  wow fadeInUp " data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms;">
+                    <div class="container">
+
+                        <address class="col-sm-12">
+                                <span class="lang1">© 2020 Evolups. Todos los derechos reservados </span>
+                            </address>
+                        <div class="col-sm-12">
+                            <div id="payment-methods">
+                                <span class="payment-method">
+                                        <a href="/cart" title="visa">
+                                            <img
+                                                src="assets/imgs/Visa?v=1503289230">
+                                        </a>
+                                    </span>
+                                <!-- <span class="payment-method">
+                                        <a href="/cart" title="visa Electron">
+                                            <img
+                                                src="assets/imgs/Visa_Electron_58x36.png?v=1503289246">
+                                        </a>
+                                    </span> -->
+                                <span class="payment-method">
+                                        <a href="/cart" title="MasterCard">
+                                            <img
+                                                src="assets/imgs/Masterdcard.jpeg?v=1503289271">
+                                        </a>
+                                    </span>
+                                <!--  <span class="payment-method">
+                                        <a href="/cart" title="Maestro">
+                                            <img src="assets/imgs/Maestro_58x36.png?v=1503289287">
+                                        </a>
+                                    </span>
+                                <span class="payment-method">
+                                        <a href="/cart" title="Paypal">
+                                            <img
+                                                src="assets/imgs/PayPal_cb89a856-006f-4176-a552-055826074573_58x36.png?v=1503289315">
+                                        </a>
+                                    </span> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </footer>
+
+
+            <div class="loading-modal modal" data-translate="cart.ajax_cart.loading">Loading...</div>
+            <div class="ajax-error-modal modal">
+                <div class="modal-inner">
+                    <div class="ajax-error-title" data-translate="cart.ajax_cart.error">Error</div>
+                    <div class="ajax-error-message"></div>
+                </div>
+            </div>
+            <div class="ajax-success-modal modal">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="ajax-left">
+                        <img class="ajax-product-image" alt="&nbsp;" src="" style="max-width:64px; max-height:64px;object-fit:cover;">
+                    </div>
+                    <div class="ajax-right">
+                        <p class="ajax-product-title"></p>
+                        <p class="success-message btn-go-to-cart" data-translate="cart.ajax_cart.success_text">is added to your shopping cart.</p>
+                        <p class="success-message btn-go-to-wishlist" data-translate="wishlist.ajax_wishlist.success_text">is added to your wish list.</p>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-secondary continue-shopping shadow" onclick="javascript:void(0)" data-translate="cart.ajax_cart.continue_shopping">Continue Shopping</button>
+                        <button class="btn-secondary btn-go-to-cart shadow" onclick="window.location='/cart'" data-translate="cart.ajax_cart.go_to_cart">Go to cart</button>
+                        <button class="btn-secondary btn-go-to-wishlist shadow" onclick="window.location='/pages/wish-list'" data-translate="wishlist.ajax_wishlist.go_to_wishlist">Go To Wishlist</button>
+                    </div>
+                    <a href="javascript:void(0)" class="close-modal" data-translate="cart.ajax_cart.close">Close</a>
+                </div>
+            </div>
+
+            <div class="newsletter-success-modal">
+                <div class="modal-overlay"></div>
+                <div class="halo-modal-content">
+                    <a class="close close-modal" title="Close">
+                            Liquid error (message-modal line 32): Could not find asset snippets/icon-close.liquid
+                        </a>
+
+                    <div class="halo-modal-body">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                        <span>You have successfully subscribed!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <!-- <script type="text/javascript" src="assets/js/slick.min.js"></script> -->
+
+    <script type="text/javascript" src="assets/js/wow.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.nicescroll.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

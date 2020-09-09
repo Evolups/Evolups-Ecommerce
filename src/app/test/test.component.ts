@@ -3,7 +3,11 @@ import { ProductService } from 'src/services/product.service';
  import { Router,ActivatedRoute } from '@angular/router'; 
  import { from } from 'rxjs';
  import { groupBy, mergeMap, toArray } from 'rxjs/operators';
+ import { FormGroup, FormControl, Validators,FormBuilder } from '@angular/forms';
+ import { HttpClient } from '@angular/common/http';
+ import { BagService } from 'src/services/bag.service';
 
+ 
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
@@ -12,20 +16,59 @@ import { ProductService } from 'src/services/product.service';
 export class TestComponent implements OnInit {
 
 
+  SERVER_URL = "/home";
+  uploadForm: FormGroup;  
 
 
-categoria:string; 
+  groupNuevos: any[][] = [];
+  Vnuevos=[];
+  groupCategorias: any[][] = [];
+  VCategoria=[];
+  user:any;
 
-//constructor(private productservices: ProductService, private router: Router,private route: ActivatedRoute) {};
+  mySubscription: any;
+  convertido = [];  
+  groupItemsHome: any[][] = [];
+  productoH=[];
+
+constructor(private productservices: ProductService, private router: Router,private route: ActivatedRoute,public bagService: BagService
+  
+  ) {};
 
   ngOnInit(): void {
-  
+
+ 
+
   } 
+ 
 
   
-  agruparItems() {
-    this.groupItems = [];
-    const source = from(this.producto);
+CargaCar_total(){
+  //Busca la la venta
+
+  this.productservices.GetCar_Total(this.user.email)
+  .subscribe( resp => {
+    resp.forEach(item => {
+       
+      //coloca total en el carrito
+      this.bagService.totalitems=item.cantidad;  
+  
+    });
+      
+  }); 
+ 
+ 
+   }
+
+
+Categoria(){
+  //Busca las marcas
+this.productservices.getCategoria()
+.subscribe( resp => {
+  resp.forEach(item => {
+    this.VCategoria.push( item )
+    this.groupCategorias = [];
+    const source = from(this.VCategoria);
     // group by code
     const example = source.pipe(
       groupBy((item: any) => item.codigo),
@@ -35,83 +78,74 @@ categoria:string;
 
     let contador = 0;
     const subscribe = example.subscribe(val => {
-      this.groupItems[contador] = val;
-      console.log(this.groupItems);
+      this.groupCategorias[contador] = val;
+      console.log(this.groupCategorias);
       contador++;
     });
- 
-  }
-  
 
-  name = 'Angular';
-
-  array = [{
- "name": "prueba1",
- "positionId": 1
- },{
- "name": "prueba2",
- "positionId": 2
- },{
- "name": "prueba3",
- "positionId": 3
- },{
- "name": "prueba4",
- "positionId": 4
- },{
- "name": "prueba5",
- "positionId": 5
- },{
- "name": "prueba6",
- "positionId": 6
- }]
- 
- convertido = [];  
- groupItems: any[][] = [];
- producto=[];
- constructor( private productservices: ProductService, private router: Router,private route: ActivatedRoute){
- 
-  
-  this.categoria= this.route.snapshot.paramMap.get('id');
-
-  this.productservices.getProducto(this.categoria)
-  .subscribe( resp => {
-    resp.forEach(item => {
-      this.producto.push( item )
-      this.groupItems = [];
-      const source = from(this.producto);
-      // group by code
-      const example = source.pipe(
-        groupBy((item: any) => item.codigo),
-        // return each item in group as array
-        mergeMap(group => group.pipe(toArray()))
-      );
-  
-      let contador = 0;
-      const subscribe = example.subscribe(val => {
-        this.groupItems[contador] = val;
-        console.log(this.groupItems);
-        contador++;
-      });
-
-    });
-      
-  });  
-
-  
-  
-/* 
-
-
-    for (let i = 0; i < this.array.length; i++) {
-       const element = this.array[i];
-        let arrayPar = []
-         arrayPar.push(this.array[i])
-     arrayPar.push(this.array[i+1])
-     this.convertido.push(arrayPar)
-     i++
-     } */
-
-     
+  });
     
-  }
+});  
+
+
+}
+
+
+
+ProductosNuevos(){
+  //Busca las marcas
+this.productservices.getProductoNuevos()
+.subscribe( resp => {
+  resp.forEach(item => {
+    this.Vnuevos.push( item )
+    this.groupNuevos = [];
+    const source = from(this.Vnuevos);
+    // group by code
+    const example = source.pipe(
+      groupBy((item: any) => item.codigo),
+      // return each item in group as array
+      mergeMap(group => group.pipe(toArray()))
+    );
+
+    let contador = 0;
+    const subscribe = example.subscribe(val => {
+      this.groupNuevos[contador] = val;
+      console.log(this.groupCategorias);
+      contador++;
+    });
+
+  });
+    
+});  
+
+
+}
+
+
+departamento(id:string){
+  this.router.navigate(['/productlist',id,0]);
+
+}
+
+ofertas(id:string){
+  this.router.navigate(['/ofertas',id]);
+
+}
+
+logout(){
+
+  localStorage.clear();
+  this.router.navigate(['/login',"logout"]);
+
+}
+
+
+ProductDetail(id:any)
+{
+  this.router.navigate(['/detailsproduct',id.codigo]); 
+}
+ 
+  
+ 
+
 }

@@ -1,0 +1,182 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<aside class="sidebar" role="complementary">
+    <div class="sidebar__header"></div>
+    <div class="sidebar__content">
+        <div id="order-summary" class="order-summary order-summary--is-collapsed" data-order-summary="">
+            <h2 class="visually-hidden-if-js">Hitorico de ordenes</h2>
+            <h2 class="visually-hidden-if-js">3292</h2>
+
+            <div class="order-summary__sections">
+                <div class="order-summary__section order-summary__section--product-list" *ngFor="let item of groupItems">
+                    <div class="order-summary__section__content">
+                        <table class="product-table" *ngFor="let pro  of item">
+                            <!-- <caption class="visually">Shopping cart</caption> -->
+                            <thead class="product-table__header">
+
+                                <tr>
+                                    <th scope="col"><span class="visually">Imagen</span></th>
+                                    <th scope="col"><span class="visually">Numero</span></th>
+                                    <th scope="col"><span class="visually">Cantidad</span></th>
+                                    <th scope="col"><span class="visually">itbis</span></th>
+                                    <th scope="col"><span class="visually">Descuento</span></th>
+                                    <th scope="col"><span class="visually">Envio</span></th>
+                                    <th scope="col"><span class="visually">Precio</span></th>
+                                    <th scope="col"><span class="visually">Total</span></th>
+                                    <th scope="col"><span class="visually">Estatus</span></th>
+
+                                </tr>
+
+                            </thead>
+                            <tbody data-order-summary-section="line-items" [routerLink]="['/home']" routerLinkActive="router-link-active">
+                                <tr class=" product " data-product-id="1997713211492 " data-variant-id="18689453031524 " data-product-type=" " data-customer-ready-visible=" ">
+                                    <td class="product__image ">
+                                        <div class="product-thumbnail ">
+                                            <div class="product-thumbnail__wrapper ">
+                                                <img alt="Ipsum dolor sit amet - S / Cornflowerblue " class="product-thumbnail__image " src='{{item[0].foto_url}}'>
+                                            </div>
+                                            <span class="product-thumbnail__quantity " aria-hidden="true ">{{pro.cantidad}}</span>
+                                        </div>
+
+                                    </td>
+                                    <th class="product__description  " scope="row ">
+                                        {{pro.nro_fact}}
+                                    </th>
+
+                                    <th class="product__description " scope="row ">
+                                        <span class="product__description__name order-summary__emphasis ">{{pro.itemds}}</span>
+                                        <span class="product__description__variant order-summary__small-text ">      </span>
+                                    </th>
+
+                                    <td class="product__description" scope="row ">
+                                        {{pro.cantidad}}
+                                    </td>
+
+                                    <td class="product__quantity visually " class="product__description  " scope="row ">
+                                        {{pro.descuento}}
+                                    </td>
+
+                                    <td class="product__description" scope="row">
+                                        {{pro.itbis}}
+                                    </td>
+                                    <td class="product__description  ">
+                                        <span class="order-summary__emphasis skeleton-while-loading ">{{pro.flete}}</span>
+                                    </td>
+                                    <td class="product__price " class="product__description  ">
+                                        <span>{{pro.precio}}</span>
+                                    </td>
+
+                                    <td class="product__price " class="product__description  ">
+                                        <span>{{pro.total}}</span>
+                                    </td>
+
+                                    <td>
+                                        <span class="order-summary__emphasis skeleton-while-loading ">EN PROCESO</span>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- <div class="order-summary__scroll-indicator " aria-hidden="true " tabindex="-1 ">
+                            Scroll for more items
+                            <svg aria-hidden="true " focusable="false " class="icon-svg icon-svg--size-12 ">
+          <use xlink:href="#down-arrow "></use>
+        </svg>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="order-summary__section order-summary__section--total-lines " data-order-summary-section="payment-lines ">
+                    <!-- <table class="total-line-table ">
+                        <caption class="visually-hidden ">Cost summary</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col "><span class="visually-hidden ">Descripción</span></th>
+                                <th scope="col "><span class="visually-hidden ">Precio</span></th>
+                            </tr>
+                        </thead>
+                        <tbody class="total-line-table__tbody ">
+                            <tr class="total-line total-line--subtotal ">
+                                <th class="total-line__name " scope="row ">Subtotal</th>
+                                <td class="total-line__price ">
+                                    <span class="order-summary__emphasis skeleton-while-loading " data-checkout-subtotal-price-target="1500 ">${{bagService.calcularSubTotal()}}
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr class="total-line total-line--shipping ">
+                                <th class="total-line__name " scope="row ">
+        
+                            </tr>
+
+
+                            <tr class="total-line total-line--taxes  " data-checkout-taxes=" ">
+                                <th class="total-line__name " scope="row ">Envio (Estimado)</th>
+                                <td class="total-line__price ">
+                                    <span class="order-summary__emphasis skeleton-while-loading " data-checkout-total-taxes-target="0 ">$90.00</span>
+                                </td>
+                            </tr>
+
+
+
+
+                        </tbody>
+                        <tfoot class="total-line-table__footer ">
+                            <tr class="total-line ">
+                                <th class="total-line__name payment-due-label " scope="row ">
+                                    <span class="payment-due-label__total ">Total</span>
+                                </th>
+                                <td class="total-line__price payment-due ">
+                                    <span class="payment-due__currency remove-while-loading ">DOP$</span>
+                                    <span class="payment-due__price skeleton-while-loading--lg " data-checkout-payment-due-target="7500 ">{{bagService.calcularTotal()}}</span>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table> -->
+
+                </div>
+            </div>
+        </div>
+        <!-- 
+        <div class="visually-hidden " data-order-summary-section="accessibility-live-region ">
+            <div aria-live="polite " aria-atomic="true " role="status ">
+                Updated total price:
+                <span data-checkout-payment-due-target="7500 ">
+    $75.00
+  </span>
+            </div>
+        </div> -->
+
+
+        <div id="partial-icon-symbols " class="icon-symbols " data-tg-refresh="partial-icon-symbols " data-tg-refresh-always="true "><svg xmlns="http://www.w3.org/2000/svg ">
+  <symbol id="caret-down "><svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 10 10 ">
+      <path d="M0 3h10L5 8 " fill-rule="nonzero "></path>
+    </svg></symbol>
+            <symbol id="spinner-button "><svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 20 20 ">
+      <path
+        d="M20 10c0 5.523-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0v2c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8h2z ">
+      </path>
+    </svg></symbol>
+            <symbol id="chevron-right "><svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 10 10 ">
+      <path d="M2 1l1-1 4 4 1 1-1 1-4 4-1-1 4-4 "></path>
+    </svg></symbol>
+            <symbol id="down-arrow "><svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 12 12 ">
+      <path
+        d="M10.817 7.624l-4.375 4.2c-.245.235-.64.235-.884 0l-4.375-4.2c-.244-.234-.244-.614 0-.848.245-.235.64-.235.884 0L5.375 9.95V.6c0-.332.28-.6.625-.6s.625.268.625.6v9.35l3.308-3.174c.122-.117.282-.176.442-.176.16 0 .32.06.442.176.244.234.244.614
+                                0 .848 ">
+      </path>
+    </svg></symbol>
+            </svg>
+        </div>
+
+
+    </div>
+</aside>
+
+<div>
+
+
+
+</div>

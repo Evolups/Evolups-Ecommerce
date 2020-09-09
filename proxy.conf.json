@@ -1,7 +1,7 @@
 {
-  "/api/*": {
-      "target": "https://evolups.azurewebsites.net",
-      "secure": false,
-      "changeOrigin": true
-  }
+    "/api/*": {
+        "target": "https://servicios.evolups.com",
+        "secure": false,
+        "changeOrigin": true
+    }
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/imgs/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="/assets/imgs/favicon.png" type="image/png">
 
     <title>inicio</title>
     <!-- fonts -->
@@ -20,25 +20,30 @@
         });
     </script>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/bootstrap-v3.min.css"> -->
+    <link rel="stylesheet" href="/assets/css/bootstrap-v3.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="/assets/css/component.css"> /
+    <link rel="stylesheet" href="/assets/css/component.css">
     <link rel="stylesheet" href="/assets/css/theme-styles.css">
     <link rel="stylesheet" href="/assets/css/theme-styles-setting.css">
     <link rel="stylesheet" href="/assets/css/theme-styles-responsive.css">
 
     <link rel="stylesheet" href="/assets/css/dtl.css">
-    <link rel="stylesheet" href="/assets/css/animate.css"> -->
+    <link rel="stylesheet" href="/assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" /> -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+
+
+
 
 </head>
 
 <body>
+
+
     <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s1">
         <div class="gf-menu-device-wrapper">
-            <div class="close-menu">x</div>
+            <div class="close-menu">xxxx</div>
             <div class="gf-menu-device-container">
                 <div class="row">
                     <ul class="site-nav gf-menu" style="display: none;">
@@ -50,24 +55,44 @@
                             </a>
                         </li>
                         <li class="item">
-                            <a href="blogs.html" class=" ">
+                            <a href="https://evolups.com/blog/" class=" ">
                                 <span>
                                         <span class="lang1">Blog</span>
                                 </span>
                             </a>
                         </li>
 
-                        <li class="item">
-                            <a class="menu__moblie" href="/home">
-                                <span>
-                                        <span class="lang1">Newsletter</span>
-                                </span>
-                            </a>
-                        </li>
+
                         <li class="item">
                             <a href="/contact" class=" ">
                                 <span>
                                         <span class="lang1">Contactos</span>
+                                </span>
+                            </a>
+                        </li>
+
+
+                        <li class="item">
+                            <a href="/department" class=" ">
+                                <span>
+                                        <span class="lang1">Departamentos</span>
+                                </span>
+                            </a>
+                        </li>
+
+
+                        <li class="item">
+                            <a [routerLink]="['/history']" routerLinkActive="router-link-active" class=" ">
+                                <span>
+                                        <span class="lang1">Mis Ordenes</span>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="item">
+                            <a (click)="logout()" class=" ">
+                                <span>
+                                    <span class="lang1">logout </span>
                                 </span>
                             </a>
                         </li>
@@ -76,6 +101,7 @@
             </div>
         </div>
     </nav>
+
     <div class="wrapper-container">
         <div class="dtl-section header-p">
             <header class="site-header" role="banner">
@@ -91,6 +117,7 @@
                                         <ul class="customer-links">
 
                                             <li class="dropdown ct_login">
+
                                                 <!-- <a class="login visible-xs" href="/account/login" data-translate="customer.login.sign_in">Sign In</a> -->
                                                 <a class="login hidden-xs" href="javascript:void(0)" data-toggle="dropdown" data-translate="customer.login.sign_in">Sign In</a>
 
@@ -125,8 +152,25 @@
                                                     </form>
                                                 </div>
                                             </li>
-
+                                            <!--   <li class="wishlist ">
+                                                <a *ngIf="currentUser.tipoLogin != 3">
+                                                    <img style="width: 40px; border-radius: 50px;" [src]="this.usuariolog.photoUrl">
+                                                    <span>
+                                              {{this.usuariolog.name}}
+                                            </span>
+                                                </a>
+                                                <a *ngIf="currentUser.tipoLogin == 3">
+                                                    <img style="width: 40px; border-radius: 50px;" [src]="this.usuariolog.avatar">
+                                                    <span>
+                                              {{this.usuariolog.nombre}}
+                                            </span>
+                                                </a>
+                                            </li>
+ -->
                                         </ul>
+
+
+
 
                                     </div>
                                 </div>
@@ -148,13 +192,13 @@
                                 <!-- end Navigation Mobile  -->
 
                                 <div class="header-logo-fix">
-                                    <a href="index.html">
+                                    <a href="/index.html">
                                         <img src="assets/imgs/logo-evolups100.png" alt="">
                                     </a>
                                 </div>
 
                                 <h1 class="header-logo col-sm-3">
-                                    <a href="index.html">
+                                    <a href="/index.html">
                                         <img src="assets/imgs/logo-evolups100.png" alt="">
                                     </a>
                                 </h1>
@@ -173,308 +217,437 @@
                                                 <i class="fa fa-search" aria-hidden="true"></i>
                                                 </button>
                                             </form>
-
-
-                                            <!--   <input type="text" id="buscar" [(ngModel)]="buscar" placeholder="Buscar" class="input-group-field" aria-label="Search Site" autocomplete="off"> -->
-
-
-
                                         </div>
+
+                                        <!--   <input type="text" id="buscar" [(ngModel)]="buscar" placeholder="Buscar" class="input-group-field" aria-label="Search Site" autocomplete="off"> -->
+
+
+
                                     </div>
-                                    <!------end header search---------->
-                                    <ul class="customer-links">
+                                </div>
+                                <!------end header search---------->
+                                <ul class="customer-links">
 
-                                        <li class="dropdown ct_login">
-                                            <a class="login visible-xs" href="/login.html">Sign In</a>
-                                            <a class="visible-xs" href="/register.html">Create Account</a>
-                                            <a class="login hidden-xs" href="javascript:void(0)" data-toggle="dropdown">Iniciar Sesión</a>
-                                            <div class="dropdown-menu shadow" role="menu" aria-labelledby="dLabel">
-                                                <h6 class="login-header" data-translate="customer.login.sign_in">Iniciar Sesion</h6>
-                                                <form class="form-login" accept-charset="UTF-8" action="/login" method="post">
+                                    <li class="dropdown ct_login">
+                                        <a class="login visible-xs" (click)="inicio()" routerLinkActive="router-link-active" routerLinkActive="router-link-active">Ingresar</a>
+                                        <a class="visible-xs" [routerLink]="['/register']" routerLinkActive="router-link-active" routerLinkActive="router-link-active">Registrate</a>
 
-                                                    <input name="form_type" type="hidden" value="customer_login">
-                                                    <input name="utf8" type="hidden" value="✓">
 
-                                                    <label for="customer_email" data-translate="customer.login.email">Email<em>*</em></label>
-                                                    <input type="email" value="" name="customer[email]">
 
-                                                    <label for="customer_password" data-translate="customer.login.password">Contraseña<em>*</em></label>
-                                                    <input type="password" value="" name="customer[password]">
 
-                                                    <div class="action-btn">
-                                                        <input type="submit" data-translate="customer.login.login" class="btn-secondary" value="Iniciar">
-                                                        <p class="text-center"><a href="/login_recover.html" data-translate="customer.login.forgot_password">¿Olvidaste tu
+                                        <img style="width: 40px; border-radius: 50px;" src={{Foto}}>
+
+                                        <a class="hidden-xs" (click)="inicio()" routerLinkActive="router-link-active" routerLinkActive="router-link-active" data-toggle="dropdown">{{titulo}}</a>
+                                        <a class="hidden-xs" (click)="logout()" routerLinkActive="router-link-active" routerLinkActive="router-link-active" data-toggle="dropdown">{{titulo3}}</a>
+                                        <a class="hidden-xs" [routerLink]="['/register']" routerLinkActive="router-link-active" routerLinkActive="router-link-active" data-toggle="dropdown">{{titulo2}}</a>
+
+
+
+
+
+                                        <div class="dropdown-menu shadow" role="menu" aria-labelledby="dLabel">
+                                            <h6 class="login-header" data-translate="customer.login.sign_in">Iniciar Sesion</h6>
+                                            <form class="form-login" accept-charset="UTF-8" action="/login" method="post">
+
+                                                <input name="form_type" type="hidden" value="customer_login">
+                                                <input name="utf8" type="hidden" value="✓">
+
+                                                <label for="customer_email" data-translate="customer.login.email">Email<em>*</em></label>
+                                                <input type="email" value="" name="customer[email]">
+
+                                                <label for="customer_password" data-translate="customer.login.password">Contraseña<em>*</em></label>
+                                                <input type="password" value="" name="customer[password]">
+
+                                                <div class="action-btn">
+                                                    <input type="submit" data-translate="customer.login.login" class="btn-secondary" value="Iniciar">
+                                                    <p class="text-center"><a href="/login_recover.html" data-translate="customer.login.forgot_password">¿Olvidaste tu
                             contraseña?</a></p>
-                                                    </div>
-                                                    <div class="new-customer">
+                                                </div>
+                                                <div class="new-customer">
 
-                                                        <a href="/register.html" class="btn" data-translate="layout.customer.create_account">Crear Cuenta</a>
+                                                    <a href="/register.html" class="btn" data-translate="layout.customer.create_account">Crear Cuenta</a>
 
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </li>
-                                        <li class="wishlist">
-                                            <a routerLink="/department">
-                                                <span>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </li>
+                                    <!-- <li class="wishlist">
+                                        <a routerLink="/department">
+                                            <span>
                                                 Departamentos
                                               </span>
+                                        </a>
+                                    </li> -->
+                                </ul>
+                                <div class="top-header ">
+                                    <div class="wrapper-top-cart">
+                                        <div class="top-cart">
+                                            <a routerLink="/cars" data-toggle="dropdown" id="cartToggle">
+                                                <span class="icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                                                <span class="first">Carrito</span>
+                                                <span id="cartCount">{{ bagService.totalitems }}</span>
                                             </a>
-                                        </li>
-                                    </ul>
-                                    <div class="top-header ">
-                                        <div class="wrapper-top-cart">
-                                            <div class="top-cart">
-                                                <a routerLink="/car" data-toggle="dropdown" id="cartToggle">
-                                                    <span class="icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-                                                    <span class="first">Carrito</span>
-                                                    <span id="cartCount">{{ bagService.totalBagItems | async }}</span>
-                                                </a>
-                                                <div id="dropdown-cart" class="dropdown-menu shadow">
-                                                    <div class="no-items">
-                                                        <p data-translate="cart.general.empty">Su carrito está vacío.</p>
-                                                        <p class="text-continue"><a href="javascript:void(0)" data-translate="cart.ajax_cart.continue_shopping">Continue Comprando</a>
+                                            <div id="dropdown-cart" class="dropdown-menu shadow">
+                                                <div class="no-items">
+                                                    <p data-translate="cart.general.empty">Su carrito está vacío.</p>
+                                                    <p class="text-continue"><a href="javascript:void(0)" data-translate="cart.ajax_cart.continue_shopping">Continue Comprando</a>
+                                                    </p>
+                                                </div>
+                                                <div class="has-items" style="display: none;">
+                                                    <div class="summary">
+                                                        <p class="total">
+                                                            <span class="label"><span data-translate="cart.label.total">Total</span>:</span>
+                                                            <span class="price"><span class="money" data-currency-usd="$0.00">$0.00</span></span>
                                                         </p>
                                                     </div>
-                                                    <div class="has-items" style="display: none;">
-                                                        <div class="summary">
-                                                            <p class="total">
-                                                                <span class="label"><span data-translate="cart.label.total">Total</span>:</span>
-                                                                <span class="price"><span class="money" data-currency-usd="$0.00">$0.00</span></span>
-                                                            </p>
-                                                        </div>
-                                                        <div class="actions">
-                                                            <button class="btn" onclick="window.location='/checkout'" data-translate="cart.general.checkout">Checkout Now</button>
-                                                        </div>
-                                                        <p class="text-cart">
-                                                            <a href="/cart" data-translate="cart.general.view_cart">Or
+                                                    <div class="actions">
+                                                        <button class="btn" onclick="window.location='/checkout'" data-translate="cart.general.checkout">Checkout Now</button>
+                                                    </div>
+                                                    <p class="text-cart">
+                                                        <a href="/cart" data-translate="cart.general.view_cart">Or
                                                                 View Cart
                                                             </a>
-                                                        </p>
-                                                    </div>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- End Top Header -->
-                                    <div class="menu-block btn_menu text-center hidden-xs hidden-phone">
-                                        <!-- start Navigation Mobile  -->
-                                        <a href="javascript:void(0)" class="resized dbars">
-                                            <i class="fa fa-bars f32 font-white"></i>
-                                        </a>
-                                        <a href="javascript:void(0)" class="resized dclose">
-                                            <i class="fa fa-close f32 font-white"></i>
-                                        </a>
-                                        <nav class="float_menu">
-                                            <div class="float_menu_wrapper">
-                                                <ul>
-                                                    <li class="item">
-                                                        <a href="about-us.html" class=" ">
-                                                            <span class="lang1">Nosotros</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="item">
-                                                        <a href="blogs.html" class=" ">
-                                                            <span class="lang1">Blog</span>
-                                                        </a>
-                                                    </li>
+                                </div>
 
-                                                    <li class="item">
-                                                        <a class="menu__moblie" href="index.html">
-                                                            <span class="lang1">Newsletter</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="item">
-                                                        <a href="/contact" class=" ">
-                                                            <span>
+                                <!-- End Top Header -->
+                                <div class="menu-block btn_menu text-center hidden-xs hidden-phone">
+                                    <!-- start Navigation Mobile  -->
+                                    <a href="javascript:void(0)" class="resized dbars">
+                                        <i class="fa fa-bars f32 "></i>
+
+                                    </a>
+                                    <a href="javascript:void(0)" class="resized dclose">
+                                        <i class="fa fa-close f32  "></i>
+                                    </a>
+                                    <nav class="float_menu">
+                                        <div class="float_menu_wrapper">
+                                            <ul>
+                                                <li class="item">
+                                                    <a href="about-us.html" class=" ">
+                                                        <span class="lang1">Nosotros </span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="https://evolups.com/blog/" class=" ">
+                                                        <span class="lang1">Blog</span>
+                                                    </a>
+                                                </li>
+
+
+                                                <li class="item">
+                                                    <a href="/contact" class=" ">
+                                                        <span>
                                                                 <span class="lang1">Contactos</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </nav>
-                                    </div>
+                                                        </span>
+                                                    </a>
+                                                </li>
 
+                                                <li class="item">
+                                                    <a [routerLink]="['/history']" routerLinkActive="router-link-active" class=" ">
+                                                        <span>
+                                                                <span class="lang1">Mis Ordenes</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/department" class=" ">
+                                                        <span>
+                                                                <span class="lang1">Departamentos</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="item">
+                                                    <a [routerLink]="['/perfil']" routerLinkActive="router-link-active" class=" ">
+                                                        <span>
+                                                                <span class="lang1">Mis Datos</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="item">
+                                                    <a (click)="logout()" class=" ">
+                                                        <span>
+                                                            <span class="lang1">logout</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </nav>
 
                                 </div>
-                                <div class="nav-search-mb">
 
-                                    <form action="/search" method="get" class="input-group search-bar" role="search">
 
-                                        <input type="hidden" name="type" value="product">
+                            </div>
 
-                                        <input type="text" name="q" value="" data-translate="general.search.placeholder" translate-item="placeholder" placeholder="Search entire store" class="input-group-field" aria-label="Search Site" autocomplete="off">
-                                        <button type="submit" class="btn-search"><i class="fa fa-search"
+                            <div class="nav-search-mb">
+
+                                <form class="input-group search-bar" role="search" (ngSubmit)="register(fRegister)" #fRegister="ngForm">
+
+                                    <input type="hidden" name="type" value="product">
+
+                                    <input type="text" id="buscar" name="fb" [(ngModel)]="registerUser.usuario" value="" data-translate="general.search.placeholder" translate-item="placeholder" placeholder="Buscar Producto" class="input-group-field" aria-label="Search Site" autocomplete="off">
+                                    <button type="submit" class="btn-search"><i class="fa fa-search"
                                                 aria-hidden="true"></i></button>
-                                    </form>
+                                </form>
 
-                                </div>
+
+
+
                             </div>
                         </div>
                     </div>
+                </div>
             </header>
-            </div>
-            <nav class="nav-bar" role="navigation">
-                <div class="container" style="display: block;">
-                    <div class="row">
-                        <ul class="site-nav">
-                            <li class="item">
-                                <a href="about-us.html" class=" ">
-                                    <span class="lang1">Nosotros</span>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="blogs.html" class=" ">
-                                    <span class="lang1">Blog</span>
-                                </a>
-                            </li>
+            <nav class="hidden-xs hidden-phone visible-lg w-100 menu-departaments flex-wrap">
+                <ul class="site-nav ">
+                    <li class="item">
+                        <a href="/productlist/BAÑOS/0">
+                            <span class="lang1">BAÑOS</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="/productlist/CERÁMICA/0">
+                            <span class="lang1">CERAMICAS</span>
+                        </a>
+                    </li>
 
-                            <li class="item">
-                                <a class="menu__moblie" href="index.html">
-                                    <span class="lang1">Newsletter</span>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="/contact" class=" ">
-                                    <span>
-                                        <span class="lang1">Contactos</span>
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                    <li class="item">
+                        <a href="/productlist/CLIMATIZACIÓN/0">
+                            <span class="lang1">CLIMATIZACIÓN</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="/productlist/COCINA/0">
+                            <span class="lang1">COCINA</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="/productlist/ELÉCTRICOS/0">
+                            <span class="lang1">ELÉCTRICOS</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="/productlist/HERRAMIENTAS/0">
+                            <span class="lang1">HERRAMIENTAS</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="/productlist/EBANISTERÍA/0" class=" ">
+                            <span class="lang1">Ebanistería</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="/productlist/PINTURA/0">
+                            <span class="lang1">PINTURA</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="/productlist/HERRERÍA/0">
+                            <span class="lang1">Herrería</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="/productlist/CONSTRUCCIÓN/0">
+                            <span class="lang1">CONSTRUCCIÓN</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="/productlist/PLOMERÍA/0">
+                            <span class="lang1">Plomería</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="/productlist/GENERAL/0">
+                            <span class="lang1">GENERAL</span>
+                        </a>
+                    </li>
+                </ul>
             </nav>
-            <main class="main-content home">
-                <router-outlet></router-outlet>
-                <div class="dtl-section index-section">
-                    <section class="content_module new_row dtl show">
-                        <div class="new_row content_bg">
-                            <article class="new_center_content">
-                                <div class="content_info">
-                                    <h2>
-                                        Descarga Evolups en tu celular
-                                    </h2>
-                                    <h3>+11 mil de usuarios piden a travez de nosotros</h3>
-                                    <ul>
-                                        <li>
-                                            <a href="#" target="_blank">
-                                                <img src="assets/imgs/mob-button-appstore-es.png" alt="Disponible en el App Store">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" target="_blank">
-                                                <img src="assets/imgs/mob-button-gplay-es.png" alt="Disponible en Google Play">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <img src="assets/imgs/rebrand-mobile-app.png" class="phone_img " alt="Descargar app">
-                            </article>
-                        </div>
-                    </section>
+
+
+
+        </div>
+        <nav class="nav-bar" role="navigation">
+            <div class="container" style="display: block;">
+                <div class="row">
+                    <ul class="site-nav">
+                        <li class="item">
+                            <a href="about-us.html" class=" ">
+                                <span class="lang1">Nosotros</span>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="https://evolups.com/blog/" class=" ">
+                                <span class="lang1">Blog</span>
+                            </a>
+                        </li>
+
+                        <li class="item">
+                            <a href="/contact" class=" ">
+                                <span>
+                                        <span class="lang1">Contactos</span>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="item">
+                            <a [routerLink]="['/history']" routerLinkActive="router-link-active" class=" ">
+                                <span>
+                                        <span class="lang1">Mis Ordenes</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a (click)="logout()" class=" ">
+                                <span>
+                                    <span class="lang1">logout</span>
+                                </span>
+                            </a>
+                        </li>
+
+                    </ul>
                 </div>
-            </main>
-            <div class="dtl-section float-left w-100">
-                <footer class="site-footer">
-                    <div class="footer-middle wow fadeInUp " data-wow-delay="200ms">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <h6 class="title">
-                                        <span class="lang1">Información </span>
-                                    </h6>
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <span class="lang1">Nosotros</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/contact">
-                                                <span class="lang1">Contacto</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="lang1">Blog</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="lang1">Refiere un Comercio</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6 newslt">
-                                    <h6 class="title">
-                                        <span class="lang1">REGÍSTRESE EN NUESTRO BOLETÍN DE NOTICIAS</span>
-                                    </h6>
-                                    <span class="sub-tit hide">
+            </div>
+        </nav>
+        <main class="main-content home">
+            <router-outlet></router-outlet>
+            <div class="dtl-section index-section">
+                <div class="home-slideshow index-home  container-fluid"></div>
+                <section class="content_module new_row dtl show">
+                    <div class="new_row content_bg">
+                        <article class="new_center_content">
+                            <div class="content_info">
+                                <!--  <h2>
+                                    Descarga Evolups en tu celular
+                                </h2>
+                                <h3>+11 mil de usuarios piden a travez de nosotros</h3> -->
+                                <ul>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                            <img src="assets/imgs/mob-button-appstore-es.png" alt="Disponible en el App Store">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                            <img src="assets/imgs/mob-button-gplay-es.png" alt="Disponible en Google Play">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- <img src="assets/imgs/rebrand-mobile-app.png" class="phone_img " alt="Descargar app"> -->
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <div class="dtl-section float-left w-100">
+            <footer class="site-footer">
+                <div class="footer-middle wow fadeInUp " data-wow-delay="200ms">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h6 class="title">
+                                    <span class="lang1">Información </span>
+                                </h6>
+                                <ul>
+                                    <li>
+                                        <a [routerLink]="['/about']" routerLinkActive="router-link-active">
+                                            <span class="lang1">Nosotros</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['/contact']" routerLinkActive="router-link-active">
+                                            <span class="lang1">Contacto</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://evolups.com/blog/">
+                                            <span class="lang1">Blog</span>
+                                        </a>
+                                    </li>
+                                    <!-- <li>
+                                        <a [routerLink]="['/contact']" routerLinkActive="router-link-active">
+                                            <span class="lang1">Refiere un Comercio</span>
+                                        </a>
+                                    </li> -->
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 newslt">
+                                <h6 class="title">
+                                    <span class="lang1">REGÍSTRESE EN NUESTRO BOLETÍN DE NOTICIAS</span>
+                                </h6>
+                                <span class="sub-tit hide">
                                         <span class="lang1">Enter your email bellow to receive a $30 coupon, special offters,
                                             excusive discounts and more!</span>
-                                    </span>
-                                    <div class="inner-form-subscribe">
-                                        <form method="post" action="/contact" id="contact_form" accept-charset="UTF-8" class="input-group">
-                                            <input class="input-group-field" type="email" name="contact[email]" placeholder="Enter your email address" required="required">
-                                            <button class="btn" type="submit">Suscribirse</button>
-                                        </form>
-                                    </div>
+                                </span>
+                                <div class="inner-form-subscribe">
+                                    <form [formGroup]="accountForm" (ngSubmit)="newsletter(accountForm.value)" id="contact_form" accept-charset="UTF-8" class="input-group">
+
+                                        <input type="text" formControlName="email" id="FirstName" placeholder="Digite su cuenta de Email" autofocus="">
+                                        <button class="btn" type="submit">Suscribirse</button>
+                                    </form>
                                 </div>
-                                <div class="col-sm-2">
-                                    <div class="social-footer text-center">
-                                        <h6 class="title">
-                                            <span class="lang1">Síguenos en</span>
-                                        </h6>
-                                        <ul class="social">
-                                            <li class="Facebook">
-                                                <a href="https://web.facebook.com/Evolups.do" title="Facebook">
-                                                    <i class="fa fa-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li class="Twitter">
-                                                <a href="https://twitter.com/evolups.do?igshid=gllyr0ue6b2z" title="Twitter"><i class="fa fa-twitter"></i></a>
-                                            </li>
-                                            <li class="Instagram">
-                                                <a href="#" title="Instagram">
-                                                    <i class="fa fa-instagram"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="social-footer text-center">
+                                    <h6 class="title">
+                                        <span class="lang1">Síguenos en</span>
+                                    </h6>
+                                    <ul class="social">
+                                        <li class="Facebook">
+                                            <a href="https://www.facebook.com/evolups.rd" target="_blank" title="Facebook">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="Twitter">
+                                            <a href="https://twitter.com/evolups_do" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li class="Instagram">
+                                            <a href="https://www.instagram.com/evolups.do/" target="_blank" title="Instagram">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="footer-bottom  wow fadeInUp " data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms;">
-                        <div class="container">
+                </div>
+                <div class="footer-bottom  wow fadeInUp " data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms;">
+                    <div class="container">
 
-                            <address class="col-sm-12">
+                        <address class="col-sm-12">
                                 <span class="lang1">© 2020 Evolups. Todos los derechos reservados </span>
                             </address>
-                            <div class="col-sm-12">
-                                <div id="payment-methods">
-                                    <span class="payment-method">
+                        <div class="col-sm-12">
+                            <div id="payment-methods">
+                                <span class="payment-method">
                                         <a href="/cart" title="visa">
                                             <img
                                                 src="assets/imgs/Visa.jpeg?v=1503289230">
                                         </a>
                                     </span>
-                                    <!--   <span class="payment-method">
+                                <!--   <span class="payment-method">
                                         <a href="/cart" title="visa Electron">
                                             <img
                                                 src="assets/imgs/Visa_Electron_58x36.png?v=1503289246">
                                         </a>
                                     </span> -->
-                                    <span class="payment-method">
+                                <span class="payment-method">
                                         <a href="/cart" title="MasterCard">
                                             <img
                                                 src="assets/imgs/Masterdcard.jpeg?v=1503289271">
                                         </a>
                                     </span>
-                                    <!--  <span class="payment-method">
+                                <!--  <span class="payment-method">
                                         <a href="/cart" title="Maestro">
                                             <img src="assets/imgs/Maestro_58x36.png?v=1503289287">
                                         </a>
@@ -485,68 +658,102 @@
                                                 src="assets/imgs/PayPal_cb89a856-006f-4176-a552-055826074573_58x36.png?v=1503289315">
                                         </a>
                                     </span> -->
-                                </div>
                             </div>
-
                         </div>
-                    </div>
-                </footer>
 
-
-                <div class="loading-modal modal" data-translate="cart.ajax_cart.loading">Loading...</div>
-                <div class="ajax-error-modal modal">
-                    <div class="modal-inner">
-                        <div class="ajax-error-title" data-translate="cart.ajax_cart.error">Error</div>
-                        <div class="ajax-error-message"></div>
                     </div>
                 </div>
-                <div class="ajax-success-modal modal">
-                    <div class="overlay"></div>
-                    <div class="content">
-                        <div class="ajax-left">
-                            <img class="ajax-product-image" alt="&nbsp;" src="" style="max-width:64px; max-height:64px;object-fit:cover;">
-                        </div>
-                        <div class="ajax-right">
-                            <p class="ajax-product-title"></p>
-                            <p class="success-message btn-go-to-cart" data-translate="cart.ajax_cart.success_text">is added to your shopping cart.</p>
-                            <p class="success-message btn-go-to-wishlist" data-translate="wishlist.ajax_wishlist.success_text">is added to your wish list.</p>
-                        </div>
-                        <div class="actions">
-                            <button class="btn-secondary continue-shopping shadow" onclick="javascript:void(0)" data-translate="cart.ajax_cart.continue_shopping">Continue Shopping</button>
-                            <button class="btn-secondary btn-go-to-cart shadow" onclick="window.location='/cart'" data-translate="cart.ajax_cart.go_to_cart">Go to cart</button>
-                            <button class="btn-secondary btn-go-to-wishlist shadow" onclick="window.location='/pages/wish-list'" data-translate="wishlist.ajax_wishlist.go_to_wishlist">Go To Wishlist</button>
-                        </div>
-                        <a href="javascript:void(0)" class="close-modal" data-translate="cart.ajax_cart.close">Close</a>
-                    </div>
-                </div>
+            </footer>
 
-                <div class="newsletter-success-modal">
-                    <div class="modal-overlay"></div>
-                    <div class="halo-modal-content">
-                        <a class="close close-modal" title="Close">
+
+            <div class="loading-modal modal" data-translate="cart.ajax_cart.loading">Loading...</div>
+            <div class="ajax-error-modal modal">
+                <div class="modal-inner">
+                    <div class="ajax-error-title" data-translate="cart.ajax_cart.error">Error</div>
+                    <div class="ajax-error-message"></div>
+                </div>
+            </div>
+            <div class="ajax-success-modal modal">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="ajax-left">
+                        <img class="ajax-product-image" alt="&nbsp;" src="" style="max-width:64px; max-height:64px;object-fit:cover;">
+                    </div>
+                    <div class="ajax-right">
+                        <p class="ajax-product-title"></p>
+                        <p class="success-message btn-go-to-cart" data-translate="cart.ajax_cart.success_text">is added to your shopping cart.</p>
+                        <p class="success-message btn-go-to-wishlist" data-translate="wishlist.ajax_wishlist.success_text">is added to your wish list.</p>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-secondary continue-shopping shadow" onclick="javascript:void(0)" data-translate="cart.ajax_cart.continue_shopping">Continue Shopping</button>
+                        <button class="btn-secondary btn-go-to-cart shadow" onclick="window.location='/cart'" data-translate="cart.ajax_cart.go_to_cart">Go to cart</button>
+                        <button class="btn-secondary btn-go-to-wishlist shadow" onclick="window.location='/pages/wish-list'" data-translate="wishlist.ajax_wishlist.go_to_wishlist">Go To Wishlist</button>
+                    </div>
+                    <a href="javascript:void(0)" class="close-modal" data-translate="cart.ajax_cart.close">Close</a>
+                </div>
+            </div>
+
+            <div class="newsletter-success-modal">
+                <div class="modal-overlay"></div>
+                <div class="halo-modal-content">
+                    <a class="close close-modal" title="Close">
                             Liquid error (message-modal line 32): Could not find asset snippets/icon-close.liquid
                         </a>
 
-                        <div class="halo-modal-body">
-                            <i class="fa fa-check" aria-hidden="true"></i>
-                            <span>You have successfully subscribed!</span>
-                        </div>
+                    <div class="halo-modal-body">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                        <span>You have successfully subscribed!</span>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-        <script type="text/javascript" src="assets/js/slick.min.js"></script> -->
 
-        <script type="text/javascript" src="assets/js/wow.min.js"></script>
-        <script type="text/javascript" src="assets/js/jquery.nicescroll.min.js"></script>
-        <script src="assets/js/app.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script type="text/javascript" src="/assets/js/slick.min.js"></script>
+
+    <script type="text/javascript" src="/assets/js/wow.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.nicescroll.min.js"></script>
+    <script src="./src/assets/js/app.js"></script>
+
+    <script>
+        var doofinder_script = '//cdn.doofinder.com/media/js/doofinder-compact.7.latest.min.js';
+        (function(d, t) {
+            var f = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            f.async = 1;
+            f.src = ('https:' == location.protocol ? 'https:' : 'http:') + doofinder_script;
+            f.setAttribute('charset', 'utf-8');
+            s.parentNode.insertBefore(f, s)
+        }(document, 'script'));
+
+        var dfCompactLayers = [{
+            "hashid": "5f1c64335c55ed45d7636c96dc5ca107",
+            "zone": "us1",
+            "display": {
+                "lang": "es",
+                "results": {
+                    "allResultsURL": "https://www.evolups.com/search?q=%query%",
+                    "maxResults": 5
+                },
+                "closeOnClick": true,
+                "suggestions": {
+                    "maxSuggestions": 5
+                }
+            },
+            "queryInput": "#buscar"
+        }];
+    </script>
+
 </body>
 
 </html>

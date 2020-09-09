@@ -45,7 +45,7 @@ VCategorias={
 
   ProductDetail(id:any)
   {
-    this.router.navigate(['/product-detail',id.codigo]); 
+    this.router.navigate(['/detailsproduct',id.codigo]); 
   }
   
   listaproductos(id){

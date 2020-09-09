@@ -1,0 +1,42 @@
+<div class="wrapper-breadcrumb">
+    <div class="breadcrumb container">
+        <a [routerLink]="['/home']" routerLinkActive="router-link-active" data-translate="general.breadcrumbs.home">Inicio</a>
+
+        <span class="spera">/</span>
+
+        <span class="lang1">Mis Ordenes</span>
+    </div>
+</div>
+<table class="table table-striped" *ngFor="let venta of groupItems">
+    <thead>
+        <tr>
+            <th scope="col">Imagen</th>
+            <th scope="col">Factura No.</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Flete</th>
+
+            <th scope="col">Total</th>
+            <th scope="col">Estatus</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ve of venta">
+            <td scope="row">
+                <img src="{{ve.foto_url}}" width="50" height="50">
+            </td>
+
+            <td scope="row">{{ve.nro_fact}}</td>
+            <td>{{ve.cantidad}}</td>
+            <td>{{ve.itemds}}</td>
+            <td>{{ve.Precio}}</td>
+            <td>{{ve.flete}}</td>
+            <td>{{ve.Total}}</td>
+
+            <td>{{ve.estatus}}</td>
+
+        </tr>
+
+    </tbody>
+</table>

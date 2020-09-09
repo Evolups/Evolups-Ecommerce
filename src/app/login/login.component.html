@@ -1,0 +1,229 @@
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    /* style the container */
+    
+    .container {
+        position: relative;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px 0 30px 0;
+    }
+    /* style inputs and link buttons */
+    
+    input,
+    .btn {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        margin: 5px 0;
+        opacity: 0.85;
+        display: inline-block;
+        font-size: 17px;
+        line-height: 20px;
+        text-decoration: none;
+        /* remove underline from anchors */
+    }
+    
+    input:hover,
+    .btn:hover {
+        opacity: 1;
+    }
+    /* add appropriate colors to fb, twitter and google buttons */
+    
+    .fb {
+        background-color: #3B5998;
+        color: white;
+    }
+    
+    .evolups {
+        background-color: #55ACEE;
+        color: white;
+    }
+    
+    .google {
+        background-color: #dd4b39;
+        color: white;
+    }
+    /* style the submit button */
+    
+    input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+    /* Two-column layout */
+    
+    .col {
+        float: left;
+        width: 100%;
+        margin: auto;
+        padding: 0 50px;
+        margin-top: 6px;
+    }
+    /* Clear floats after the columns */
+    
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    /* vertical line */
+    
+    .vl {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        border: 2px solid #ddd;
+        height: 175px;
+    }
+    /* text inside the vertical line */
+    
+    .vl-innertext {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        padding: 8px 10px;
+    }
+    /* hide some text on medium and large screens */
+    
+    .hide-md-lg {
+        display: none;
+    }
+    /* bottom container */
+    
+    .bottom-container {
+        text-align: center;
+        background-color: white;
+        border-radius: 0px 0px 4px 4px;
+    }
+    /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+    
+    @media screen and (max-width: 650px) {
+        .col {
+            width: 100%;
+            margin-top: 0;
+        }
+        /* hide the vertical line */
+        .vl {
+            display: none;
+        }
+        /* show the hidden text on small screens */
+        .hide-md-lg {
+            display: block;
+            text-align: center;
+        }
+    }
+</style>
+<div class="page-width pb-30">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-6 col-xs-12">
+                <!-- Mensaje si olvido la clave (quitale la clase *hide* para ver este DIV) -->
+                <div class="note form-success hide" id="ResetSuccess">
+                    We've sent you an email with a link to update your password.
+                </div>
+
+                <div id="CustomerLoginForm" class="form-vertical">
+                    <form method="post" [routerLink]="['login', 'logout' ]" routerLinkActive="router-link-active" id="customer_login" accept-charset="UTF-8" class="align-items-center d-flex flex-column">
+                        <h1 class="title_block"><span class="text-bold">Acceso</span></h1>
+
+                        <label for="CustomerEmail">Email</label>
+                        <input [(ngModel)]="model.usuario" type="email" name="customer[email]" id="CustomerEmail" class="" autocorrect="off" autocapitalize="off" autofocus="">
+
+
+                        <label for="CustomerPassword">Clave</label>
+                        <input [(ngModel)]="model.clave" type="password" value="" name="customer[password]" id="CustomerPassword" class="">
+
+
+                        <div class="text-center">
+
+                            <p>
+                                <a href="#recover" class="mr-2" id="RecoverPassword">Olvidaste tu contraseña?</a>
+                                <a [routerLink]="['/register']" routerLinkActive="router-link-active" id="customer_register_link">Registrar</a>?
+
+                            </p>
+
+                            <div>
+                                <form action="/action_page.php">
+                                    <div class="row">
+                                        <div class="col">
+                                            <a (click)="login()" class="evolups btn">
+                                                <i>E</i> Continuar con Evolups
+                                            </a>
+
+                                            <a (click)="signInWithFB()" class="fb btn">
+                                                <i class="fa fa-facebook fa-fw"></i> Continuar con Facebook
+                                            </a>
+
+                                            <a (click)="signInWithGoogle()" class="google btn"><i class="fa fa-google fa-fw"></i> Continuar con Google
+          </a>
+                                        </div>
+
+
+                                    </div>
+                                </form>
+                            </div>
+
+
+
+
+                        </div>
+
+                        <input type="hidden" name="checkout_url" value="https://furnitica-vinova.myshopify.com/12164300900/checkouts/bc5d4d0d842c3d62dcae5088e92aba46?key=f2a63244a12c4a8d8e1a1f3e36873727&amp;step=contact_information">
+                    </form>
+                </div>
+
+                <div id="RecoverPasswordForm" class="hide">
+
+                    <div class="text-center">
+                        <h2>Reset your password</h2>
+                        <p>We will send you an email to reset your password.</p>
+                    </div>
+
+                    <div class="form-vertical">
+                        <form>
+
+                            <label for="RecoverEmail">Email</label>
+                            <input type="email" value="" name="email" id="RecoverEmail" class="input-full" autocorrect="off" autocapitalize="off">
+
+                            <div class="text-center">
+                                <p>
+                                    <input type="submit" class="btn" value="Submit">
+                                </p>
+
+                                <button type="button" id="HideRecoverPasswordLink" class="text-link">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+
+
+                <div class="text-center">
+                    <hr class="hr--invisible">
+                    <!-- <h2>Continuar como invitado</h2> -->
+
+                    <button routerLink="/home" class="btn">Iniciar</button>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

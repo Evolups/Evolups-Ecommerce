@@ -128,53 +128,7 @@
 
                 <div class="col-xs-3 sidebar collection-sidebar">
                     <div class="widget sidebar-links sidebar-custom">
-                        <div class="widget-title">
-                            <span class="lang1">Departamentos </span>
-                        </div>
-                        <div class="widget-content" *ngFor="let catego of  groupCategorias">
-                            <ul>
-                                <li>
-                                    <a [routerLink]="['/productlist',catego[0].categoria]" routerLinkActive="router-link-active">
-                                        <span class="lang1">{{catego[0].categoria}}</span>
-                                    </a>
-                                </li>
-                                <!-- <li>
-                                    <a (click)="listaproductos('ceramica')">
-                                        <span class="lang1">Ceramicas</span>
-                                    </a>
-                                </li> -->
-                                <!-- <li>
-                                    <a (click)="listaproductos('clima')">
-                                        <span class="lang1">Climatización</span>
-                                    </a>
-                                </li> -->
-                                <!-- <li>
-                                    <a (click)="listaproductos('cocina')">
-                                        <span class="lang1">Cocina</span>
-                                    </a>
-                                </li> -->
-                                <!-- <li>
-                                    <a (click)="listaproductos('electricidad')">
-                                        <span class="lang1">Eléctricidad</span>
-                                    </a>
-                                </li> -->
-                                <!-- <li>
-                                    <a (click)="listaproductos('herramienta')">
-                                        <span class="lang1">Herramientas</span>
-                                    </a>
-                                </li> -->
-                                <!-- <li>
-                                    <a (click)="listaproductos('madera')">
-                                        <span class="lang1">Madera</span>
-                                    </a>
-                                </li> -->
-                                <!-- <li>
-                                    <a (click)="listaproductos('madera')" class="active">
-                                        <span class="lang1">Pintura</span>
-                                    </a>
-                                </li> -->
-                            </ul>
-                        </div>
+
                     </div>
 
 
@@ -194,18 +148,7 @@
                                             <input type="checkbox" class="lang1" value="dincidunteros">
                                             <label class="lang1">{{marca[0].marca}}</label>
                                         </li>
-                                        <!-- <li>
-                                            <input type="checkbox" class="lang1" value="nectellus">
-                                            <label class="lang1">Nectellus</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" class="lang1" value="solutmades">
-                                            <label class="lang1">Solutmades</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" class="lang1" value="loremous-comodous">
-                                            <label class="lang1">Loremous Comodous</label>
-                                        </li> -->
+
                                         <li>
                                             <input type="checkbox" class="lang1" value="cosmopolis">
                                             <label class="lang1">Cosmopolis</label>
@@ -217,12 +160,12 @@
                     </div>
                 </div>
 
-                <div class="block-row col-main col-xs-9">
+                <div class="block-row col-main col-xs-9" *ngFor="let cat of  groupCategoriasbyid">
                     <div class="dtl-section">
                         <header class="page-header">
-                            <div class="img_cart">
-                                <img src="assets/imgs/dp/pintura_in.jpg" alt="Lorem Et Doruss">
-                            </div>
+
+                            <img src={{cat[0].foto_url}} width="1000" height="20">
+
                             <h3>
                                 <span class="lang1">{{this.categoria}}</span>
                             </h3>
@@ -264,6 +207,7 @@
                                 <button class="btn btn-2 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                         <i class="icon-exchange"></i>
                                         <span data-translate="collections.sorting.featured">Destacados</span>
+                   
                                         <i class="icon-chevron-down"></i>
                                     </button>
 
@@ -290,8 +234,8 @@
                                         <div class="product-top">
                                             <div class="product-image image-swap">
                                                 <a (click)="ProductDetail(item[0])" class="product-grid-image">
-                                                    <img src={{item[0].foto_url}} alt="">
-                                                    <img src="{{item[0].foto_url}}" alt=" ">
+                                                    <img src={{item[0].foto_url}} width="300" height="300" alt="">
+                                                    <img src="{{item[0].foto_url}}" width="300" height="300" alt=" ">
                                                     <div class="hover"></div>
                                                 </a>
                                             </div>
@@ -302,17 +246,17 @@
                                             </div>
 
                                             <div class="product-des">
-                                                <a class="wishlist" href="login.html" title="Add to wishlist">
+                                                <a class="wishlist" (click)="ProductDetail(item[0])" title="Add to wishlist">
                                                     <span class="icon"></span>
                                                     <span class="wishlist_text">
-                                                            Add to wishlist
+                                                           ver Detalle
                                                         </span>
                                                 </a>
 
                                                 <div class="action">
 
                                                     <form action="/cart/add" method="post" class="variants" enctype="multipart/form-data">
-                                                        <button type="button" class="btn" title="Select options">
+                                                        <button type="button" (click)="add(item.codigo,item.precio1,item.marca,item.descripcio,item.codigo_empre,item.existencia,item.foto_url)" class="btn" title="Agregar al Carrito">
                                                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                                                 <span data-translate="products.product.select_options">Select
                                                                     options</span>
@@ -321,9 +265,9 @@
                                                 </div>
 
                                                 <div class="quickview-button">
-                                                    <a href="javascript:void(0)" title="Quick View" data-translate="products.product.quick_view" translate-item="title">
+                                                    <a (click)="ProductDetail(item[0])" title="Ver Detalle" data-translate="products.product.quick_view" translate-item="title">
                                                         <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <span data-translate="products.product.quick_view">Quick View</span>
+                                                        <span data-translate="products.product.quick_view">Ver Detalle</span>
                                                     </a>
                                                 </div>
 
@@ -332,20 +276,24 @@
 
                                         <div class="product-bottom">
                                             <div class="product-vendor">{{item[0].descripcio}}</div>
-                                            <!-- <a class="product-title" href="details.html">
-                                                <span class="lang1">Naminos elementum disus tincidunts cosmo de
-                                                        cosmopolis</span>
-                                            </a> -->
+
 
 
                                             <div class="price-box">
                                                 <p class="sale">
-                                                    <!-- <span class="old-price"><span class="money">{{item[0].precio1}}</span> -->
 
                                                     <span class="special-price"><em data-translate="products.product.from">from
                                                             </em><span class="money">{{item[0].precio1}}</span></span>
                                                 </p>
                                             </div>
+
+                                            <div>
+
+
+                                                <img src={{item[0].imagen}} width="80" height="80" alt="">
+
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -367,11 +315,13 @@
                                 <ul class="pagination-page">
                                     <li class="disabled"><span>Previo</span>
                                     </li>
-                                    <li class="active"><span>1</span></li>
-                                    <li>
-                                        <a href="details.html">2</a>
+
+                                    <li *ngFor="let pag of groupPagCantidad | slice:1; let i = index">
+                                        <a [routerLink]="['/productlist', this.categoria,i]" routerLinkActive="router-link-active">{{i+1}}</a>
                                     </li>
-                                    <li class="text"><a href="#" title="Next"><span>Siguiente</span></a></li>
+
+                                    <li class="text">
+                                        <a (click)="ProductosconPaginacion(this.categoria,'1') " title="Next"><span>Siguiente</span></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -391,12 +341,12 @@
                                 </h6>
                                 <ul>
                                     <li>
-                                        <a href="#">
+                                        <a [routerLink]="['/about']" routerLinkActive="router-link-active">
                                             <span class="lang1">Nosotros</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/contact">
+                                        <a [routerLink]="['/contact']" routerLinkActive="router-link-active">
                                             <span class="lang1">Contacto</span>
                                         </a>
                                     </li>
@@ -405,11 +355,11 @@
                                             <span class="lang1">Blog</span>
                                         </a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a href="#">
                                             <span class="lang1">Refiere un Comercio</span>
                                         </a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                             <div class="col-sm-6 newslt">
@@ -434,15 +384,15 @@
                                     </h6>
                                     <ul class="social">
                                         <li class="Facebook">
-                                            <a href="https://web.facebook.com/Evolups.do" title="Facebook">
+                                            <a href="https://www.facebook.com/evolups.rd" target="_blank" title="Facebook">
                                                 <i class="fa fa-facebook"></i>
                                             </a>
                                         </li>
                                         <li class="Twitter">
-                                            <a href="https://twitter.com/evolups.do?igshid=gllyr0ue6b2z" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                            <a href="https://twitter.com/evolups_do" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
                                         </li>
                                         <li class="Instagram">
-                                            <a href="https://twitter.com/evolups.do?igshid=gllyr0ue6b2z" title="Instagram">
+                                            <a href="https://www.instagram.com/evolups.do/" target="_blank" title="Instagram">
                                                 <i class="fa fa-instagram"></i>
                                             </a>
                                         </li>

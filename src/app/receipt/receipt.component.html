@@ -23,8 +23,6 @@
                         <hr>
                     </div>
 
-
-
                     <!-- <ul class="cart-list "> -->
                     <div align="center">
 
@@ -35,31 +33,13 @@
                         <img src="./assets/imgs/Ready.png" alt=" "> <br>
 
                     </div>
-                    <!--   <li *ngFor="let item of bagService.groupItems ">
-                          
-                            <div class="product-details ">
-                                <a href="# " class="product-name ">
-                                    <span class="lang1 ">{{item[0]?.descripcio}}</span>
-                                </a>
-                                 <p class="vendor ">Vendor</p> 
-                                <p class="price "><span class="money ">{{ (item[0]?.precio1 * item.length) | currency }}</span></p>
-                                <div class="quantity ">
-                                    <label data-translate="cart.label.quantity ">Cantidad</label>
-                                    <input [readOnly]="true " class="qty " type="number " name="updates[] " id="updates_46442277770 " value="{{item.length}} " min="0 " data-id="46442277770 ">
-                                    <a class="remove " (click)="confirmarEliminarArticulos(item) ">Borrar</a>
-                                    <input class="update " type="button " name="update " value="Actualizar Carrito ">
-                                </div>
-                            </div> 
-                        </li> -->
 
-                    <!-- </ul> -->
 
                 </div>
-                <div class="cart-row col-xs-4 ">
-                    <div class="total-price " *ngFor="let item of  groupCategorias">
+                <div class="cart-row col-xs-4 " *ngFor="let Vent of  grouTotal">
+                    <div class="total-price ">
                         <h6 data-translate="cart.general.subtotal ">Total Orden</h6>
-                        <p class="price "><span class="money ">{{(item[0].cantidad*item[0]?.Precio)}}</span></p>
-
+                        <p class="price "><span class="money ">${{Vent[0].Total}}</span></p>
 
                     </div>
                     <br>
@@ -69,12 +49,15 @@
                     <br>
 
                     <a (click)="VerHistorico()" class="btn " data-translate="cart.general.button_checkout "> Ver mi Pedido </a>
+                    <br>
 
+                    <a (click)="Irhome()" class="btn " data-translate="cart.general.button_checkout "> Volver a la Tienda </a>
+                    <br>
 
+                    <!--                     <a (click)="pagar('3331')" class="btn " data-translate="cart.general.button_checkout "> simular Pago </a> -->
                 </div>
             </div>
         </form>
-
 
     </div>
 

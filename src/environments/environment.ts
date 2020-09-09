@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:56890/api',
+  keyLoginLocalStorage: 'e-commerce',
+
+  tipoLogueo: {
+    Facebok: 1,
+    Google: 2,
+    User: 3
+  },
+  currentUser: JSON.parse(localStorage.getItem('e-commerce')) // Debe tener el mismo valor que la variable keyLoginLocalStorage
 };
 
 /*

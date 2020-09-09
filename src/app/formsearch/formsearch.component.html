@@ -121,7 +121,7 @@
                 <span class="lang1">Pinturas</span>
             </div>
         </div>
-        <main class="main-content container" role="main">
+        <!--    <main class="main-content container" role="main">
             <div class="row">
 
                 <div class="col-xs-3 sidebar collection-sidebar">
@@ -173,32 +173,226 @@
                 <div class="block-row col-main col-xs-9">
                     <div class="dtl-section">
                         <header class="page-header">
-                            <!-- <div class="img_cart">
-                            <img src="assets/imgs/dp/pintura_in.jpg" alt="Lorem Et Doruss">
-                            </div> -->
+                     
 
+
+
+        <h3>
+            <span class="lang1">Resultado de la Busqueda...</span>
+
+        </h3>
+        <div class="collection-des">
+            <div class="rte lang1">
+
+            </div>
+        </div>
+        </header>
+    </div>
+    <div class="dtl-section">
+
+        <div class="toolbar">
+            <div class="view-mode">
+                <a class="grid active" href="grid" title="Grid" data-translate="collections.general.grid_view" translate-item="title">
+                    <div class="icon-grid">
+                        <div class="icon-bar"></div>
+                        <div class="icon-bar"></div>
+                        <div class="icon-bar"></div>
+                    </div>
+                    <span data-translate="collections.general.grid_view">Grid</span>
+                </a>
+                <a class="list" href="list" title="List" data-translate="collections.general.list_view" translate-item="title">
+                    <div class="icon-list">
+                        <div class="icon-bar"></div>
+                        <div class="icon-bar"></div>
+                        <div class="icon-bar"></div>
+                    </div>
+                    <span data-translate="collections.general.list_view">List</span>
+                </a>
+            </div>
+
+
+            <div class="filter-sortby btn-group">
+                <label for="sort-by" data-translate="collections.sorting.title">Sortear</label>
+                <button class="btn btn-2 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <i class="icon-exchange"></i>
+                                        <span data-translate="collections.sorting.featured">Destacados</span>
+                                        <i class="icon-chevron-down"></i>
+                                    </button>
+
+                <ul class="dropdown-menu" role="menu">
+                    <li class="active"><span data-href="manual" data-translate="collections.sorting.featured">Destacados</span></li>
+                    <li><span data-href="price-ascending" data-translate="collections.sorting.price_ascending">Price, low to high</span></li>
+                    <li><span data-href="price-descending" data-translate="collections.sorting.price_descending">Price, high to low</span></li>
+                    <li><span data-href="title-ascending" data-translate="collections.sorting.az">Alphabetically, A-Z</span></li>
+                    <li><span data-href="title-descending" data-translate="collections.sorting.za">Alphabetically, Z-A</span></li>
+                    <li><span data-href="created-ascending" data-translate="collections.sorting.date_ascending">Date, old to new</span></li>
+                    <li><span data-href="created-descending" data-translate="collections.sorting.date_descending">Date, new to old</span></li>
+                    <li><span data-href="best-selling" data-translate="collections.sorting.best_selling">Best
+                                                Selling</span></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="product-collection products-grid row" *ngFor="let item of  groupItems">
+            <div class="no_crop_image  grid-item col-xs-6 col-md-4" *ngFor="let it of  item">
+
+                <div class="inner product-item  on-sale wow fadeIn" data-wow-delay="1100ms">
+                    <div class="inner-top">
+                        <div class="product-top">
+                            <div class="product-image image-swap">
+                                <a (click)="ProductDetail(it)" class="product-grid-image">
+                                    <img src={{it.foto_url}} alt="">
+                                    <img src="{{it.foto_url}}" alt=" ">
+                                    <div class="hover"></div>
+                                </a>
+                            </div>
+
+
+                            <div class="product-label">
+                                <strong class="label" data-translate="products.product.sale">Venta</strong>
+                            </div>
+
+                            <div class="product-des">
+                                <a class="wishlist" href="login.html" title="Add to wishlist">
+                                    <span class="icon"></span>
+                                    <span class="wishlist_text">
+                                                            Add to wishlist
+                                                        </span>
+                                </a>
+
+                                <div class="action">
+
+                                    <form action="/cart/add" method="post" class="variants" enctype="multipart/form-data">
+                                        <button type="button" class="btn" title="Select options">
+                                                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                                                <span data-translate="products.product.select_options">Select
+                                                                    options</span>
+                                                            </button>
+                                    </form>
+                                </div>
+
+                                <div class="quickview-button">
+                                    <a href="javascript:void(0)" title="Quick View" data-translate="products.product.quick_view" translate-item="title">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                        <span data-translate="products.product.quick_view">Quick View</span>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="product-bottom">
+                            <div class="product-vendor">{{it.Descripcion_Evolups}}</div>
+                            <div class="product-vendor">{{it.descripcio}}</div>
+
+                            <a class="product-title">
+                                <span class="lang1">Cantidad Disponible:{{it.existencia}}</span><br>
+
+                                <span class="lang1">{{it.codigo_empre}}</span>
+                            </a>
+
+
+                            <div class="price-box">
+                                <p class="sale">
+
+                                    <span class="special-price"><em data-translate="products.product.from">from
+                                                            </em><span class="money">Precio {{it.precio1 | currency}}</span>
+                                    <img src={{it.imagen}} width="80" height="80" alt="">
+                                    </span>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="padding">
+
+            <div class="toolbar toolbar-bottom">
+                <p class="page-total">
+                    <span data-translate="collections.toolbar.showing">Showing</span>: 1 - 12
+
+                    <span data-translate="collections.toolbar.of">of</span> 17
+                </p>
+
+                <ul class="pagination-page">
+                    <li class="disabled"><span>Previo</span>
+                    </li>
+                    <li class="active"><span>1</span></li>
+                    <li>
+                        <a (click)="listaproductos(this.categoria)">2</a>
+                    </li>
+                    <li class="text"><a (click)="listaproductos(this.categoria)" title="Next"><span>Siguiente</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    </main>
+
+    -->
+
+        <main class="main-content container" role="main">
+            <div class="row">
+
+                <div class="col-xs-3 sidebar collection-sidebar">
+                    <div class="widget sidebar-links sidebar-custom">
+
+                    </div>
+
+
+                    <div class="dtl-section">
+
+                        <div class="sidebar-block">
+                            <div class="sidebar-custom sidebar-tag brand">
+                                <div class="widget-title">
+                                    <span class="lang1">Marca </span>
+                                    <a href="javascript:void(0)" class="clear" style="display:none">
+                                        Clear
+                                    </a>
+                                </div>
+                                <div class="widget-content" *ngFor="let marca of  groupMarcas">
+                                    <ul>
+                                        <li>
+                                            <input type="checkbox" class="lang1" value="dincidunteros">
+                                            <label class="lang1">{{marca[0].marca}}</label>
+                                        </li>
+
+                                        <li>
+                                            <input type="checkbox" class="lang1" value="cosmopolis">
+                                            <label class="lang1">Cosmopolis</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block-row col-main col-xs-9">
+                    <div class="dtl-section">
+                        <header class="page-header">
 
 
                             <h3>
-                                <span class="lang1">Resultado de la Busqueda...</span>
-                                <form class="input-group search-bar" role="search" (ngSubmit)="register(fRegister)" #fRegister="ngForm">
-                                    <input type="text" id="buscar" name="fb" [(ngModel)]="registerUser.usuario" placeholder="Buscar" class="input-group-field" aria-label="Search Site">
-                                    <button type="submit" class="btn-search">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                        </button>
-                                </form>
-
+                                <span class="lang1">RESULTADO DE LA BUSQUEDA...</span>
                             </h3>
                             <div class="collection-des">
                                 <div class="rte lang1">
-                                    <!-- <span> Pellentesque at libero vehicula consectetur justo lorem luctus
-                                            libero. Aenean eu viverra mauris enos pulvinar tellus. Divamus ut massa a libero commodo
-                                            imperdiet in danos amet arcus.&nbsp;Cras accumsan dorci maces consequat blandi susto
-                                            dusto elementum libero non honcus purus sem sit amet enimos. </span> -->
+                                    <span></span>
                                 </div>
                             </div>
                         </header>
                     </div>
+
                     <div class="dtl-section">
 
                         <div class="toolbar">
@@ -211,35 +405,36 @@
                                     </div>
                                     <span data-translate="collections.general.grid_view">Grid</span>
                                 </a>
-                                <a class="list" href="list" title="List" data-translate="collections.general.list_view" translate-item="title">
+                                <!--  <a class="list" href="list" title="List" data-translate="collections.general.list_view" translate-item="title">
                                     <div class="icon-list">
                                         <div class="icon-bar"></div>
                                         <div class="icon-bar"></div>
                                         <div class="icon-bar"></div>
                                     </div>
                                     <span data-translate="collections.general.list_view">List</span>
-                                </a>
+                                </a> -->
                             </div>
 
 
                             <div class="filter-sortby btn-group">
                                 <label for="sort-by" data-translate="collections.sorting.title">Sortear</label>
                                 <button class="btn btn-2 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        <i class="icon-exchange"></i>
-                                        <span data-translate="collections.sorting.featured">Destacados</span>
-                                        <i class="icon-chevron-down"></i>
-                                    </button>
+                                    <i class="icon-exchange"></i>
+                                    <span data-translate="collections.sorting.featured">Destacados</span>
+               
+                                    <i class="icon-chevron-down"></i>
+                                </button>
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li class="active"><span data-href="manual" data-translate="collections.sorting.featured">Destacados</span></li>
-                                    <li><span data-href="price-ascending" data-translate="collections.sorting.price_ascending">Price, low to high</span></li>
+                                    <!--     <li><span data-href="price-ascending" data-translate="collections.sorting.price_ascending">Price, low to high</span></li>
                                     <li><span data-href="price-descending" data-translate="collections.sorting.price_descending">Price, high to low</span></li>
                                     <li><span data-href="title-ascending" data-translate="collections.sorting.az">Alphabetically, A-Z</span></li>
                                     <li><span data-href="title-descending" data-translate="collections.sorting.za">Alphabetically, Z-A</span></li>
                                     <li><span data-href="created-ascending" data-translate="collections.sorting.date_ascending">Date, old to new</span></li>
                                     <li><span data-href="created-descending" data-translate="collections.sorting.date_descending">Date, new to old</span></li>
                                     <li><span data-href="best-selling" data-translate="collections.sorting.best_selling">Best
-                                                Selling</span></li>
+                                            Selling</span></li> -->
                                 </ul>
                             </div>
 
@@ -253,8 +448,8 @@
                                         <div class="product-top">
                                             <div class="product-image image-swap">
                                                 <a (click)="ProductDetail(item[0])" class="product-grid-image">
-                                                    <img src={{item[0].foto_url}} alt="">
-                                                    <img src="{{item[0].foto_url}}" alt=" ">
+                                                    <img src={{item[0].foto_url}} width="300" height="300" alt="">
+                                                    <img src="{{item[0].foto_url}}" width="300" height="300" alt=" ">
                                                     <div class="hover"></div>
                                                 </a>
                                             </div>
@@ -265,28 +460,28 @@
                                             </div>
 
                                             <div class="product-des">
-                                                <a class="wishlist" href="login.html" title="Add to wishlist">
+                                                <a class="wishlist" (click)="ProductDetail(item[0])" title="Add to wishlist">
                                                     <span class="icon"></span>
                                                     <span class="wishlist_text">
-                                                            Add to wishlist
-                                                        </span>
+                                                       ver Detalle
+                                                    </span>
                                                 </a>
 
                                                 <div class="action">
 
                                                     <form action="/cart/add" method="post" class="variants" enctype="multipart/form-data">
-                                                        <button type="button" class="btn" title="Select options">
-                                                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                                <span data-translate="products.product.select_options">Select
-                                                                    options</span>
-                                                            </button>
+                                                        <button type="button" (click)="add(item.codigo,item.precio1,item.marca,item.descripcio,item.codigo_empre,item.existencia,item.foto_url)" class="btn" title="Agregar al Carrito">
+                                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                                            <span data-translate="products.product.select_options">Select
+                                                                options</span>
+                                                        </button>
                                                     </form>
                                                 </div>
 
                                                 <div class="quickview-button">
-                                                    <a href="javascript:void(0)" title="Quick View" data-translate="products.product.quick_view" translate-item="title">
+                                                    <a (click)="ProductDetail(item[0])" title="Ver Detalle" data-translate="products.product.quick_view" translate-item="title">
                                                         <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <span data-translate="products.product.quick_view">Quick View</span>
+                                                        <span data-translate="products.product.quick_view">Ver Detalle</span>
                                                     </a>
                                                 </div>
 
@@ -295,25 +490,24 @@
 
                                         <div class="product-bottom">
                                             <div class="product-vendor">{{item[0].descripcio}}</div>
-                                            <a class="product-title">
 
-                                                <span class="lang1">Cantidad Disponible:{{item[0].existencia}}</span><br>
-                                                <span class="lang1">Cantidad Comercio:{{item[0].cantidad_Registro}}</span>
-                                            </a>
 
 
                                             <div class="price-box">
                                                 <p class="sale">
-                                                    <!-- <span class="old-price">
-                                                        <span class="money">{{item[0].precio1}}</span> 
-                                                    </span>-->
+
                                                     <span class="special-price"><em data-translate="products.product.from">from
-                                                            </em><span class="money">{{item[0].precio1}}</span>
-
-                                                    </span>
-
+                                                        </em><span class="money">{{item[0].precio1}}</span></span>
                                                 </p>
                                             </div>
+
+                                            <div>
+
+
+                                                <img src={{item[0].imagen}} width="80" height="80" alt="">
+
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -335,11 +529,13 @@
                                 <ul class="pagination-page">
                                     <li class="disabled"><span>Previo</span>
                                     </li>
-                                    <li class="active"><span>1</span></li>
-                                    <li>
-                                        <a href="details.html">2</a>
+
+                                    <li *ngFor="let pag of groupPagCantidad | slice:1; let i = index">
+                                        <a [routerLink]="['/productlist', this.categoria,i]" routerLinkActive="router-link-active">{{i+1}}</a>
                                     </li>
-                                    <li class="text"><a href="#" title="Next"><span>Siguiente</span></a></li>
+
+                                    <li class="text">
+                                        <a (click)="ProductosconPaginacion(this.categoria,'1') " title="Next"><span>Siguiente</span></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -348,6 +544,7 @@
             </div>
 
         </main>
+
         <div class="dtl-section float-left w-100">
             <footer class="site-footer">
                 <div class="footer-middle wow fadeInUp " data-wow-delay="200ms">
@@ -359,12 +556,12 @@
                                 </h6>
                                 <ul>
                                     <li>
-                                        <a href="#">
+                                        <a [routerLink]="['/about']" routerLinkActive="router-link-active">
                                             <span class="lang1">Nosotros</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/contact">
+                                        <a [routerLink]="['/contact']" routerLinkActive="router-link-active">
                                             <span class="lang1">Contacto</span>
                                         </a>
                                     </li>
@@ -373,11 +570,11 @@
                                             <span class="lang1">Blog</span>
                                         </a>
                                     </li>
-                                    <li>
+                                    <!--   <li>
                                         <a href="#">
                                             <span class="lang1">Refiere un Comercio</span>
                                         </a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                             <div class="col-sm-6 newslt">
@@ -402,15 +599,15 @@
                                     </h6>
                                     <ul class="social">
                                         <li class="Facebook">
-                                            <a href="https://web.facebook.com/Evolups.do" title="Facebook">
+                                            <a href="https://www.facebook.com/evolups.rd" target="_blank" title="Facebook">
                                                 <i class="fa fa-facebook"></i>
                                             </a>
                                         </li>
                                         <li class="Twitter">
-                                            <a href="https://twitter.com/evolups.do?igshid=gllyr0ue6b2z" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                            <a href="https://twitter.com/evolups_do" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
                                         </li>
                                         <li class="Instagram">
-                                            <a href="https://twitter.com/evolups.do?igshid=gllyr0ue6b2z" title="Instagram">
+                                            <a href="https://www.instagram.com/evolups.do/" target="_blank" title="Instagram">
                                                 <i class="fa fa-instagram"></i>
                                             </a>
                                         </li>

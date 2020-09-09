@@ -7,3 +7,7 @@ export interface User {
     nombre?: string;
     apellido?: string;
 }
+export interface marca {
+    descrip?: string;
+  
+}

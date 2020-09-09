@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { BagService } from 'src/services/bag.service';
-import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { Router,NavigationEnd } from '@angular/router';
+import { FormGroup, FormControl, Validators,NgForm } from '@angular/forms';
 import { User } from '../interfaces/interfaces';
-import { from } from 'rxjs';
-import { groupBy, mergeMap, toArray } from 'rxjs/operators';
-import { ProductService } from 'src/services/product.service'; 
 
+import { AuthService } from 'angularx-social-login';
+import { AccountService } from 'src/services/account.service';
+import { environment } from 'src/environments/environment';
+import {ProductService} from 'src/services/product.service';
 
 
 @Component({
@@ -17,67 +18,133 @@ import { ProductService } from 'src/services/product.service';
 export class DefaultLayoutComponent implements OnInit {
 
  
+  accountForm: FormGroup;
   registerUser: User = {
     usuario: ''
   };
 
-  // groupItems: any[][] = [];
-  // producto=[];
+  mySubscription: any;
+ 
+  constructor(
+    
 
-  constructor(public bagService: BagService,private router:Router,private productservices: ProductService) { }
+    public bagService: BagService,
+    private router: Router,
+    public producservices:ProductService,
+    private accountService: AccountService) {
+      this.setForm();
+      this.router.routeReuseStrategy.shouldReuseRoute = function () {
+        return false;
+      };
+      this.mySubscription = this.router.events.subscribe((event) => {
+        if (event instanceof NavigationEnd) {
+          // Trick the Router into believing it's last link wasn't previously loaded
+          this.router.navigated = false;
+        }
+      });
+    
 
+  }
 
   async register( fRegister: NgForm ) {
    // if (fRegister.invalid) { return; }
     ///const valido = await this.userService.register( this.registerUser);
-   this.router.navigate(['/formsearch',this.registerUser.usuario]);
+   this.router.navigate(['/formsearch',this.registerUser.usuario.replace("%20",'')]);
  
-   console.log(fRegister.value);
+   //console.log(fRegister.value);
   }
 
   
+  Foto:string;
+  titulo:string;
+  titulo2:string;
+  titulo3:string;
+  usuariolog:any;
+  currentUser: any;
+
+  ngOnInit(): void {
+ 
+   if(this.bagService.userLog!=null){
+
+    this.inicio();
+
+   } else {
+     this.titulo2="";
+     this.titulo="";
+     this.titulo="Ingresar |";
+     this.titulo2="Registrate |";
+   }  
+
+  }
+  
+
+inicio(){
+     
+
+if(this.titulo=="Ingresar |"   ){
+/*   alert(this.titulo);
+  alert(this.titulo2);   */
+
+  localStorage.removeItem("e-commerce");
+ 
+  this.router.navigate(['/login','logout']);
+}
+
+if(this.titulo!="Ingresar |" && this.bagService.userLog!=null){
+    this.titulo="";
+    this.titulo2="";
+    this.titulo3="Salir";
+    this.Foto=this.bagService.userLog.PhotoUrl;
+    this.titulo=this.bagService.userLog.name +" | ";
+}
+   
+ 
+  }
+
+
+   newsletter(obj){
+   
+    let array = [];
+    array.push(obj);
+    console.log("email",obj);
+
+    this.producservices.newsletter(array).subscribe(result => {
+      alert("Email Registrado Correctamente.");
+    });
+
+  }
+
+  
+  setForm() {
+    this.accountForm = new FormGroup({
+      email: new FormControl('', [
+        Validators.required,
+        Validators.minLength(1),
+      ]),
+   
+    });
+  }
+
+   
+logout(){
+
+  localStorage.removeItem("e-commerce");
+  this.titulo2="";
+  this.titulo3="";
+  this.titulo="";
+  this.titulo="Ingresar |";
+  this.titulo2="Registrate |";
+  this.Foto="";
+
+  this.router.navigateByUrl('/index.html');
+}
+
   departamento(){
 
     this.router.navigate(['/department']);
   
     }
-
-  ngOnInit(): void {
-    // this.productos();
-  }
-  /* 
-  productos() {
-  this.productservices.getProducto("")
-  .subscribe( resp => {
-    resp.forEach(item => {
-      this.producto.push( item )
-      this.groupItems = [];
-      const source = from(this.producto);
-      // group by code
-     const example = source.pipe(
-        groupBy((item: any) => item.codigo),
-        // return each item in group as array
-        mergeMap(group => group.pipe(toArray()))
-      );
- 
-      let contador = 0;
-      const subscribe = example.subscribe(val => {
-        this.groupItems[contador] = val;
-       console.log(this.groupItems);
-       contador++;
-     });
-
-   });
-     
-});  
-
-
-} */
-
-   
-
   
-   
-
+  
 
 }

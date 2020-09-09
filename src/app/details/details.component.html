@@ -1,114 +1,56 @@
-<div class="col-12">
+<div class="col-12 ">
 
 
-    <!--   <table>
-        <thead>
-            <th>Groups Name</th>
-            <th>Groups Items</th>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of groupMarcas">
 
-                <td>
-                    <ul>
-                        <li *ngFor="let pro of item">{{pro.descripcio}}</li>
-
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li *ngFor="let pro of item">{{pro.precio1}}</li>
-
-                    </ul>
-                </td>
-
-            </tr>
-        </tbody>
-    </table> -->
-
-
-    <div class="col-xs-3 sidebar collection-sidebar">
-        <div class="widget sidebar-links sidebar-custom">
-            <div class="widget-title">
-                <span class="lang1">Departamentos </span>
+    <div class="col-xs-3 sidebar collection-sidebar ">
+        <div class="widget sidebar-links sidebar-custom ">
+            <div class="widget-title ">
+                <span class="lang1 ">Departamentos </span>
             </div>
-            <div class="widget-content">
+            <div class="widget-content ">
                 <ul>
-                    <li *ngFor="let cat of groupCategorias">
-                        <a (click)="listaproductos(cat[0].categoria)">
-                            <span class="lang1">{{cat[0].categoria}}</span>
+                    <li *ngFor="let cat of groupCategorias ">
+                        <a (click)="listaproductos(cat[0].categoria) ">
+                            <span class="lang1 ">{{cat[0].categoria}}</span>
                         </a>
                     </li>
-                    <!-- <li>
-                        <a (click)="listaproductos('ceramica')">
-                            <span class="lang1">Ceramicas</span>
-                        </a>
-                    </li> -->
-                    <!-- <li>
-                        <a (click)="listaproductos('Climatizacion')">
-                            <span class="lang1">Climatización</span>
-                        </a>
-                    </li> -->
-                    <!-- <li>
-                        <a (click)="listaproductos('Cocina')">
-                            <span class="lang1">Cocina</span>
-                        </a>
-                    </li> -->
-                    <!-- <li>
-                        <a (click)="listaproductos('Electricidad')">
-                            <span class="lang1">Eléctricidad</span>
-                        </a>
-                    </li> -->
-                    <!-- <li>
-                        <a (click)="listaproductos('Herramienta')">
-                            <span class="lang1">Herramientas</span>
-                        </a>
-                    </li> -->
-                    <!-- <li>
-                        <a (click)="listaproductos('Madera')">
-                            <span class="lang1">Madera</span>
-                        </a>
-                    </li> -->
-                    <!-- <li>
-                        <a (click)="listaproductos('Pintura')">
-                            <span class="lang1">Pintura</span>
-                        </a>
-                    </li> -->
+
                 </ul>
             </div>
         </div>
 
 
-        <div class="dtl-section">
-            <div class="sidebar-block">
-                <div class="sidebar-custom sidebar-tag brand">
-                    <div class="widget-title">
-                        <span class="lang1">Marca </span>
-                        <a href="javascript:void(0)" class="clear" style="display:none">
+        <div class="dtl-section ">
+            <div class="sidebar-block ">
+                <div class="sidebar-custom sidebar-tag brand ">
+                    <div class="widget-title ">
+                        <span class="lang1 ">Marca </span>
+                        <a href="javascript:void(0) " class="clear " style="display:none ">
               Clear
             </a>
                     </div>
-                    <div class="widget-content" *ngFor="let ma of gMarcas">
+                    <div class="widget-content " *ngFor="let ma of gMarcas ">
                         <ul>
                             <li>
-                                <input type="checkbox" class="lang1" value="dincidunteros">
-                                <label class="lang1">{{ma[0].marca}}</label>
+                                <a (click)="listaproductos(ma[0].marca) ">
+                                    <label class="lang1 ">{{ma[0].marca}}</label>
+                                </a>
                             </li>
                             <!-- <li>
-                                <input type="checkbox" class="lang1" value="nectellus">
-                                <label class="lang1">Nectellus</label>
+                                <input type="checkbox " class="lang1 " value="nectellus ">
+                                <label class="lang1 ">Nectellus</label>
                             </li> -->
                             <!-- <li>
-                                <input type="checkbox" class="lang1" value="solutmades">
-                                <label class="lang1">Solutmades</label>
+                                <input type="checkbox " class="lang1 " value="solutmades ">
+                                <label class="lang1 ">Solutmades</label>
                             </li> -->
                             <!-- <li>
-                                <input type="checkbox" class="lang1" value="loremous-comodous">
-                                <label class="lang1">Loremous Comodous</label>
+                                <input type="checkbox " class="lang1 " value="loremous-comodous ">
+                                <label class="lang1 ">Loremous Comodous</label>
                             </li> -->
                             <!-- <li>
-                                <input type="checkbox" class="lang1" value="cosmopolis">
-                                <label class="lang1">Cosmopolis</label>
+                                <input type="checkbox " class="lang1 " value="cosmopolis ">
+                                <label class="lang1 ">Cosmopolis</label>
                             </li> -->
                         </ul>
                     </div>
@@ -119,7 +61,7 @@
 
 
 
-    <div class="col-xs-9 col-main" *ngFor="let pro of  groupMarcas">
+    <div class="col-xs-9 col-main " *ngFor="let pro of groupMarcas ">
         <div class=" product ">
             <!-- <div class="col-xs-5 feature-product-detail ">
                 <div class="product-img-box ">
@@ -163,62 +105,159 @@
                 </div>
             </div>
 
-            <div class="offers " *ngFor="let item of  pro">
-                <div class="col-xs-5 feature-product-detail ">
-                    <div class="product-img-box ">
-                        <div class="product-photo-container text-center ">
-                            <div class="zoomWrapper ">
 
-                                <img src="{{item.foto_url}} " alt=" ">
-                            </div>
+            <div class="offers " *ngFor="let item of pro; let i = index ">
+                <div class="no_crop_image grid-item col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                    <div class="inner product-item  on-sale wow fadeIn " data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms;">
+
+                        <!-- <div class="col-xs-5 feature-product-detail "> -->
+                        <!-- <div class="product-img-box "></div> -->
+                        <!-- <div class="product-photo-container text-center "> -->
+                        <div class="zoomWrapper ">
+                            <!-- <div class="inner-top"> -->
+                            <!-- <div class="product-top"> -->
+                            <ul id="lista1">
+                                <li display:block>
+                                    <div *ngIf="item.foto_url">
+                                        <img src="{{item.foto_url}} " width="100 " height="100 " alt=" ">
+                                        <img src="{{item.foto_url}} " alt=" ">
+                                    </div>
+                                    <div class="hover "></div>
+                                </li>
+                                <li display:block>
+                                    <div *ngIf="item.foto_url2">
+                                        <img src="{{item.foto_url2}} " width="100 " height="100 " alt=" ">
+                                        <img src="{{item.foto_url}} " alt=" ">
+                                    </div>
+                                    <div class="hover "></div>
+                                </li>
+                                <li display:block>
+                                    <div *ngIf="item.foto_url3">
+                                        <img src="{{item.foto_url3}} " width="100 " height="100 " alt=" ">
+                                        <img src="{{item.foto_url3}} " alt=" ">
+                                    </div>
+                                    <div class="hover "></div>
+                                </li>
+
+                            </ul>
+
                         </div>
                     </div>
-                </div>
 
+
+                    <!-- </div>
+                    </div> -->
+                    <!-- </div>  -->
+                    <!-- </div> -->
+                </div>
                 <div class="col-xs-7 product-shop ">
                     <header class="product-title ">
                         <p class="product-vendor ">
-                            <span>{{item.descripcio}}</span></p>
+
+                            <span>{{item.descripcio}}</span>
+
+
+                        </p>
                         <h3>
-                            <span class="lang1 ">CARACTERISTICAS</span>
+                            <span class="lang1 ">{{item.caracteristicas}}</span>
                         </h3>
                     </header>
                     <div class="product-info ">
-                        <label class="lang1 ">Codigo</label>
-                        <span class="variant-sku ">{{item.codigo}}</span>
+                        <label class="lang1 ">Producto</label>
+                        <span class="variant-sku ">{{item.codigo}}  </span>
+                        <img src={{item.imagen}} width="80 " height="80 " alt=" ">
+
                         <p class="product-inventory ">
                             <label class="lang1 ">Disponible</label>
                             <span>{{item.existencia}}</span>
                         </p>
 
                         <p class="product-type ">
-                            <label class="lang1 ">Tipo Producto</label>
-                            <span></span>
+                            <label class="lang1 ">Catogoria</label>
+                            <span>{{item.categoria}}</span>
                         </p>
 
 
                         <p class="product-type ">
                             <label class="lang1 ">Marca</label>
-                            <span></span>
+                            <span>{{item.marca}}</span>
+
+
+
                         </p>
+
+
+                        <p class="product-type ">
+                            <label class="lang1 ">Comercio</label>
+                            <span>{{item.codigo_empre}}</span>
+                            <img src={{item.imagenempresa}} width="80 " height="80 " alt=" ">
+
+                        </p>
+
+                        <p class="product-type ">
+                            <label class="lang1 ">Distancia</label> {{distancia}}
+                        </p>
+
+                        <p class="product-type ">
+
+                            <label class="lang1 ">Tiempo Apróximado</label> {{tiempo}}
+                        </p>
+                        <!--   <div>Latitude: {{latitude}}</div>
+                        <div>Longitude: {{longitude}}</div>
+                        <div>distancia: {{distancia}}</div> -->
+
+
 
                     </div>
 
                     <form action="car.html " method="post " enctype="multipart/form-data ">
                         <div class="prices ">
-                            <span class="price " itemprop="price "><span class="money ">{{item.precio1| currency}} </span></span>
+                            <span class="price " temprop="price "><span class="money ">{{item.precio1| currency}} </span></span> <span>{{item.unidad}}</span>
                         </div>
+
                         <label for="quantity " data-translate="cart.label.quantity ">Cantidad: </label>
                         <div (click)="cantidad> 1 ? cantidad = cantidad - 1 : 1" class="dec button">-</div>
                         <input [(ngModel)]="cantidad" type="text" id="quantity" name="quantity" value="1">
+
                         <div (click)="cantidad = cantidad+1" class="inc button">+</div>
-                        <div class="total-price">
-                            <label><b data-translate="cart.general.subtotal">Sub total</b>:</label><span><span
+
+                        <div class="total-price"><label><b data-translate="cart.general.subtotal">Sub total</b>:</label><span><span
                   class="money">{{ (cantidad * item.precio1) | currency }}</span></span>
                         </div>
-                        <input type="button" (click)="add()" name="add" class="btn" value="Añadir al carrito">
+
+                        <div class="total-price"><label><b data-translate="cart.general.subtotal">+Envio</b>:</label><span><span
+                            class="money"> {{envio| currency}}</span></span>
+                        </div>
+
+                        <div class="total-price"><label><b data-translate="cart.general.subtotal">Total</b>:</label><span><span
+                            class="money"> {{envio+ (cantidad * item.precio1)| currency}}</span></span>
+                        </div>
+
+                        <div class="btn-group btn-group-lg top-header">
+                            <button type="button" (click)="add(item.codigo,item.precio1,item.marca,item.descripcio,item.codigo_empre,item.existencia,item.foto_url)"><img src="./assets/imgs/addcarrito.jpg"   width="300" height="300" /></button>
+                            <button type="button" (click)="ComprarAhora(item.codigo,item.precio1,item.marca,item.descripcio,item.codigo_empre,item.existencia,item.foto_url)"><img src="./assets/imgs/Comprarahora.jpg"  width="300" height="300"   /></button>
+
+                        </div>
+
+                        <!-- <div>
+
+                            <div style="text-align: center;">
+                                <button type="button" class="linea" (click)="add(item.codigo,item.precio1,item.marca,item.descripcio,item.codigo_empre,item.existencia,item.foto_url)" name="add"><img src="./assets/imgs/addcarrito.png" width="500" height="500"  alt="Click para añadir al carrigo" /></button>
+                                <button type="button" class="linea" (click)="ComprarAhora(item.codigo,item.precio1,item.marca,item.descripcio,item.codigo_empre,item.existencia,item.foto_url)" name="add"><img src="./assets/imgs/ComprarAhora_opt.png"  width="500" height="500" /></button>
+
+                            </div> 
+
+
+                       codigo:string,precio1:number,marca:string,descripcion:string,empresa_id:string,cantidad:number -->
+
+                        <!-- <input type="button" (click)="add(item.codigo,item.precio1,item.marca,item.descripcio,item.codigo_empre,item.existencia,item.foto_url)" name="add"  src="./asset/imgs/addcarrito.png" class="btn" value="Añadir al carrito... ">  
+
+                  </div>     -->
+                        <!-- <input type=" button " (click)="ComprarAhora(item.codigo,item.precio1,item.marca,item.descripcio,item.codigo_empre,item.existencia,item.foto_url) " name="add " class="btn " value="Comprar Ahora"> -->
                         <hr>
                     </form>
+
+
                 </div>
 
             </div>
@@ -233,23 +272,23 @@
 
         <!--TAB HORIZONTAL-->
 
-        <div class="panel-group">
-            <ul class="nav nav-tabs" id="myTab">
-                <li class="active">
-                    <a data-toggle="tab" href="#collapse-tab1">
-                        <span class="lang1">Detalle</span>
+        <div class="panel-group ">
+            <ul class="nav nav-tabs " id="myTab ">
+                <li class="active ">
+                    <a data-toggle="tab " href="#collapse-tab1 ">
+                        <span class="lang1 ">Detalle</span>
                     </a>
                 </li>
-                <li class="">
-                    <a data-toggle="tab" href="#collapse-tab2">
-                        <span class="lang1">Envio / &amp; Devolución</span>
+                <li class=" ">
+                    <a data-toggle="tab " href="#collapse-tab2 ">
+                        <span class="lang1 ">Envio / &amp; Devolución</span>
                     </a>
                 </li>
             </ul>
 
-            <div id="myTabContent" class="tab-content">
-                <div id="collapse-tab1" class="tab-pane active">
-                    <div class="lang1">
+            <div id="myTabContent " class="tab-content ">
+                <div id="collapse-tab1 " class="tab-pane active ">
+                    <div class="lang1 ">
                         <!--       <p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.Donec
                             pretium egestas sapien et mollis. Mauris tincidunt urna eu neque feugiat vulputate. Morbi ut tempor lacus, ac pellentesque nibh. Ut nec vestibulum urna. Sed facilisis luctus sem, at accumsan diam volutpat sit amet. Nunc sem
                             massa, imperdiet condimentum commodo vel, euismod nec augue. Etiam porta vel erat non ullamcorper. Etiam tristique egestas orci ac maximus.&nbsp;</p>
@@ -257,8 +296,8 @@
                     </div>
                 </div>
 
-                <div id="collapse-tab2" class="tab-pane">
-                    <div class="lang1">
+                <div id="collapse-tab2 " class="tab-pane ">
+                    <div class="lang1 ">
                         <p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.Donec
                             pretium egestas sapien et mollis. Mauris tincidunt urna eu neque feugiat vulputate. Morbi ut tempor lacus, ac pellentesque nibh.</p>
                     </div>
@@ -268,53 +307,53 @@
 
         <!--RELATED PRODUCT-->
 
-        <section class="related-products">
-            <h5 class="lang1">Productos Relacionados</h5>
-            <div class="products-grid row owl-carousel">
-                <div class=" no_crop_image grid-item">
-                    <div class="inner product-item  on-sale wow fadeIn animated" data-wow-delay="1000ms">
-                        <div class="inner-top">
-                            <div class="product-top">
-                                <div class="product-image image-swap" *ngFor="let item of  groupMarcas">
-                                    <a href="#" class="product-grid-image">
-                                        <img src={pro.foto_url}} alt="">
-                                        <img src="assets/imgs/l10608410_cc41a6f1-65b1-4a71-add1-c52ba5eaf85d_large.jpg" alt="">
-                                        <div class="hover"></div>
+        <section class="related-products ">
+            <h5 class="lang1 ">Productos Relacionados</h5>
+            <div class="products-grid row owl-carousel ">
+                <div class=" no_crop_image grid-item ">
+                    <div class="inner product-item on-sale wow fadeIn animated " data-wow-delay="1000ms ">
+                        <div class="inner-top ">
+                            <div class="product-top ">
+                                <div class="product-image image-swap " *ngFor="let item of groupMarcas ">
+                                    <a href="# " class="product-grid-image ">
+                                        <img src={pro.foto_url}} alt=" ">
+                                        <img src="assets/imgs/l10608410_cc41a6f1-65b1-4a71-add1-c52ba5eaf85d_large.jpg " alt=" ">
+                                        <div class="hover "></div>
                                     </a>
                                 </div>
-                                <div class="product-label">
-                                    <strong class="label">Sale</strong>
+                                <div class="product-label ">
+                                    <strong class="label ">Sale</strong>
                                 </div>
-                                <div class="product-des">
-                                    <div class="action">
-                                        <form action="/cart/add" method="post" class="variants" enctype="multipart/form-data">
-                                            <button type="button" class="btn" title="Select options">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        <span data-translate="products.product.select_options">Select
+                                <div class="product-des ">
+                                    <div class="action ">
+                                        <form action="/cart/add " method="post " class="variants " enctype="multipart/form-data ">
+                                            <button type="button " class="btn " title="Select options ">
+                        <i class="fa fa-shopping-cart " aria-hidden="true "></i>
+                        <span data-translate="products.product.select_options ">Select
                           options</span>
                       </button>
                                         </form>
                                     </div>
-                                    <div class="quickview-button">
-                                        <a href="javascript:void(0)" title="Quick View">
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                            <span data-translate="products.product.quick_view">Quick View</span>
+                                    <div class="quickview-button ">
+                                        <a href="javascript:void(0) " title="Quick View ">
+                                            <i class="fa fa-search " aria-hidden="true "></i>
+                                            <span data-translate="products.product.quick_view ">Quick View</span>
                                         </a>
                                     </div>
 
                                 </div>
                             </div>
-                            <div class="product-bottom">
-                                <div class="product-vendor">{{pro.descripcio}} </div>
-                                <a class="product-title" href="#">
-                                    <!-- <span class="lang1">Naminos elementum disus tincidunts cosmo de
+                            <div class="product-bottom ">
+                                <div class="product-vendor ">{{pro.descripcio}} </div>
+                                <a class="product-title " href="# ">
+                                    <!-- <span class="lang1 ">Naminos elementum disus tincidunts cosmo de
                     cosmopolis</span> -->
                                 </a>
-                                <div class="price-box">
-                                    <p class="sale">
-                                        <span class="old-price"><span class="money">$1,111.00</span></span>
-                                        <span class="special-price"><em data-translate="products.product.from">from </em><span class="money"
-                        data-currency-usd="$1,000.00" data-currency="USD">{{pro.precio1}} </span></span>
+                                <div class="price-box ">
+                                    <p class="sale ">
+                                        <span class="old-price "><span class="money ">$1,111.00</span></span>
+                                        <span class="special-price "><em data-translate="products.product.from ">from </em><span class="money "
+                        data-currency-usd="$1,000.00 " data-currency="USD ">{{pro.precio1}} </span></span>
                                     </p>
                                 </div>
                             </div>
@@ -322,149 +361,151 @@
                     </div>
                 </div>
 
-                <div class=" no_crop_image grid-item">
-                    <div class="inner product-item  on-sale wow fadeIn animated" data-wow-delay="1000ms">
-                        <div class="inner-top">
-                            <div class="product-top">
-                                <div class="product-image image-swap">
-                                    <a href="#" class="product-grid-image">
-                                        <img src="assets/imgs/l02184820_504d6138-63f9-4d02-b7c3-ac1cd3ff58e9_large.jpg" alt="">
-                                        <img src="assets/imgs/l10608410_cc41a6f1-65b1-4a71-add1-c52ba5eaf85d_large.jpg" alt="">
-                                        <div class="hover"></div>
+                <div class=" no_crop_image grid-item ">
+                    <div class="inner product-item on-sale wow fadeIn animated " data-wow-delay="1000ms ">
+                        <div class="inner-top ">
+                            <div class="product-top ">
+                                <div class="product-image image-swap ">
+                                    <a href="# " class="product-grid-image ">
+                                        <img src="assets/imgs/l02184820_504d6138-63f9-4d02-b7c3-ac1cd3ff58e9_large.jpg " alt=" ">
+                                        <img src="assets/imgs/l10608410_cc41a6f1-65b1-4a71-add1-c52ba5eaf85d_large.jpg " alt=" ">
+                                        <div class="hover "></div>
                                     </a>
                                 </div>
-                                <div class="product-label">
-                                    <strong class="label">Sale</strong>
+                                <div class="product-label ">
+                                    <strong class="label ">Sale</strong>
                                 </div>
-                                <div class="product-des">
-                                    <div class="action">
-                                        <form action="/cart/add" method="post" class="variants" enctype="multipart/form-data">
-                                            <button type="button" class="btn" title="Select options">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        <span data-translate="products.product.select_options">Select
+                                <div class="product-des ">
+                                    <div class="action ">
+                                        <form action="/cart/add " method="post " class="variants " enctype="multipart/form-data ">
+                                            <button type="button " class="btn " title="Select options ">
+                        <i class="fa fa-shopping-cart " aria-hidden="true "></i>
+                        <span data-translate="products.product.select_options ">Select
                           options</span>
                       </button>
                                         </form>
                                     </div>
-                                    <div class="quickview-button">
-                                        <a href="javascript:void(0)" title="Quick View">
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                            <span data-translate="products.product.quick_view">Quick View</span>
+                                    <div class="quickview-button ">
+                                        <a href="javascript:void(0) " title="Quick View ">
+                                            <i class="fa fa-search " aria-hidden="true "></i>
+                                            <span data-translate="products.product.quick_view ">Quick View</span>
                                         </a>
                                     </div>
 
                                 </div>
                             </div>
-                            <div class="product-bottom">
-                                <div class="product-vendor">Dressers</div>
-                                <a class="product-title" href="#">
-                                    <span class="lang1">Naminos elementum disus tincidunts cosmo de
+                            <div class="product-bottom ">
+                                <div class="product-vendor ">Dressers</div>
+                                <a class="product-title " href="# ">
+                                    <span class="lang1 ">Naminos elementum disus tincidunts cosmo de
                     cosmopolis</span>
                                 </a>
-                                <div class="price-box">
-                                    <p class="sale">
-                                        <span class="old-price"><span class="money">$1,111.00</span></span>
-                                        <span class="special-price"><em data-translate="products.product.from">from </em><span class="money"
-                        data-currency-usd="$1,000.00" data-currency="USD">$1,000.00</span></span>
+                                <div class="price-box ">
+                                    <p class="sale ">
+                                        <span class="old-price "><span class="money ">$1,111.00</span></span>
+                                        <span class="special-price "><em data-translate="products.product.from ">from </em><span class="money "
+                        data-currency-usd="$1,000.00 " data-currency="USD ">$1,000.00</span></span>
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class=" no_crop_image grid-item">
-                    <div class="inner product-item  on-sale wow fadeIn animated" data-wow-delay="1000ms">
-                        <div class="inner-top">
-                            <div class="product-top">
-                                <div class="product-image image-swap">
-                                    <a href="#" class="product-grid-image">
-                                        <img src="assets/imgs/l02184820_504d6138-63f9-4d02-b7c3-ac1cd3ff58e9_large.jpg" alt="">
-                                        <img src="assets/imgs/l10608410_cc41a6f1-65b1-4a71-add1-c52ba5eaf85d_large.jpg" alt="">
-                                        <div class="hover"></div>
+
+
+                <div class=" no_crop_image grid-item ">
+                    <div class="inner product-item on-sale wow fadeIn animated " data-wow-delay="1000ms ">
+                        <div class="inner-top ">
+                            <div class="product-top ">
+                                <div class="product-image image-swap ">
+                                    <a href="# " class="product-grid-image ">
+                                        <img src="assets/imgs/l02184820_504d6138-63f9-4d02-b7c3-ac1cd3ff58e9_large.jpg " alt=" ">
+                                        <img src="assets/imgs/l10608410_cc41a6f1-65b1-4a71-add1-c52ba5eaf85d_large.jpg " alt=" ">
+                                        <div class="hover "></div>
                                     </a>
                                 </div>
-                                <div class="product-label">
-                                    <strong class="label">Sale</strong>
+                                <div class="product-label ">
+                                    <strong class="label ">Sale</strong>
                                 </div>
-                                <div class="product-des">
-                                    <div class="action">
-                                        <form action="/cart/add" method="post" class="variants" enctype="multipart/form-data">
-                                            <button type="button" class="btn" title="Select options">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        <span data-translate="products.product.select_options">Select
+                                <div class="product-des ">
+                                    <div class="action ">
+                                        <form action="/cart/add " method="post " class="variants " enctype="multipart/form-data ">
+                                            <button type="button " class="btn " title="Select options ">
+                        <i class="fa fa-shopping-cart " aria-hidden="true "></i>
+                        <span data-translate="products.product.select_options ">Select
                           options</span>
                       </button>
                                         </form>
                                     </div>
-                                    <div class="quickview-button">
-                                        <a href="javascript:void(0)" title="Quick View">
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                            <span data-translate="products.product.quick_view">Quick View</span>
+                                    <div class="quickview-button ">
+                                        <a href="javascript:void(0) " title="Quick View ">
+                                            <i class="fa fa-search " aria-hidden="true "></i>
+                                            <span data-translate="products.product.quick_view ">Quick View</span>
                                         </a>
                                     </div>
 
                                 </div>
                             </div>
-                            <div class="product-bottom">
-                                <div class="product-vendor">Dressers</div>
-                                <a class="product-title" href="#">
-                                    <span class="lang1">Naminos elementum disus tincidunts cosmo de
+                            <div class="product-bottom ">
+                                <div class="product-vendor ">Dressers</div>
+                                <a class="product-title " href="# ">
+                                    <span class="lang1 ">Naminos elementum disus tincidunts cosmo de
                     cosmopolis</span>
                                 </a>
-                                <div class="price-box">
-                                    <p class="sale">
-                                        <span class="old-price"><span class="money">$1,111.00</span></span>
-                                        <span class="special-price"><em data-translate="products.product.from">from </em><span class="money"
-                        data-currency-usd="$1,000.00" data-currency="USD">$1,000.00</span></span>
+                                <div class="price-box ">
+                                    <p class="sale ">
+                                        <span class="old-price "><span class="money ">$1,111.00</span></span>
+                                        <span class="special-price "><em data-translate="products.product.from ">from </em><span class="money "
+                        data-currency-usd="$1,000.00 " data-currency="USD ">$1,000.00</span></span>
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class=" no_crop_image grid-item">
-                    <div class="inner product-item  on-sale wow fadeIn animated" data-wow-delay="1000ms">
-                        <div class="inner-top">
-                            <div class="product-top">
-                                <div clÑss="product-image image-swap">
-                                    <a href="#" class="product-grid-image">
-                                        <img src="assets/imgs/l02184820_504d6138-63f9-4d02-b7c3-ac1cd3ff58e9_large.jpg" alt="">
-                                        <img src="assets/imgs/l10608410_cc41a6f1-65b1-4a71-add1-c52ba5eaf85d_large.jpg" alt="">
-                                        <div class="hover"></div>
+                <div class=" no_crop_image grid-item ">
+                    <div class="inner product-item on-sale wow fadeIn animated " data-wow-delay="1000ms ">
+                        <div class="inner-top ">
+                            <div class="product-top ">
+                                <div clÑss="product-image image-swap ">
+                                    <a href="# " class="product-grid-image ">
+                                        <img src="assets/imgs/l02184820_504d6138-63f9-4d02-b7c3-ac1cd3ff58e9_large.jpg " alt=" ">
+                                        <img src="assets/imgs/l10608410_cc41a6f1-65b1-4a71-add1-c52ba5eaf85d_large.jpg " alt=" ">
+                                        <div class="hover "></div>
                                     </a>
                                 </div>
-                                <div class="product-label">
-                                    <strong class="label">Sale</strong>
+                                <div class="product-label ">
+                                    <strong class="label ">Sale</strong>
                                 </div>
-                                <div class="product-des">
-                                    <div class="action">
-                                        <form action="/cart/add" method="post" class="variants" enctype="multipart/form-data">
-                                            <button type="button" class="btn" title="Select options">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        <span data-translate="products.product.select_options">Select
+                                <div class="product-des ">
+                                    <div class="action ">
+                                        <form action="/cart/add " method="post " class="variants " enctype="multipart/form-data ">
+                                            <button type="button " class="btn " title="Select options ">
+                        <i class="fa fa-shopping-cart " aria-hidden="true "></i>
+                        <span data-translate="products.product.select_options ">Select
                           options</span>
                       </button>
                                         </form>
                                     </div>
-                                    <div class="quickview-button">
-                                        <a href="javascript:void(0)" title="Quick View">
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                            <span data-translate="products.product.quick_view">Quick View</span>
+                                    <div class="quickview-button ">
+                                        <a href="javascript:void(0) " title="Quick View ">
+                                            <i class="fa fa-search " aria-hidden="true "></i>
+                                            <span data-translate="products.product.quick_view ">Quick View</span>
                                         </a>
                                     </div>
 
                                 </div>
                             </div>
-                            <div class="product-bottom">
-                                <div class="product-vendor">Dressers</div>
-                                <a class="product-title" href="#">
-                                    <span class="lang1">Naminos elementum disus tincidunts cosmo decosmopolis</span>
+                            <div class="product-bottom ">
+                                <div class="product-vendor ">Dressers</div>
+                                <a class="product-title " href="# ">
+                                    <span class="lang1 ">Naminos elementum disus tincidunts cosmo decosmopolis</span>
                                 </a>
-                                <div class="price-box">
-                                    <p class="sale">
-                                        <span class="old-price"><span class="money">$1,111.00</span></span>
-                                        <span class="special-price"><em data-translate="products.product.from">from </em><span class="money"
-                        data-currency-usd="$1,000.00" data-currency="USD">$1,000.00</span></span>
+                                <div class="price-box ">
+                                    <p class="sale ">
+                                        <span class="old-price "><span class="money ">$1,111.00</span></span>
+                                        <span class="special-price "><em data-translate="products.product.from ">from </em><span class="money "
+                        data-currency-usd="$1,000.00 " data-currency="USD ">$1,000.00</span></span>
                                     </p>
                                 </div>
                             </div>

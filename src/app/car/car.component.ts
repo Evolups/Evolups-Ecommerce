@@ -27,6 +27,18 @@ export class CarComponent implements OnInit {
     if (confirm('Seguro desea eliminar estos articulos?')) {
       this.bagService.eliminarArticulos(items);
     }
+
   }
+
+  
+  
+  async ActualizarCarrito(items) {
+
+    alert('Actualizar informacion');
+    
+      this.bagService.ActualizarArticulo(items);
+    
+  }
+
 
 }

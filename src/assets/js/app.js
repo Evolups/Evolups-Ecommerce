@@ -21,9 +21,10 @@ $(window).scroll(function() {
 
 $(document).ready(function() {
     new WOW().init();
-    // $('.carousel').carousel({
-    //     interval: 2000
-    // });
+    $('.carousel').carousel({
+        interval: 2000
+    });
+    // $(".owl-carousel").owlCarousel();
     $('.single-item').slick({
         dots: true,
         infinite: true,
@@ -35,8 +36,8 @@ $(document).ready(function() {
         dots: true,
         infinite: true,
         speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 3
+        slidesToShow: 2,
+        slidesToScroll: 2
     });
     $('.one-time').slick({
         dots: false,
@@ -100,20 +101,43 @@ $(document).ready(function() {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 5000,
+        variableWidth: false,
+        autoplaySpeed: 3000,
         nextArrow: '<button type="button" class="banner-category-slick-next"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
         prevArrow: '<button type="button" class="banner-category-slick-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></button>'
     });
-
-    // $(".owl-carousel").owlCarousel({
-    //     pagination: false,
-    //     navigation: true,
-    //     items: 3,
-    //     itemsDesktopSmall: [1024, 3],
-    //     itemsTablet: [768, 2],
-    //     itemsTabletSmall: [767, 2],
-    //     itemsMobile: [479, 2]
-    // });
+    // Cambios 03/09/20
+    $('.oferta-1').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: true,
+        pauseOnHover: false,
+        adaptiveHeight: true
+    });
+    // Fin Cambios 03/09/20
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        items: 4,
+        autoplay: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+    });
 
     $('#myTab a').click(function(e) {
         e.preventDefault();
@@ -157,4 +181,54 @@ $(document).ready(function() {
             showLeftPush.trigger('click');
         }
     });
+
+    // MODAL
+    var $modalParent = $('div.newsletterwrapper'),
+        modalWindow = $('#email-modal'),
+        emailModal = $('#email-modal'),
+        modalPageURL = window.location.pathname;
+
+    modalWindow = modalWindow.html();
+    modalWindow = '<div id="email-modal">' + modalWindow + '</div>';
+    $modalParent.css({ 'position': 'relative' });
+    $('.wrapper #email-modal').remove();
+    $modalParent.append(modalWindow);
+
+
+    $('#email-modal .btn.close').click(function(e) {
+        e.preventDefault();
+        // closeEmailModalWindow();
+        $('#email-modal').hide();
+    });
+    setTimeout(function() {
+        $('#email-modal').show();
+    }, 3000);
+    $('body').keydown(function(e) {
+        if (e.which == 27) {
+            closeEmailModalWindow();
+            $('body').unbind('keydown');
+        }
+    });
+    $('#mc_embed_signup form').submit(function() {
+        if ($('#mc_embed_signup .email').val() != '') {
+            closeEmailModalWindow();
+        }
+    });
+
+    function closeEmailModalWindow() {
+        $('#email-modal .modal-window').fadeOut(600, function() {
+            $('#email-modal .modal-overlay').fadeOut(600, function() {
+                $('#email-modal').hide();
+            });
+        });
+        $('#email-modal').css("display", "none !important");
+    }
+
+    function openEmailModalWindow() {
+        $('#email-modal').fadeIn(600, function() {
+            $('#email-modal .modal-window').fadeIn(600);
+        });
+    }
+
+
 });

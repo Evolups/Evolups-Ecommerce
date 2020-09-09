@@ -14,7 +14,7 @@ export class DepartmentComponent implements OnInit {
 
   constructor(private router:Router, private productservices: ProductService ) {}
 
-  groupCategorias: any[][] = [];
+groupCategorias: any[][] = [];
 producto=[];
 VCategoria=[];
 
@@ -24,7 +24,7 @@ VCategoria=[];
   }
 
   listaproductos(id:any){
-  this.router.navigate(['/productlist',id]);
+  this.router.navigate(['/productlist',id,0]);
 
   }
 
