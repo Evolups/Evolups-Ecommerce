@@ -134,7 +134,7 @@ ofertas(id:string){
 
 logout(){
 
-  localStorage.clear();
+  sessionStorage.clear();
   this.router.navigate(['/login',"logout"]);
 
 }

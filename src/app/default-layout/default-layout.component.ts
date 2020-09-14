@@ -85,7 +85,7 @@ if(this.titulo=="Ingresar |"   ){
 /*   alert(this.titulo);
   alert(this.titulo2);   */
 
-  localStorage.removeItem("e-commerce");
+  sessionStorage.removeItem("e-commerce");
  
   this.router.navigate(['/login','logout']);
 }
@@ -128,7 +128,8 @@ if(this.titulo!="Ingresar |" && this.bagService.userLog!=null){
    
 logout(){
 
-  localStorage.removeItem("e-commerce");
+  sessionStorage.clear();
+  sessionStorage.removeItem("e-commerce");
   this.titulo2="";
   this.titulo3="";
   this.titulo="";
@@ -137,6 +138,7 @@ logout(){
   this.Foto="";
 
   this.router.navigateByUrl('/index.html');
+  window.location.reload();
 }
 
   departamento(){

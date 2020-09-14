@@ -67,8 +67,8 @@ export class HomeComponent implements OnInit {
 
 ngOnInit(): void {
 //Uusario que esta logueado
-this.user = localStorage.getItem('e-commerce');
-this.user =JSON.parse( localStorage.getItem('e-commerce'));
+this.user = sessionStorage.getItem('e-commerce');
+this.user =JSON.parse( sessionStorage.getItem('e-commerce'));
 
  this.Categoria();
  this.CargaCar_total();
@@ -169,7 +169,7 @@ ofertas(id:string){
 
 logout(){
 
-  localStorage.clear();
+  sessionStorage.clear();
   this.router.navigate(['/login',"logout"]);
 
 }

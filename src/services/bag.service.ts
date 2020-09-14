@@ -113,7 +113,7 @@ public user:string="";
   }
 
   getuserlog(){
-    this.userLog=JSON.parse(localStorage.getItem('e-commerce')); 
+    this.userLog=JSON.parse(sessionStorage.getItem('e-commerce')); 
   }
   
   ActualizarArticulo(item) {

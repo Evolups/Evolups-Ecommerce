@@ -67,9 +67,9 @@ export class CheckoutComponent implements OnInit {
   constructor(private accountService: AccountService,private formBuilder: FormBuilder, public bagService: BagService, private router: Router,private productservices: ProductService,  private mapsAPILoader: MapsAPILoader,    private ngZone: NgZone) {
    
   //Uusario que esta logueado
-   this.user = localStorage.getItem('e-commerce');
+   this.user = sessionStorage.getItem('e-commerce');
 
-    this.user =JSON.parse( localStorage.getItem('e-commerce'));
+    this.user =JSON.parse( sessionStorage.getItem('e-commerce'));
 
     this.validateForm = new FormGroup({
       Edificio: new FormControl('', [

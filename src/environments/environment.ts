@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:56890/api',
-  keyLoginLocalStorage: 'e-commerce',
+  keyLoginsessionStorage: 'e-commerce',
 
   tipoLogueo: {
     Facebok: 1,
     Google: 2,
     User: 3
   },
-  currentUser: JSON.parse(localStorage.getItem('e-commerce')) // Debe tener el mismo valor que la variable keyLoginLocalStorage
+  currentUser: JSON.parse(sessionStorage.getItem('e-commerce')) // Debe tener el mismo valor que la variable keyLoginsessionStorage
 };
 
 /*

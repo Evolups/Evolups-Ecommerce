@@ -1,5 +1,5 @@
 export const environment = {
-  keyLoginLocalStorage: 'e-commerce',
+  keyLoginsessionStorage: 'e-commerce',
   apiUrl: 'https://evolovers.com/api',
   
   production: true

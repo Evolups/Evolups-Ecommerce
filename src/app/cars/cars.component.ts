@@ -41,9 +41,9 @@ export class CarsComponent implements OnInit {
   ngOnInit(): void {
     
     //Uusario que esta logueado
-    this.user = localStorage.getItem('e-commerce');
+    this.user = sessionStorage.getItem('e-commerce');
 
-    this.user =JSON.parse( localStorage.getItem('e-commerce'));
+    this.user =JSON.parse( sessionStorage.getItem('e-commerce'));
 
     this.CargaCar();
     this.CargaCar_total();

@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 export class JwtInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // add authorization header with jwt token if available
-        const currentUser = JSON.parse(localStorage.getItem(environment.keyLoginLocalStorage));
+        const currentUser = JSON.parse(sessionStorage.getItem(environment.keyLoginsessionStorage));
         if (currentUser && currentUser.Token) {
             request = request.clone({
                 setHeaders: {

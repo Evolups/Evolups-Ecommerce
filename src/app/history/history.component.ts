@@ -34,7 +34,7 @@ historydetail(nofactu:string){
     
 Venta(){
   //Busca los productos por Categoria
-this.user=JSON.parse(localStorage.getItem('e-commerce'));
+this.user=JSON.parse(sessionStorage.getItem('e-commerce'));
 console.log(this.user.email);
 
     this.productservices.getVentaTotalxcliente(this.user.email)

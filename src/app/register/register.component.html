@@ -4,6 +4,15 @@
             <div class="col-6 col-xs-12">
 
                 <div class="form-vertical">
+
+                    <br />
+                    <a (click)="signInWithFB()" class="fb btn">
+                        <i class="fa fa-facebook fa-fw"></i> Continuar con Facebook
+                    </a>
+                    <br />
+                    <a (click)="signInWithGoogle()" class="google btn"><i
+                            class="fa fa-google fa-fw"></i> Continuar con Google
+                    </a>
                     <form [formGroup]="accountForm" (ngSubmit)="save(accountForm.value)" id="create_customer" accept-charset="UTF-8">
 
                         <h1 class="title_block"><span class="text-bold">Crear Cuenta</span></h1>
